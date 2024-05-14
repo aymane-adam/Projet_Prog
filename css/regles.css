@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Pirate'; /* Nom de la police */
+    src: url(../font/Pieces\ of\ Eight.ttf) format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     background: url(../img/fond_regles.jpg);
 }
@@ -18,6 +25,7 @@ h1{
     text-align: center;
     grid-area : Titre;
     padding-left : 11%;
+    font-family: 'Pirate', Arial, sans-serif;
 }
 
 img{
@@ -29,4 +37,7 @@ img{
 ul{
     grid-area: Regles;
     padding-left : 17%;
+    font-family: 'Pirate', Arial, sans-serif;
+    font-size: 25px;
+    padding-top : 20%;
 }
