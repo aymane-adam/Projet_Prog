@@ -1,4 +1,14 @@
-body {
-    background: url(../img/bg.jpg) center/cover;
-    text-align: center;
+@font-face {
+    font-family: 'Pirate'; /* Nom de la police */
+    src: url(../font/Pieces\ of\ Eight.ttf) format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
 }
+
+body {
+    background: url(../img/bg2.jpg) center/cover no-repeat;
+    min-height: 100vh;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Pirate', Arial, sans-serif;
+} 
