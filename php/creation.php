@@ -7,6 +7,7 @@
     <title>Création</title>
 </head>
 <body>
-    <h1>Création d'un niveau</h1>
+    <h1><img class="fondtitre "src="../img/planches.webp" width="30%">Création d'un niveau</h1>
+    <p>kf</p>
 </body>
 </html>

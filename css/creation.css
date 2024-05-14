@@ -1,3 +1,13 @@
-.body{
-    background: url(../img/akrien.gif) center/cover;
+body{
+    background: url(../img/piratebois.jpg) center/cover no-repeat;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.fondtitre{
+    position:absolute;
+    z-index:-1;
+}
+h1{
+    color:white;
 }
