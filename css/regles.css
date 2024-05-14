@@ -1,0 +1,32 @@
+body{
+    background: url(../img/fond_regles.jpg);
+}
+
+div{
+    display : grid;
+    grid-template-columns: 436px;
+    grid-template-rows: repeat(4, 107px);
+    grid-template-areas: "Titre"
+                        "Regles"
+                        "Regles"
+                        "Regles";
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    grid-area : Titre;
+    padding-left : 11%;
+}
+
+img{
+    max-width : 436px;
+    max-height : 516px;
+    grid-area : Regles
+}
+
+ul{
+    grid-area: Regles;
+    padding-left : 17%;
+}
