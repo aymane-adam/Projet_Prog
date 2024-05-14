@@ -12,3 +12,26 @@ body {
     font-size: 40px;
     font-family: 'Pirate', Arial, sans-serif;
 } 
+
+img {
+    width: 20%;
+}
+
+h2 {
+    color: white;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.text {
+    position: absolute;
+    font-size: 120%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    text-shadow: 2px 2px 2px black;
+} 
