@@ -41,7 +41,7 @@ dl{
     margin-top : -15%;
     text-align: center;
     font-family: 'Pirate', Arial, sans-serif;
-    font-size: 25px;
+    font-size: 23px;
     grid-area: regles;
 }
 
@@ -52,5 +52,5 @@ dl{
 }
 
 #mot{
-    color :red;
+    grid-area : six;
 }
