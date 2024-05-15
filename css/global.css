@@ -5,6 +5,7 @@
     font-style: normal;
 }
 
+
 body {
     background: url(../img/bg2.jpg) center/cover no-repeat;
     min-height: 100vh;
@@ -49,32 +50,21 @@ h2 {
     pointer-events: none; /* Empêche le texte d'interférer avec le clic sur l'image */
 } 
 
-.grid {
-    display: grid;
-    font-size: 30px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-        "ti r1"
-        "tx r2";
+.sailor {
+    display: flex;
+    align-items: center;
 }
 
-.grid img {
-    width: 30%;
+.sailor img {
+    width: 20%;
 }
 
-.grid h3 {
-    grid-area: ti;
+.text {
+    flex: 1;
 }
 
-.grid p {
-    grid-area: tx;
+p {
+    font-family:  Arial, sans-serif;
+    font-size: 20px;
 }
 
-.grid pirate1 {
-    grid-area: r1;
-}
-
-.grid pirate2 {
-    grid-area: r2;
-}

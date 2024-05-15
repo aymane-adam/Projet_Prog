@@ -15,15 +15,13 @@
         </div>
     </a>
 
-    <div class="grid">
+    <div class="sailor">
         <img src="img/XoD5.gif" alt="Mr le Pirate">
-        <h3>Welcome Sailor</h3>
-        <p>Vous vous êtes échoué sur Lost Island.
-        Prenez votre courage à une main et un crochet,
+        <h3>Welcome Sailor,</h3>
+        <p>Vous vous êtes échoué sur Lost Island.<br>
+        Prenez votre courage à une main et un crochet,<br>
         et jsp
         <p>
-        <img class="pirate1" src="img/R (1).gif" alt="">
-        <img class="pirate2" src="img/R.gif" alt="">
     </div>
 </body>
 </html>
