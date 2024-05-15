@@ -25,13 +25,56 @@ h2 {
     position: relative;
     text-align: center;
     color: white;
+    display: inline-block;
+}
+
+.container img {
+    width: 30%;
+    cursor: pointer; /* Change le curseur au survol pour indiquer que l'image est cliquable */
+    transition: transform 0.3s ease; /* Ajoute une transition douce lorsqu'on survole l'image */
+}
+
+.container img:hover {
+    transform: scale(1.1); /* Agrandit légèrement l'image lorsqu'on survole */
 }
 
 .text {
     position: absolute;
-    font-size: 120%;
+    font-size: 110%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -55%);
     text-shadow: 2px 2px 2px black;
+    color: white;
+    pointer-events: none; /* Empêche le texte d'interférer avec le clic sur l'image */
 } 
+
+.grid {
+    display: grid;
+    font-size: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "ti r1"
+        "tx r2";
+}
+
+.grid img {
+    width: 30%;
+}
+
+.grid h3 {
+    grid-area: ti;
+}
+
+.grid p {
+    grid-area: tx;
+}
+
+.grid pirate1 {
+    grid-area: r1;
+}
+
+.grid pirate2 {
+    grid-area: r2;
+}

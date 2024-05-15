@@ -13,16 +13,37 @@
 
 <body>
 
-    <header>
-        <nav id="navop">
-
-        <div class="nav-veil">
-                <img src="../img/neil-nav.png" alt="veil">
-        </div>
-       </nav>
-
-    </header>
+<header>
+<header>
+    <div class="nav-veil" onclick="toggleImages()">
+      <img src="../img/neil-nav.png" alt="veil">
+    </div>
+    <div class="nav-veil2" onclick="toggleImages()">
+      <img src="../img/Design sans titre (5).png" alt="veil">
+    </div>
+  </header>
   
+  <script>
+   function toggleImages() {
+      var veil1 = document.querySelector('.nav-veil');
+      var veil2 = document.querySelector('.nav-veil2');
 
+      if (veil1.style.opacity === '0') {
+        veil1.style.opacity = '1';
+        veil2.style.opacity = '0';
+        veil2.style.height = '2%'; // Taille initiale de la deuxième image
+      } else {
+        veil1.style.opacity = '0';
+        veil2.style.opacity = '1';
+        veil2.style.height = '100%'; // Taille de la deuxième image lorsque la première est cliquée
+}
+}
+        </script>
 
 </body>
+<footer id="footer-yu">
+<div class="coque">
+                <img src="../img/coque_pirate.png" alt="veil">
+        </div>
+
+</footer>
