@@ -8,16 +8,16 @@
     </head>
     <body>
         <div>
-            <img src="../img/regles.png" alt="Photo d'un parchemin"/>
-            <h1>LES REGLES</h1>
-            <ul>
-                <li>La but du jeu est d'arrivé à la case arrivé</li>
-                <li>Placer tout les bloques avant de lancer le niveau</li>
-                <li>Pour chaque obstacle toucher cela entraine la fin du niveau</li>
-                <li>Le nombre de bloque à poser est limité</li>
-                <li>Le temps pour résoudre le niveau est illimités</li>
-                <li>Le nombre de point se fera de la maniere suivante : </li>
-            </ul>
+            <img src="../img/parchemin.png" alt="parchemin"/>
+            <h1>THE CIR CODE</h1>
+            <dl>
+                <dt>La but du jeu est d'arrivé à la case arrivé</dt>
+                <dt>Placer tout les bloques avant de lancer le niveau</dt>
+                <dt>Pour chaque obstacle toucher cela entraine la fin du niveau</dt>
+                <dt>Le nombre de bloque à poser est dtmité</dt>
+                <dt>Le temps pour résoudre le niveau est ildtmités</dt>
+                <dt>Le nombre de point se fera de la maniere suivante : </dt>
+            </dl>
         </div> 
     </body>
 </html>
