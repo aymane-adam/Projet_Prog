@@ -35,18 +35,18 @@ h2{
     text-shadow: 2px 2px 2px white;
     color: black;
     margin-bottom: 80px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .creationa{
     margin-left:8%;
-    width:35%;
+    width:30%;
     position:relative;
     float:left;
 }
 .creationm{
     margin-right:8%;
-    width:35%;
+    width:30%;
     position:relative;
     float:right;
 }
