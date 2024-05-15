@@ -18,6 +18,7 @@
                 <dt>Le temps pour résoudre le niveau est ildtmités</dt>
                 <dt>Le nombre de point se fera de la maniere suivante : </dt>
             </dl>
+            <img id="capitaine" src="../img/capitaine.gif" alt="capitaine"/>
         </div> 
     </body>
 </html>

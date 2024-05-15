@@ -9,16 +9,106 @@ body{
     background: url(../img/piratebois.jpg) center/cover no-repeat;
     min-height: 100vh;
     text-align: center;
+    color: white;
+    font-family: 'Pirate', Arial, sans-serif;
 }
 
 
-h1{
-    font-family: 'Pirate', Arial, sans-serif;
-    margin: 5% 25%;
-    text-align:center;
-    font-size: 70px;
+.container {
+    margin-top: 60px;
+    margin-bottom:80px;
+    position: relative;
+    text-align: center;
+    clear:both;
+}
+
+.txt {
+    position: absolute;
+    font-size: 23px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
     text-shadow: 2px 2px 2px black;
-    color: white;
-    background:url(../img/planches.webp) center/cover;
-    height:20%;
+} 
+h2{
+    font-size: 35px;
+    text-shadow: 2px 2px 2px white;
+    color: black;
+    margin-bottom: 80px;
+    margin-top: 30px;
+}
+
+.creationa{
+    margin-left:8%;
+    width:30%;
+    position:relative;
+    float:left;
+}
+.creationm{
+    margin-right:8%;
+    width:30%;
+    position:relative;
+    float:right;
+}
+.imgmanuel{
+    border-bottom : 2px solid black;
+    border-right : 2px solid black;
+}
+.imgalea{
+    border-bottom : 2px solid black;
+    border-right : 2px solid black;
+}
+
+@keyframes rotation1 {
+
+    from {transform: rotate(0deg);}
+  
+    to {transform: rotate(50deg);}
+  
+  }
+@keyframes rotation {
+
+    from {transform: rotate(0deg);}
+  
+    to {transform: rotate(-50deg);}
+  
+  }
+@keyframes rotation2 {
+
+    from {transform: rotate(50deg);}
+  
+    to {transform: rotate(0deg);}
+  
+  }
+@keyframes rotation3 {
+
+    from {transform: rotate(-50deg);}
+  
+    to {transform: rotate(0deg);}
+  
+  }
+.creationa:hover .sword,.creationm:hover .sword{
+    animation: rotation 0.3s ease-in-out forwards alternate;
+}
+.creationa:hover .sword1,.creationm:hover .sword1{
+    animation: rotation1 0.3s ease-in-out forwards alternate;
+}
+.creationa:not(:hover) .sword1,.creationm:not(:hover) .sword1{
+    animation: rotation2 0.3s ease-in-out forwards alternate;
+}
+.creationa:not(:hover) .sword,.creationm:not(:hover) .sword{
+    animation: rotation3 0.3s ease-in-out forwards alternate;
+}
+
+
+.sword, .sword1{
+    z-index:-1;
+    position:absolute;
+    width:50%;
+    top:0px;
+    margin:0 25%; 
+}
+
+::after{
+    animation:rotation1 0.4s ease-in-out forwards;;
 }
