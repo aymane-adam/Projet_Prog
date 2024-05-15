@@ -4,40 +4,43 @@
     font-weight: normal;
     font-style: normal;
 }
+*{
+    margin: 0%;
 
-body{
+}
+body,html{
     background: url(../img/fond_regles.jpg);
+    height: 100%;
+    width: 100%;
 }
 
 div{
-    display : grid;
-    grid-template-columns: 436px;
-    grid-template-rows: repeat(4, 107px);
-    grid-template-areas: "Titre"
-                        "Regles"
-                        "Regles"
-                        "Regles";
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 5% 85% 5%;
+    grid-template-rows: 10% 50% 10%;
+    grid-template-areas: "rien sept rien2"
+                        "trois titre cinq"
+                        "six regles huit"; 
 }
 
 h1{
     text-align: center;
-    grid-area : Titre;
-    padding-left : 11%;
     font-family: 'Pirate', Arial, sans-serif;
+    margin-top : 4%;
+    grid-area: titre;
 }
 
 img{
-    max-width : 436px;
-    max-height : 516px;
-    grid-area : Regles
+    grid-area: titre;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-ul{
-    grid-area: Regles;
-    padding-left : 17%;
+dl{
+    margin-top : -15%;
+    text-align: center;
     font-family: 'Pirate', Arial, sans-serif;
     font-size: 25px;
-    padding-top : 20%;
+    grid-area: regles;
 }
