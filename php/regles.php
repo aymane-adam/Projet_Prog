@@ -18,6 +18,8 @@
                 <dt>Le temps pour résoudre le niveau est ildtmités</dt>
                 <dt>Le nombre de point se fera de la maniere suivante : </dt>
             </dl>
+            <img id="capitaine" src="../img/capitaine.gif" alt="capitaine"/>
+            <p id="mot">Ho matelos, si tu es ici c'est pour decouvrir les règles de Lost Island !</p>
         </div> 
     </body>
 </html>

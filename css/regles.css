@@ -17,10 +17,10 @@ body,html{
 div{
     height: 100%;
     display: grid;
-    grid-template-columns: 5% 85% 5%;
+    grid-template-columns: 10% 85% 5%;
     grid-template-rows: 10% 50% 10%;
     grid-template-areas: "rien sept rien2"
-                        "trois titre cinq"
+                        "capitaine titre cinq"
                         "six regles huit"; 
 }
 
@@ -43,4 +43,14 @@ dl{
     font-family: 'Pirate', Arial, sans-serif;
     font-size: 25px;
     grid-area: regles;
+}
+
+#capitaine{
+    grid-area: capitaine;
+    margin-top: 90%;
+    width: 450px;
+}
+
+#mot{
+    color :red;
 }
