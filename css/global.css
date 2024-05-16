@@ -8,11 +8,19 @@
 
 body {
     background: url(../img/bg2.jpg) center/cover no-repeat;
+    background-position: center;
     min-height: 100vh;
-    text-align: center;
     font-size: 40px;
     font-family: 'Pirate', Arial, sans-serif;
-} 
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+h1{
+    text-align: center;
+}
 
 img {
     width: 20%;
@@ -50,21 +58,14 @@ h2 {
     pointer-events: none; /* Empêche le texte d'interférer avec le clic sur l'image */
 } 
 
-.sailor {
-    display: flex;
-    align-items: center;
+.sailor{
+    margin-top: -2%;
 }
 
 .sailor img {
-    width: 20%;
+    width: 15%;
 }
 
 .text {
     flex: 1;
 }
-
-p {
-    font-family:  Arial, sans-serif;
-    font-size: 20px;
-}
-
