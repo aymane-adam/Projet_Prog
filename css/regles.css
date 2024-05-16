@@ -21,7 +21,7 @@ div{
     grid-template-rows: 10% 50% 10%;
     grid-template-areas: "rien sept rien2"
                         "capitaine titre cinq"
-                        "six regles huit"; 
+                        "mot regles huit"; 
 }
 
 h1{
@@ -52,5 +52,28 @@ dl{
 }
 
 #mot{
-    grid-area : six;
+    grid-area : mot;
 }
+
+#retour{
+    position : relative;
+     top : 30px;
+     left : 40px;
+    width: 500px;
+    grid-area: rien;
+    text-decoration: none;
+    color: black;
+}
+
+#retour:hover{
+    transform: scale(1.07);
+}
+
+#mot_retour{
+    position: relative;
+    bottom: 50px;
+    left : 50px;
+    font-family: 'Pirate', Arial, sans-serif;
+
+}
+
