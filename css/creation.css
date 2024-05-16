@@ -39,20 +39,23 @@ h2{
 }
 
 .creationa{
-    margin-left:8%;
-    width:30%;
+    margin-left:7%;
+    width:40%;
     position:relative;
     float:left;
+    text-decoration: none;
 }
 .creationm{
-    margin-right:8%;
-    width:30%;
+    margin-right:7%;
+    width:40%;
     position:relative;
     float:right;
+    text-decoration: none;
 }
 .imgmanuel{
     border-bottom : 2px solid black;
     border-right : 2px solid black;
+    
 }
 .imgalea{
     border-bottom : 2px solid black;
@@ -61,30 +64,40 @@ h2{
 
 @keyframes rotation1 {
 
-    from {transform: rotate(0deg);}
+    from {
+    transform: rotate(0deg);
+    margin-left:18%;}
   
-    to {transform: rotate(50deg);}
+    to {
+    transform: rotate(50deg);
+    margin-left:20%;}
   
   }
 @keyframes rotation {
-
-    from {transform: rotate(0deg);}
-  
-    to {transform: rotate(-50deg);}
-  
+    from {
+    transform: rotate(0deg);
+    margin-left:18%;}
+    to {
+    transform: rotate(-50deg);
+    margin-left:20%;}
   }
 @keyframes rotation2 {
-
-    from {transform: rotate(50deg);}
-  
-    to {transform: rotate(0deg);}
-  
+    from {
+    transform: rotate(50deg);
+    margin-left:20%;}
+    to {
+    transform: rotate(0deg);
+    margin-left:18%;}
   }
 @keyframes rotation3 {
 
-    from {transform: rotate(-50deg);}
+    from {
+    transform: rotate(-50deg);
+    margin-left:20%;}
   
-    to {transform: rotate(0deg);}
+    to {
+    transform: rotate(0deg);
+    margin-left:18%;}
   
   }
 .creationa:hover .sword,.creationm:hover .sword{
@@ -100,15 +113,29 @@ h2{
     animation: rotation3 0.3s ease-in-out forwards alternate;
 }
 
+@keyframes grand {
+    from {width : 80%;} 
+    to {
+    width : 85%;
+    border:outset 3px #e99210;}
+}
+@keyframes grand1 {
+    from {
+    width : 85%;
+    border:outset 3px #e99210;} 
+    to {width : 80%}
+}
+.creationa:hover .imgalea,.creationm:hover .imgmanuel{
+    animation: grand 0.3s ease-in-out forwards alternate;
+}
+.creationa:not(:hover) .imgalea,.creationm:not(:hover) .imgmanuel{
+    animation: grand1 0.3s ease-in-out forwards alternate;
+}
 
 .sword, .sword1{
     z-index:-1;
     position:absolute;
-    width:50%;
+    width:45%;
     top:0px;
-    margin:0 25%; 
-}
-
-::after{
-    animation:rotation1 0.4s ease-in-out forwards;;
+    margin-left:20%;
 }

@@ -13,17 +13,17 @@
             <h1>Level Creator</h1>
         </div>
     </div>
-    <div class="creationa">
+    <a href="../index.php" class="creationa">
         <h2>Random Creation</h2>
         <img src="../img/sword.png" class="sword" alt="Image">
         <img src="../img/sword1.png" class="sword1" alt="Image">
-        <img src="../img/imgalea.png" class="imgalea" alt="Image" style="width:100%">
-    </div>    
-    <div class="creationm">
+        <img src="../img/imgalea.png" class="imgalea" alt="Image" style="width:30%">
+    </a>    
+    <a href="../index.php" class="creationm">
         <h2>Manual Creation</h2>
         <img src="../img/sword.png" class="sword" alt="Image">
         <img src="../img/sword1.png" class="sword1" alt="Image">
-        <img src="../img/imgmanuel.png" class="imgmanuel" alt="Image" style="width:100%">
-    </div>
+        <img src="../img/imgmanuel.png" class="imgmanuel" alt="Image" style="width:30%">
+    </a>
 </body>
 </html>
