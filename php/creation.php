@@ -7,6 +7,9 @@
     <title>Editor</title>
 </head>
 <body>
+<?php
+    include("nav.php")
+?>
     <div class="container">
         <img src="../img/planches.webp" alt="Image" style="width:30%">
         <div class="txt">
@@ -25,5 +28,8 @@
         <img src="../img/sword1.png" class="sword1" alt="Image">
         <img src="../img/imgmanuel.png" class="imgmanuel" alt="Image" style="width:30%">
     </a>
+<?php
+    include("footer.php")
+?>
 </body>
 </html>
