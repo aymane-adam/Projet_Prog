@@ -6,10 +6,14 @@
 }
 
 
+html,body{
+    overflow: hidden;
+}
+
 body {
     background: url(../img/bg2.jpg) center/cover no-repeat;
     background-position: center;
-    min-height: 100vh;
+    max-height: 100vh;
     font-size: 40px;
     font-family: 'Pirate', Arial, sans-serif;
 }
@@ -35,18 +39,22 @@ h2 {
     text-align: center;
     color: white;
     display: inline-block;
+    overflow: hidden; /* Assure que l'image agrandie reste dans les limites du conteneur */
 }
 
 .container img {
-    width: 30%;
     cursor: pointer; /* Change le curseur au survol pour indiquer que l'image est cliquable */
     transition: transform 0.3s ease; /* Ajoute une transition douce lorsqu'on survole l'image */
 }
 
-.container img:hover {
-    transform: scale(1.1); /* Agrandit légèrement l'image lorsqu'on survole */
+.container:hover img {
+    transform: scale(1.1); /* Agrandit l'image lorsque le conteneur est survolé */
 }
 
+#mot_play{
+    position : relative;
+    bottom : 157px;
+}
 .text {
     position: absolute;
     font-size: 110%;
@@ -59,7 +67,9 @@ h2 {
 } 
 
 .sailor{
-    margin-top: -2%;
+    position: relative;
+    bottom : 250px;
+    pointer-events: none;
 }
 
 .sailor img {
