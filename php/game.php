@@ -20,16 +20,18 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div class="tete2">
-                    <figure id="voile3">
-                        <img src="../img/voilenav.png">
-                    </figure>
-                    <figure id="voile4" class="image-container">
-                        <img src="../img/voilePleine.png">
-                        <figcaption class="overlay-text">
-                            <a href="game.php">Mode <br>campagne</a>
-                        </figcaption>
-                    </figure>
+                <div>
+                    <div class="tete2">
+                        <figure id="voile3">
+                            <img src="../img/voilenav.png">
+                        </figure>
+                        <figure id="voile4" class="image-container">
+                            <img src="../img/voilePleine.png">
+                            <figcaption class="overlay-text">
+                                <a href="game.php">Mode <br>campagne</a>
+                            </figcaption>
+                        </figure>
+                    </div>
                 </div>
             </div>
             <div id="coque">
@@ -37,8 +39,7 @@
             </div>
         </div>
             <a id="retour" href="../index.php">
-                <img id="img_retour" src="../img/bouton_retour.png" alt="Image" style="width:30%">
-                <h2 id="mot_retour">Back</h2>
+                <img id="img_retour" src="../img/bouton_retour.png" alt="Image" style="width:13%">
             </a>
     </body>
 </html>

@@ -21,7 +21,6 @@
             <img id="capitaine" src="../img/capitaine.gif" alt="capitaine"/>
             <a id="retour" href="../index.php">
             <img src="../img/bouton_retour.png" alt="Image" style="width:30%">
-            <h2 id="mot_retour">Back</h2>
             </a>
         </div> 
     </body>

@@ -48,7 +48,7 @@ h2 {
     transition: transform 0.3s ease; /* Ajoute une transition douce lorsqu'on survole l'image */
 }
 
-.container:hover img {
+.image:hover {
     transform: scale(1.1); /* Agrandit l'image lorsque le conteneur est survolé */
 }
 
@@ -56,20 +56,10 @@ h2 {
     position : relative;
     bottom : 29vh;
 }
-.text {
-    position: absolute;
-    font-size: 110%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -55%);
-    text-shadow: 2px 2px 2px black;
-    color: white;
-    pointer-events: none; /* Empêche le texte d'interférer avec le clic sur l'image */
-} 
 
 .sailor{
     position: relative;
-    bottom : 250px;
+    bottom: 15vh;
     pointer-events: none;
 }
 

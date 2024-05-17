@@ -70,11 +70,3 @@ dl{
     transition: transform 0.3s ease;
 }
 
-#mot_retour{
-    position: relative;
-    bottom: 50px;
-    left : 50px;
-    font-family: 'Pirate', Arial, sans-serif;
-
-}
-

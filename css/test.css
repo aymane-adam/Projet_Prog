@@ -5,9 +5,11 @@
     font-style: normal;
 }
 
+/*
 html,body{
     overflow: hidden;
 }
+*/
 
 body{
     background: url(../img/fond.gif) center/cover ;
@@ -67,6 +69,7 @@ body{
 
 .tete2{
     margin-left: -15%;
+    margin-right: 15%;
 }
 
 #coque img{
@@ -83,10 +86,6 @@ body{
 #bateau{
     margin-bottom: 12%;
 }
-
-
-
-
 
 
 .image-container {
@@ -117,26 +116,16 @@ body{
     color: red;
 }
 
+
 #retour{
-    position: relative;
-    bottom : 115vh;
+    position : relative;
+     top : -104vh;
+    grid-area: rien;
     text-decoration: none;
     color: black;
 }
 
-#retour:hover{
+#img_retour:hover{
     transform: scale(1.07);
     transition: transform 0.3s ease;
-}
-
-#mot_retour{
-    position: relative;
-    margin-top: -4%;
-    left : 8vh;
-    font-family: 'Pirate', Arial, sans-serif;
-
-}
-
-#img_retour{
-    max-width: 12%;
 }
