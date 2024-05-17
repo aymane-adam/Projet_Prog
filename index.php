@@ -16,4 +16,12 @@
         <img src="img/captain2.gif" alt="Mr le Pirate">
     </div>
 </body>
+
+<script>
+    m_editor = new Audio('audio/music.ogg'); 
+    m_editor.load();
+    m_editor.play();
+    m_editor.loop=true;
+</script>
+
 </html>
