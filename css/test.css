@@ -5,9 +5,9 @@
     font-style: normal;
 }
 
-html,body{
+/* html,body{
     overflow: hidden;
-}
+} */
 
 body{
     background: url(../img/fond.gif) center/cover ;
@@ -118,21 +118,24 @@ body{
 }
 
 #retour{
-    position: relative;
-    bottom : 115vh;
+    width: 80%;
+    position: absolute;
+    bottom : 85vh;
+    left : 5vh;
     text-decoration: none;
     color: black;
 }
 
 #retour:hover{
-    transform: scale(1.07);
+    transform: scale(1.05);
     transition: transform 0.3s ease;
 }
 
 #mot_retour{
     position: relative;
     margin-top: -4%;
-    left : 8vh;
+    left : 6.5vh;
+    bottom : 0.8vh;
     font-family: 'Pirate', Arial, sans-serif;
 
 }
