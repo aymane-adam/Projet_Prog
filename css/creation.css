@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+html,body{
+    overflow: hidden;
+}
+
 body{
     background: url(../img/piratebois.jpg) center/cover no-repeat;
     min-height: 100vh;
