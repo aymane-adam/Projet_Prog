@@ -119,8 +119,7 @@ body{
 
 #retour{
     position: relative;
-    bottom : 600px;
-    left : 10px;
+    bottom : 115vh;
     text-decoration: none;
     color: black;
 }
@@ -132,8 +131,8 @@ body{
 
 #mot_retour{
     position: relative;
-    bottom : 65px;
-    left : 43px;
+    bottom : 12vh;
+    left : 8vh;
     font-family: 'Pirate', Arial, sans-serif;
 
 }
