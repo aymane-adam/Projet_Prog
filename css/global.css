@@ -38,6 +38,7 @@ h2 {
     position: relative;
     text-align: center;
     color: white;
+    text-decoration: none;
     display: inline-block;
     overflow: hidden; /* Assure que l'image agrandie reste dans les limites du conteneur */
 }
@@ -53,7 +54,7 @@ h2 {
 
 #mot_play{
     position : relative;
-    bottom : 157px;
+    bottom : 29vh;
 }
 .text {
     position: absolute;
