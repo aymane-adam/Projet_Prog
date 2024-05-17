@@ -112,3 +112,28 @@ body{
     cursor: pointer;
     color: red;
 }
+
+#retour{
+    position: relative;
+    bottom : 600px;
+    left : 10px;
+    text-decoration: none;
+    color: black;
+}
+
+#retour:hover{
+    transform: scale(1.07);
+    transition: transform 0.3s ease;
+}
+
+#mot_retour{
+    position: relative;
+    bottom : 65px;
+    left : 43px;
+    font-family: 'Pirate', Arial, sans-serif;
+
+}
+
+#img_retour{
+    max-width: 130px;
+}

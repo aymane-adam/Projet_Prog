@@ -19,7 +19,6 @@
                 <dt>Le nombre de point se fera de la maniere suivante : </dt>
             </dl>
             <img id="capitaine" src="../img/capitaine.gif" alt="capitaine"/>
-            <!-- <img id="retour" src="../img/bouton_retour.png" alt="bouton_retour"/> -->
             <a id="retour" href="../index.php">
             <img src="../img/bouton_retour.png" alt="Image" style="width:30%">
             <h2 id="mot_retour">Back</h2>

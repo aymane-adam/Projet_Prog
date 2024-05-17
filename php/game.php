@@ -36,5 +36,9 @@
                 <img src="../img/coque.gif">
             </div>
         </div>
+            <a id="retour" href="../index.php">
+                <img id="img_retour" src="../img/bouton_retour.png" alt="Image" style="width:30%">
+                <h2 id="mot_retour">Back</h2>
+            </a>
     </body>
 </html>
