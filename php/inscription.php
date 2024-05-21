@@ -31,10 +31,10 @@
                         VALUES (:pseudo,:mail,:mdp)"); // On prépare la requête SQL
         
                         $sql1->execute(
-                            array(//':id_compte' => $id_compte,//
+                            array(
                             ':pseudo' => $pseudo,
                             ':mail' => $mail,
-                            ':mdp' => password_hash($password, PASSWORD_DEFAULT),
+                            ':mdp' => password_hash($mdp, PASSWORD_DEFAULT),
                         ));
                         header("Location: "."connexion.php");
                     }

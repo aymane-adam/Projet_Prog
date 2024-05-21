@@ -23,12 +23,12 @@
     <?php
     require("bdd.php");
 
-        if(isset($_POST["try_Mail"])){
+        if(isset($_POST["try_Pseudo"])){
             $try_Mdp=$_POST["try_Mdp"];
-            $try_Mail=$_POST["try_Mail"];
-            if(validedonee($try_Mail)!=false){
-                $sql1 = $conn->prepare("SELECT * FROM comptes WHERE Mail=:Mail");
-                $sql1->execute(array(':Mail' => $try_Mail));
+            $try_Pseudo=$_POST["try_Pseudo"];
+            if(validedonee($try_Pseudo)!=false){
+                $sql1 = $conn->prepare("SELECT * FROM comptes WHERE pseudo=:pseudo");
+                $sql1->execute(array(':pseudo' => $try_Pseudo));
                 $compte = $sql1->fetchAll(PDO::FETCH_ASSOC);
                 if(password_verify($try_Mdp,$compte[0]['mdp'])==true){
                     $_SESSION["pseudo"]=$compte[0]['pseudo'];
@@ -36,7 +36,7 @@
                     $_SESSION["mdp"]=$compte[0]['mdp'];
                     $_SESSION["id_compte"]=intval($compte[0]['id_compte']);
                     $_SESSION["auth"]=true;
-                    header("Location: "."index.php");
+                    header("Location: "."../index.php");
                     die();
                 }
                 else{
@@ -50,8 +50,8 @@
     ?>
 
     <form method="post">
-        <label>Mail:</label>
-        <input type="email" name="try_Mail" />
+        <label>Pseudo:</label>
+        <input type="Pseudo" name="try_Pseudo" />
         <br>
         <br>
         <label>Mot de passe:</label>
