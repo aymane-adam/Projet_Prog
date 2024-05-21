@@ -8,9 +8,9 @@
 </head>
 <body>
     <h1>Lost Island</h1>
-    <a href="php/game.php" class="container"> 
-        <img class="image" src="img/planches.png" alt="Image" style="width:30%">
-    </a>
+        <a href="php/game.php"  class="container"> 
+            <img class="image" src="img/planches.png" alt="Image" style="width:30%">
+        </a>
     <div class="sailor">
         <img src="img/captain2.gif" alt="Mr le Pirate">
     </div>

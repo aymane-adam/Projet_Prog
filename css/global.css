@@ -39,13 +39,17 @@ h2 {
     text-align: center;
     color: white;
     text-decoration: none;
-    display: inline-block;
+    display:contents;
     overflow: hidden; /* Assure que l'image agrandie reste dans les limites du conteneur */
+    border: 10px solid white;
 }
 
 .container img {
     cursor: pointer; /* Change le curseur au survol pour indiquer que l'image est cliquable */
     transition: transform 0.3s ease; /* Ajoute une transition douce lorsqu'on survole l'image */
+    display: block;
+    margin: 0 auto;
+
 }
 
 .image:hover {
