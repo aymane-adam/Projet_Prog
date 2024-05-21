@@ -13,12 +13,11 @@
     <meta name="author" content="Morchain Alexis">
 
     <link rel="icon" type="images/x-icon" href="../img/logo.png">
-    <link rel="stylesheet" href="../css/formulaire.css">
+    <link rel="stylesheet" href="../css/formulaire_conn.css">
 
 </head>
        
 <body>
-    <?php include_once("nav.php"); ?>
    
     <?php
     require("bdd.php");
@@ -59,11 +58,8 @@
         <br>
         <br>
         <input type="submit" value="Se connecter"/>
+        <p><a href="inscription.php">S'inscrire</a></p>
     </form>
-    <p><a href="inscription.php">S'inscrire</a></p>
-    
-    <?php include_once("footer.php"); ?> 
-
 </body>
 
 </html>

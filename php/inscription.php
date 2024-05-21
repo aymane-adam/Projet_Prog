@@ -11,13 +11,11 @@
     <meta name="author" content="Morchain Alexis">
 
     <link rel="icon" type="images/x-icon" href="../img/logo.png">
-    <link rel="stylesheet" href="../css/formulaire.css">
+    <link rel="stylesheet" href="../css/formulaire_insc.css">
 
 </head>
        
 <body>
-    <?php include_once("nav.php"); ?>
-
     <?php
         require("bdd.php");
         if(isset($_POST["Condition"])){
@@ -74,8 +72,6 @@
         <br>
         <br>
         <input type="submit" value="S'insrire"/>
-    </form>
-
-    <?php include_once("footer.php"); ?>  
+    </form> 
 </body>
 </html>
