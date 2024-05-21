@@ -19,56 +19,86 @@ body{
     display: none;
 }
 
-#voile2{
+#voile1, #voile2, #voile3, #voile4{
+    display: contents;
+
+}
+
+#voile2 img{ 
     display: none;
 }
 
-#voile1{
+#voile1 img{
     display: revert;
 }
 
-.tete:hover #voile1{
+.tete:hover #voile1 img{
     display: none;
 
 }
 
-.tete:hover #voile2{
+.tete:hover #voile2 img{
     display: revert;
 }
 
-#voile4{
+#voile4 img{
     display: none;
 }
-#voile3{
+#voile3 img{
     display: revert;
 }
 
-.tete2:hover #voile3{
+.tete2:hover #voile3 img{
     display: none;
 }
 
-.tete2:hover #voile4{
+.tete2:hover #voile4 img{
     display: revert;
 }
+
+
+
 
 .voile{
     display: flex;
+    margin-left: 15%;
+}
+
+.tete img{
+    width: 30%;
+    height: 30%;
+    margin-top: 8%;
+}
+
+.tete2 img{
+    width: 50%;
+    height: 80%;
     margin-left: 10%;
 }
 
-.voile img{
-    width: 65%;
-    height: auto;
+.voile a{
+    display: contents;
 }
 
+
+
+
 .tete{
-    margin-top: 6%;
+    display: contents;
 }
 
 .tete2{
-    margin-left: -15%;
-    margin-right: 15%;
+    display: contents;
 }
+
+
+
+
+
+
+
+
+
 
 #coque img{
     position: absolute;
@@ -93,25 +123,6 @@ body{
 
 .image-container img {
     display: block;
-}
-
-.overlay-text a{
-    position: absolute;
-    top: 45%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    color: black;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 250%; /* Ajustez selon vos besoins */
-    font-family: 'Pirate', Arial, sans-serif;
-    text-decoration: none;
-}
-
-.overlay-text a:hover {
-    cursor: pointer;
-    color: red;
 }
 
 

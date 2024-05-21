@@ -14,10 +14,7 @@
                         <img src="../img/voilenav.png">
                     </figure>
                     <figure id="voile2" class="image-container">
-                        <img src="../img/voilePleine.png">
-                        <figcaption class="overlay-text">
-                            <a href="game.php">Mode <br>communautaire</a>
-                        </figcaption>
+                        <a href="game.php"><img src="../img/voilePleine.png"></a>
                     </figure>
                 </div>
                 <div>
@@ -26,10 +23,7 @@
                             <img src="../img/voilenav.png">
                         </figure>
                         <figure id="voile4" class="image-container">
-                            <img src="../img/voilePleine.png">
-                            <figcaption class="overlay-text">
-                                <a href="game.php">Mode <br>campagne</a>
-                            </figcaption>
+                            <a href="game.php"><img src="../img/voilePleine2.png"></a>
                         </figure>
                     </div>
                 </div>
