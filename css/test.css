@@ -5,11 +5,9 @@
     font-style: normal;
 }
 
-/*
 html,body{
     overflow: hidden;
 }
-*/
 
 body{
     background: url(../img/fond.gif) center/cover ;
