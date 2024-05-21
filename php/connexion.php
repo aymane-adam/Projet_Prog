@@ -22,18 +22,6 @@
    
     <?php
     require("bdd.php");
-        if(isset($_COOKIE["id"])){
-            $sql1 = $conn->prepare("SELECT * FROM comptes WHERE ID=:ID");
-            $sql1->execute(array(':ID' => $_COOKIE["id"]));
-            $compte = $sql1->fetchAll(PDO::FETCH_ASSOC);
-            $_SESSION["Pseudo"]=$compte[0]['pseudo'];
-            $_SESSION["Mail"]=$compte[0]['Mail'];
-            $_SESSION["Mdp"]=$compte[0]['Mdp'];
-            $_SESSION["id"]=intval($compte[0]['Id']);
-            $_SESSION["auth"]=true;
-            header("Location: "."compte.php");
-            die();
-        }
 
         if(isset($_POST["try_Mail"])){
             $try_Mdp=$_POST["try_Mdp"];
@@ -42,11 +30,11 @@
                 $sql1 = $conn->prepare("SELECT * FROM comptes WHERE Mail=:Mail");
                 $sql1->execute(array(':Mail' => $try_Mail));
                 $compte = $sql1->fetchAll(PDO::FETCH_ASSOC);
-                if(password_verify($try_Mdp,$compte[0]["Mdp"])==true){
-                    $_SESSION["Pseudo"]=$compte[0]['pseudo'];
-                    $_SESSION["Mail"]=$compte[0]['Mail'];
-                    $_SESSION["Mdp"]=$compte[0]['Mdp'];
-                    $_SESSION["id"]=intval($compte[0]['Id']);
+                if(password_verify($try_Mdp,$compte[0]['mdp'])==true){
+                    $_SESSION["pseudo"]=$compte[0]['pseudo'];
+                    $_SESSION["mail"]=$compte[0]['mail'];
+                    $_SESSION["mdp"]=$compte[0]['mdp'];
+                    $_SESSION["id_compte"]=intval($compte[0]['id_compte']);
                     $_SESSION["auth"]=true;
                     header("Location: "."index.php");
                     die();
@@ -58,16 +46,9 @@
             else{
                 echo("Veuillez saisir une adresse mail");
             }
-        }
-        
+        }        
     ?>
-    
-    <?php
-        if($_SESSION['auth']==true){
-            header("Location: "."index.php");
-        }
-    ?>
- 
+
     <form method="post">
         <label>Mail:</label>
         <input type="email" name="try_Mail" />

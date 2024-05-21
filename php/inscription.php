@@ -21,21 +21,20 @@
     <?php
         require("bdd.php");
         if(isset($_POST["Condition"])){
-            if($_POST['Mdp'] == $_POST['Cmdp']){
-                $nom = $_POST['Nom']; 
-                $prenom = $_POST['Prenom'];
-                $email = $_POST['Mail'];
-                $password = $_POST['Mdp'];
-                if(validedonee($nom)!=false && validedonee($prenom)!=false && validedonee($email)!=false && validedonee($password)!=false){
-                    if(mailDejaPris($email,$conn) == false){
-                        $sql1 = $conn->prepare("INSERT INTO comptes(Nom,Prenom,Mail,Mdp)
-                        VALUES (:Nom,:Prenom,:Mail,:Mdp)"); // On prépare la requête SQL
+            if($_POST['mdp'] == $_POST['Cmdp']){
+                $pseudo = $_POST['pseudo'];
+                $mail = $_POST['mail'];
+                $mdp = $_POST['mdp'];
+                if(validedonee($pseudo)!=false && validedonee($mail)!=false && validedonee($mdp)!=false){
+                    if(mailDejaPris($mail,$conn) == false){
+                        $sql1 = $conn->prepare("INSERT INTO comptes(pseudo,mail,mdp)
+                        VALUES (:pseudo,:mail,:mdp)"); // On prépare la requête SQL
         
                         $sql1->execute(
-                            array(':Nom' => $nom,
-                            ':Prenom' => $prenom,
-                            ':Mail' => $email,
-                            ':Mdp' => password_hash($password, PASSWORD_DEFAULT),
+                            array(//':id_compte' => $id_compte,//
+                            ':pseudo' => $pseudo,
+                            ':mail' => $mail,
+                            ':mdp' => password_hash($password, PASSWORD_DEFAULT),
                         ));
                         header("Location: "."connexion.php");
                     }
@@ -59,11 +58,11 @@
         <br>
         <br>
         <label>Mail:</label>
-        <input type="email" name="Mail" require/>
+        <input type="email" name="mail" require/>
         <br>
         <br>
         <label>Mot de passe:</label>
-        <input type="password" name="Mdp" require/>
+        <input type="password" name="mdp" require/>
         <br>
         <br>
         <label>Confirmer mot de passe:</label>
