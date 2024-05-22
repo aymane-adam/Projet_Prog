@@ -1,6 +1,18 @@
+#fullscreenBtn{
+    background:url(fullscreen.png)center/cover;
+    position:relative;
+    float:right;
+    height:40px;
+    width:50px;
+    margin:10px;
+}
+#grid-container{
+    margin-top:50px;
+    clear:both;
+}
 .cell {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border: 1px solid black;
     display: inline-block;
     background-size: cover; /* Assure que l'image couvre toute la cellule */
@@ -18,4 +30,6 @@
 body{
     line-height:5px;
     background:url(fond.jpg);
+    text-align:center;
 }
+

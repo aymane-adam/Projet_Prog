@@ -1,3 +1,21 @@
+
+// Fonction pour entrer en mode plein écran
+function enterFullscreen() {
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+        document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari et Opera
+        document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { // Internet Explorer/Edge
+        document.documentElement.msRequestFullscreen();
+    }
+}
+
+// Ajouter un écouteur d'événement au bouton
+if (document.getElementById('fullscreenBtn').addEventListener('click', enterFullscreen)){
+document.getElementById('fullscreenBtn').addEventListener('click', enterFullscreen);}
+
 function getTuileFromNumber(num) {
     switch(num) {
         case 0: return "rock.webp";
@@ -12,7 +30,7 @@ function getTuileFromNumber(num) {
         // case 9: return "rock.webp";
         // case 0: return "diams.webp";
         // case 11: return "fer.webp";
-        // case 112: return "herbe.webp";
+        // case 12: return "herbe.webp";
         // case 13: return "rock.webp";
         // case 14: return "diams.webp";
         // case 15: return "fer.webp";
