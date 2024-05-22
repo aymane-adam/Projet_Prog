@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../test/mainmainmain.css">
 </head>
 <body>
+    <button id="fullscreenBtn"></button>
     <div id="game-container">
         <div id="tile-grid"></div>
         <img id="character" src="../pixel art projet/32x32/bateau.png" alt="Personnage">

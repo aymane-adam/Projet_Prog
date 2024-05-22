@@ -7,8 +7,19 @@ body {
     margin: 0;
     background-color: #0a75f8;
 }
-
+#fullscreenBtn{
+    top:0;  
+    position:absolute;
+    background:url(fullscreen.png)center/cover;
+    right :0;
+    height:40px;
+    width:50px;
+    margin:15px;
+}
 #game-container {
+    
+    top:50px;
+    clear:both;
     position: relative;
     width: 512px; /* 16 * 32px */
     height: 512px; /* 16 * 32px */

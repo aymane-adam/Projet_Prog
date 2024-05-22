@@ -20,7 +20,7 @@ for (let i = 0; i < rows; i++) {
 function getTuileFromNumber(num){ //renvoie l'image en fonction du nomnbre
     switch(num){ 
      case 0: return "pixel art projet/32x32/vague.png"
-     case 1: return "pixel art projet/32x32/mur.png"
+     case 1: return "pixel art projet/32x32/rock.png"
      
     }
 
@@ -94,3 +94,30 @@ document.addEventListener('keydown', (event) => {
         updateCharacterPosition();
     }
 });
+
+
+
+
+
+// Fonction pour entrer en mode plein écran
+const fullscreenBtn = document.getElementById('fullscreenBtn');
+function enterFullscreen() {
+    if (!(document.fullscreenElement)) {
+        document.documentElement.requestFullscreen();
+        fullscreenBtn.style.backgroundImage = "url('exit.png')"
+    }
+}
+// Ajouter un écouteur d'événement au bouton
+if (document.getElementById('fullscreenBtn').addEventListener('click', enterFullscreen)){
+document.getElementById('fullscreenBtn').addEventListener('click', enterFullscreen);}
+
+// Fonction pour sortir du mode plein écran
+function exFullscreen() {
+    if (document.fullscreenElement) {
+        document.exitFullscreen()
+        fullscreenBtn.style.backgroundImage = "url('fullscreen.png')"
+    }
+}
+// Ajouter un écouteur d'événement au bouton
+if (document.getElementById('fullscreenBtn').addEventListener('click', exFullscreen)){
+document.getElementById('fullscreenBtn').addEventListener('click', exFullscreen);}
