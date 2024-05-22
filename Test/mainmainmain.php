@@ -7,7 +7,7 @@
     <title>grid</title>
 </head>
 <body>
-    <div id="grid-container"></div>
-    <script src="mainmainmain.js"></script>
+    <button id="fullscreenBtn"></button>
+    <div id="grid-container"> <script src="mainmainmain.js"></script></div>
 </body>
 </html>
