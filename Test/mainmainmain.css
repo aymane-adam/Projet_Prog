@@ -13,12 +13,14 @@
 .cell {
     width: 35px;
     height: 35px;
-    border: 1px solid black;
     display: inline-block;
-    background-size: cover; /* Assure que l'image couvre toute la cellule */
-    background-position: center; /* Centre l'image dans la cellule */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     position: relative;
+}
+.cell:hover{
+    border:solid 1px black;
 }
 .cell img {
     width: 100%;

@@ -1,20 +1,26 @@
 
 // Fonction pour entrer en mode plein écran
+const fullscreenBtn = document.getElementById('fullscreenBtn');
 function enterFullscreen() {
-    if (document.documentElement.requestFullscreen) {
+    if (!(document.fullscreenElement)) {
         document.documentElement.requestFullscreen();
-    } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-        document.documentElement.mozRequestFullScreen();
-    } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari et Opera
-        document.documentElement.webkitRequestFullscreen();
-    } else if (document.documentElement.msRequestFullscreen) { // Internet Explorer/Edge
-        document.documentElement.msRequestFullscreen();
+        fullscreenBtn.style.backgroundImage = "url('exit.png')"
     }
 }
-
 // Ajouter un écouteur d'événement au bouton
 if (document.getElementById('fullscreenBtn').addEventListener('click', enterFullscreen)){
 document.getElementById('fullscreenBtn').addEventListener('click', enterFullscreen);}
+
+// Fonction pour sortir du mode plein écran
+function exFullscreen() {
+    if (document.fullscreenElement) {
+        document.exitFullscreen()
+        fullscreenBtn.style.backgroundImage = "url('fullscreen.png')"
+    }
+}
+// Ajouter un écouteur d'événement au bouton
+if (document.getElementById('fullscreenBtn').addEventListener('click', exFullscreen)){
+document.getElementById('fullscreenBtn').addEventListener('click', exFullscreen);}
 
 function getTuileFromNumber(num) {
     switch(num) {
