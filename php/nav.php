@@ -46,10 +46,10 @@
         display: none;
     }
     .nav-veil2{
-      left: 13%;
+      left: 0%;
     }
     .nav-veil2 img {
-    width: 70%;
+    width: 100%;
     height: 200px;
 }
 
@@ -68,7 +68,7 @@
     <img src="../img/neil-nav.png" alt="Image 1">
   </div>
   <div class="nav-veil2 hide" onclick="toggleImages()">
-    <img src="../img/navvasy.png" alt="Image 2">
+    <img src="../img/voilerty.png" alt="Image 2">
   </div>
 </header>
 
