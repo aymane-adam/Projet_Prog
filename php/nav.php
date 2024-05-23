@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NAVVEIL</title>
 <link rel="stylesheet" href="../css/navfooter.css">
+<style>
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+
+    .nav-veil, .nav-veil2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    }
+
+    .nav-veil.show, .nav-veil2.show {
+        animation: slideDown 0.8s ease-in-out forwards;
+        display: block;
+    }
+
+    .nav-veil.hide, .nav-veil2.hide {
+        animation: slideUp 0.8s ease-in-out forwards;
+        display: none;
+    }
+    .nav-veil2{
+      left: 13%;
+    }
+    .nav-veil2 img {
+    width: 70%;
+    height: 200px;
+}
+
+</style>
 </head>
 <body>
 <header>
@@ -16,50 +64,37 @@
           <li><a href="#">Contact</a></li>
         </ul>
     </nav>
-  <div class="nav-veil" onclick="toggleImages()">
+  <div class="nav-veil show" onclick="toggleImages()">
     <img src="../img/neil-nav.png" alt="Image 1">
   </div>
-  <div class="nav-veil2" onclick="toggleImages()" style="display:none;">
-    <img src="../img/Design sans titre (5).png" alt="Image 2">
+  <div class="nav-veil2 hide" onclick="toggleImages()">
+    <img src="../img/navvasy.png" alt="Image 2">
   </div>
 </header>
 
 <script>
-        
-        function toggleImages() {
-  var veil1 = document.querySelector('.nav-veil');
-  var veil2 = document.querySelector('.nav-veil2');
-  var nav = document.querySelector('#nav');
+function toggleImages() {
+    var veil1 = document.querySelector('.nav-veil');
+    var veil2 = document.querySelector('.nav-veil2');
+    var nav = document.querySelector('#nav');
 
-  if (veil1.style.opacity === '0' || veil1.style.opacity === '') {
-    veil1.style.opacity = '1';
-    veil2.style.display = 'none';
-    veil1.style.zIndex = '9';
-    veil2.style.zIndex = '10';
-    nav.style.zIndex = '11'
-    nav.style.opacity = '0';
-    nav.style.display = 'none';
-  } else {
-    veil1.style.opacity = '0';
-    veil2.style.opacity = '1';
-    veil2.style.display = 'block';
-    veil1.style.zIndex = '11';
-    veil2.style.zIndex = '9';
-    nav.style.zIndex = '11'
-    nav.style.opacity = '1';
-    nav.style.display = 'block';
-  }
+    if (veil1.classList.contains('show')) {
+        veil1.classList.remove('show');
+        veil1.classList.add('hide');
+        veil2.style.zIndex = '11';
+        setTimeout(function() {
+            veil2.classList.remove('hide');
+            veil2.classList.add('show');
+        }, 100); // Attendre que l'animation de la première image se termine
+    } else {
+        veil2.classList.remove('show');
+        veil2.classList.add('hide');
+        setTimeout(function() {
+            veil1.classList.remove('hide');
+            veil1.classList.add('show');
+        }, 100); // Attendre que l'animation de la deuxième image se termine
+    }
 }
-
 </script>
-
-
 </body>
 </html>
-
-
-
-
-
-
-
