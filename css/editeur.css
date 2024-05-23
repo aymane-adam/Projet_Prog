@@ -1,0 +1,25 @@
+
+table {
+    border-collapse: collapse;
+    width: auto;
+}
+
+th, td {
+    border: 1px solid black;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.image-button {
+    height: 32px;
+    width: 32px; 
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
