@@ -7,16 +7,14 @@
     <title class="titre">Lost Island</title>
 </head>
 <body>
-<?php
-    include("php/nav2.php")
-?>
-    <h1>Lost Island</h1>
+
+    <img src="img/logolost islland-Photoroom.png" class="azerty">
     <a href="php/game.php"  class="container"> 
-        <img class="image" src="img/planches.png" alt="Image" style="width:30%">
+        <img class="image" src="img/pirate-pppppppppp.png" alt="Image" style="width:30%">
     </a>
-    <div class="sailor">
+    <!-- <div class="sailor">
         <img src="img/captain2.gif" alt="Mr le Pirate">
-    </div>
+    </div> -->
 </body>
 
 <script>
