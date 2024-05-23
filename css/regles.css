@@ -8,10 +8,9 @@
     margin: 0%;
 
 }
-body,html{
-    background: url(../img/fond_regles.jpg);
-    height: 100%;
-    width: 100%;
+body {
+    background: url(../img/bg.jpg) center/cover;
+    min-height: 100vh;
 }
 
 div{
