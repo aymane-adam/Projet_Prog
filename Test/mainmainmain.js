@@ -6,38 +6,33 @@ let boatPosition = { x: 0, y: 0 };
 let gameStarted = false;
 let moveInterval;
 
-// Initialize grid
-for (let y = 0; y < gridSize; y++) {
-    for (let x = 0; x < gridSize; x++) {
-        const cell = document.createElement('div');
-        cell.className = 'cell';
-        cell.id = `cell-${x}-${y}`;
-        cell.addEventListener('dragover', handleDragOver);
-        cell.addEventListener('drop', (event) => placeArrow(event, x, y));
-        cell.addEventListener('dragleave', handleDragLeave);
-        cell.addEventListener('click', () => removeArrow(x, y));
-        grid.appendChild(cell);
-    }
-}
-for (let y = 0; y < gridSize; y++) {
-
-}
-
-
 // Function to place obstacles based on a 2D array
 function placeObstacles(obstacleGrid) {
+    grid.innerHTML = ''; // Clear existing grid
     for (let y = 0; y < obstacleGrid.length; y++) {
         for (let x = 0; x < obstacleGrid[y].length; x++) {
-            
+            const cell = document.createElement('div');
+            cell.className = 'cell';
+            cell.id = `cell-${x}-${y}`;
+
             switch (obstacleGrid[y][x]) {
-                case 0: document.getElementById(`cell-${x}-${y}`).classList.add('ocean');
-                case 1: document.getElementById(`cell-${x}-${y}`).classList.add('rock');
-                case 2: document.getElementById(`cell-${x}-${y}`).classList.add('caca');
-                case 3: document.getElementById(`cell-${x}-${y}`).classList.add('caca');
-                case 4: document.getElementById(`cell-${x}-${y}`).classList.add('caca');
-                case 5: document.getElementById(`cell-${x}-${y}`).classList.add('caca');
-                case 6: document.getElementById(`cell-${x}-${y}`).classList.add('caca');
+                case 0:
+                    cell.classList.add('ocean');
+                    break;
+                case 1:
+                    cell.classList.add('rock');
+                    break;
+                case 2:
+                    cell.classList.add('caca');
+                    break;
+                // Add more cases if needed for different obstacles
             }
+
+            cell.addEventListener('dragover', handleDragOver);
+            cell.addEventListener('drop', (event) => placeArrow(event, x, y));
+            cell.addEventListener('dragleave', handleDragLeave);
+            cell.addEventListener('click', () => removeArrow(x, y));
+            grid.appendChild(cell);
         }
     }
 }
@@ -150,11 +145,17 @@ function placeArrow(event, x, y) {
     if (gameStarted) return;
     event.preventDefault();
     const cell = document.getElementById(`cell-${x}-${y}`);
+    
+    // Check if the cell contains a rock
+    if (cell.classList.contains('rock')) {
+        return; // Prevent placing an arrow on a rock
+    }
+    
     if (cell.dataset.direction) {
         removeArrow(x, y);
     }
     const arrowType = event.dataTransfer.getData('text/plain');
-    if (arrowType ) {
+    if (arrowType) {
         const arrowCountSpan = document.querySelector(`.arrow-count[data-direction="${arrowType}"]`);
         let count = parseInt(arrowCountSpan.textContent);
         if (count > 0) {
@@ -165,7 +166,6 @@ function placeArrow(event, x, y) {
             count--;
             arrowCountSpan.textContent = count;
         }
-
     }
     document.querySelectorAll('.cell').forEach(cell => cell.classList.remove('drag-over'));
     document.querySelectorAll('.arrow').forEach(arrow => arrow.classList.remove('dragging'));
@@ -184,7 +184,6 @@ function removeArrow(x, y) {
         delete cell.dataset.direction;
     }
 }
-
 
 // Play button functionality
 playBtn.addEventListener('click', () => {
@@ -218,4 +217,8 @@ fullscreenBtn.addEventListener('click', () => {
     }
 });
 
+// Initialize the grid with obstacles
+placeObstacles(obstacleGrid);
+
+// Place the boat at the starting position
 placeBoat();
