@@ -75,9 +75,9 @@
 
         document.getElementById('play-button').addEventListener('click', () => {
             if (modeToggle) {
-                window.location.href = 'community_page.php';
+                document.location.href = "community.php";
             } else {
-                window.location.href = 'campaign_page.php';
+                window.location = "compaign.php"; 
             }
         });
     </script>
