@@ -48,12 +48,8 @@ header {
 }
 
 .pero {
-    width: 40%;
-}
-
-.new-image {
     display: block;
-    max-width: 100%;
+    width: 40%;
     height: auto;
     margin-left: 20px; /* Adjust margin as needed */
 }
@@ -62,9 +58,9 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -91,7 +87,7 @@ main {
 .obstacle {
     display: flex;
     align-items: center;
-    background-color: #2c2727c7;
+    background-color: #2c27279a;
     padding: 10px;
     margin: 10px 0;
     border-radius: 8px;
