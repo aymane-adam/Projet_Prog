@@ -45,7 +45,7 @@ function removeBoat() {
 function moveBoat() {
     let nextPosition = { ...boatPosition };
     switch (boatDirection) {
-        case 'up': nextPosition.y--; break;
+        case 'up': nextPosition.y-- ; break;
         case 'down': nextPosition.y++; break;
         case 'left': nextPosition.x--; break;
         case 'right': nextPosition.x++; break;
@@ -110,7 +110,7 @@ function placeArrow(event, x, y) {
         removeArrow(x, y);
     }
     const arrowType = event.dataTransfer.getData('text/plain');
-    if (arrowType) {
+    if (arrowType ) {
         const arrowCountSpan = document.querySelector(`.arrow-count[data-direction="${arrowType}"]`);
         let count = parseInt(arrowCountSpan.textContent);
         if (count > 0) {
@@ -121,6 +121,7 @@ function placeArrow(event, x, y) {
             count--;
             arrowCountSpan.textContent = count;
         }
+
     }
     document.querySelectorAll('.cell').forEach(cell => cell.classList.remove('drag-over'));
     document.querySelectorAll('.arrow').forEach(arrow => arrow.classList.remove('dragging'));
