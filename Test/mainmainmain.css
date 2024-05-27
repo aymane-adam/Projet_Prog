@@ -71,9 +71,10 @@ body {
 }
 
 #grid {
+    background:url(../pixel_art_projet/32x32/ocean.png);
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     width: 80vmin;
     height: 80vmin;
     gap: 2px;
@@ -89,12 +90,19 @@ body {
 }
 
 .rock {
-    background-color: gray;
+    z-index:10;
+}
+.rocher{
+    background:url(../pixel_art_projet/32x32/rock.png);
 }
 .ocean{
     background: url(../pixel_art_projet/32x32/ocean.png) center/cover;
     z-index:-10;
 }
+.pieuvre{
+    background: url(../pixel_art_projet/32x32/pieuvre.png) center/cover;
+}
+
 
 .boat {
     background: url(../pixel_art_projet/32x32/ship-right.png) center/cover;

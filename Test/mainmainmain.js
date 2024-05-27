@@ -17,13 +17,15 @@ function placeObstacles(obstacleGrid) {
 
             switch (obstacleGrid[y][x]) {
                 case 0:
-                    cell.classList.add('ocean');
+                    
                     break;
                 case 1:
                     cell.classList.add('rock');
+                    cell.classList.add('rocher');
                     break;
                 case 2:
-                    cell.classList.add('caca');
+                    cell.classList.add('rock');
+                    cell.classList.add('pieuvre');
                     break;
                 // Add more cases if needed for different obstacles
             }
@@ -39,22 +41,11 @@ function placeObstacles(obstacleGrid) {
 
 // Example obstacle grid (16x16)
 const obstacleGrid = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 0, 2, 0],
+    [2, 0, 1, 0, 1],
+    [1, 0, 2, 1, 0],
+    [0, 2, 0, 1, 2],
+    [1, 0, 2, 0, 1]
 ];
 
 // Place the obstacles using the grid
