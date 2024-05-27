@@ -35,36 +35,33 @@ h1{
 h2 {
     color: white;
 }
-.image{
-    width: 70px; /* Réduit la taille de l'image à 70px de largeur */
+.image img{
+    width: 100%; /* Réduit la taille de l'image à 70px de largeur */
     transition: transform 0.3s ease; /* Ajoute une transition douce lorsqu'on survole l'image */
     display: block;
-    margin: 0 auto;
+    
     margin-top: 5%;
     cursor: pointer; /* Change le curseur au survol pour indiquer que l'image est cliquable */
 }
 
 .container {
-    width: 520px; /* Définit la largeur du conteneur */
-
-    right: 26%;
-    overflow: hidden; /* Assure que l'image ne dépasse pas du conteneur */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 13%;
+    overflow: hidden; 
+    top:50%;
+    left:43%;
     position: absolute;
+    margin: auto;
 }
 
 .container img {
-    max-width: 40%;
-    max-height: 90%;
-    width: auto;
-    height: auto;
+    min-width: 90%;
+    min-height: 90%;
+  
     display: block;
 }
 
 .image:hover {
-    transform: scale(1.1); /* Agrandit l'image lorsque le conteneur est survolé */
+    transform: scale(0.9); /* Agrandit l'image lorsque le conteneur est survolé */
 }
 
 #mot_play{
