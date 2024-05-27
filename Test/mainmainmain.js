@@ -1,127 +1,176 @@
-// script.js
-const grid = document.getElementById('tile-grid');
-const character = document.getElementById('character');
+const grid = document.getElementById('grid');
+const playBtn = document.getElementById('playBtn');
+const gridSize = 16;
+let boatDirection = 'right';
+let boatPosition = { x: 0, y: 0 };
+let gameStarted = false;
+let moveInterval;
 
-// Taille de la grille
-const rows = 16;
-const cols = 16;
-
-let tileGrid = [];
-for (let i = 0; i < rows; i++) {
-    tileGrid[i] = [];
-    for (let j = 0; j < cols; j++) {
-        // Utiliser 1 pour une tuile normale (par exemple, l'eau) et 0 pour une tuile de collision (par exemple, un mur)
-        tileGrid[i][j] = (Math.random() < 0.2) ? 0 : 1; // 20% des tuiles seront des obstacles
+// Initialize grid
+for (let y = 0; y < gridSize; y++) {
+    for (let x = 0; x < gridSize; x++) {
+        const cell = document.createElement('div');
+        cell.className = 'cell';
+        cell.id = `cell-${x}-${y}`;
+        cell.addEventListener('dragover', handleDragOver);
+        cell.addEventListener('drop', (event) => placeArrow(event, x, y));
+        cell.addEventListener('dragleave', handleDragLeave);
+        cell.addEventListener('click', () => removeArrow(x, y));
+        grid.appendChild(cell);
     }
 }
 
-function getTuileFromNumber(num) {
-    switch(num) {
-        case 0: return 'url("../pixel art projet/32x32/rock1.png")';
-        case 1: return 'url("../pixel art projet/32x32/ocean.png")';
-        default: return 'url("../pixel art projet/32x32/boom.png")';
-    }
+// Place obstacles (rocks)
+const rocks = [
+    { x: 4, y: 4 },
+    { x: 5, y: 5 },
+    { x: 3, y: 5 }
+];
+rocks.forEach(rock => {
+    document.getElementById(`cell-${rock.x}-${rock.y}`).classList.add('rock');
+});
+
+// Place boat
+function placeBoat() {
+    const boatCell = document.getElementById(`cell-${boatPosition.x}-${boatPosition.y}`);
+    boatCell.classList.add('boat');
 }
 
-// Fonction de détection de collision
-function collision(x, y) {
-    // Vérifie les limites de la grille
-    if (x < 0 || x >= rows || y < 0 || y >= cols) {
-        return true;
-    }
-    // Conditions de collision basées sur les tuiles
-    let tileValue = tileGrid[x][y];
-    if (tileValue === 0) {
-        return true;
-    }
-    // Ajoutez ici d'autres conditions de collision basées sur les entités ou les tuiles spécifiques
-    return false;
+function removeBoat() {
+    const boatCell = document.getElementById(`cell-${boatPosition.x}-${boatPosition.y}`);
+    boatCell.classList.remove('boat');
 }
 
-// Fonction pour initialiser la grille
-function initGrid() {
-    for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < cols; j++) {
-            const tile = document.createElement('div');
-            tile.classList.add('tile');
-            if (collision(i, j)==true) {
-                // Si la tuile est une collision, définissez une image de rocher
-                tile.style.backgroundImage = getTuileFromNumber(0);
-            } else {
-                // Sinon, définissez une image normale
-                tile.style.backgroundImage = getTuileFromNumber(1);
-            }
-            // Assurez-vous que vous avez des images comme water.png et collision.png
-            grid.appendChild(tile);
+// Move boat
+function moveBoat() {
+    let nextPosition = { ...boatPosition };
+    switch (boatDirection) {
+        case 'up': nextPosition.y--; break;
+        case 'down': nextPosition.y++; break;
+        case 'left': nextPosition.x--; break;
+        case 'right': nextPosition.x++; break;
+    }
+
+    // Check for collisions or boundary
+    if (nextPosition.x < 0 || nextPosition.x >= gridSize || nextPosition.y < 0 || nextPosition.y >= gridSize ||
+        document.getElementById(`cell-${nextPosition.x}-${nextPosition.y}`).classList.contains('rock')) {
+        return; // Prevent the boat from moving out of bounds or into a rock
+    }
+
+    removeBoat();
+    boatPosition = nextPosition;
+
+    // Check for arrows
+    const boatCell = document.getElementById(`cell-${boatPosition.x}-${boatPosition.y}`);
+    if (boatCell.dataset.direction) {
+        boatDirection = boatCell.dataset.direction;
+    }
+
+    placeBoat();
+}
+
+// Reset boat to start
+function resetBoat() {
+    removeBoat(); // Ensure the boat is removed from the current position
+    boatPosition = { x: 0, y: 0 };
+    boatDirection = 'right';
+    placeBoat();
+}
+
+// Arrow inventory
+let selectedArrow = null;
+document.querySelectorAll('#inventory .arrow').forEach(arrow => {
+    arrow.draggable = true;
+    arrow.addEventListener('dragstart', handleDragStart);
+});
+
+function handleDragStart(event) {
+    if (gameStarted) return;
+    selectedArrow = event.target.dataset.direction;
+    event.target.classList.add('dragging');
+    event.dataTransfer.setData('text/plain', selectedArrow);
+    console.log(`Drag start: ${selectedArrow}`);
+}
+
+function handleDragOver(event) {
+    if (gameStarted) return;
+    event.preventDefault();
+    event.target.classList.add('drag-over');
+}
+
+function handleDragLeave(event) {
+    event.target.classList.remove('drag-over');
+}
+
+function placeArrow(event, x, y) {
+    if (gameStarted) return;
+    event.preventDefault();
+    const cell = document.getElementById(`cell-${x}-${y}`);
+    if (cell.dataset.direction) {
+        removeArrow(x, y);
+    }
+    const arrowType = event.dataTransfer.getData('text/plain');
+    if (arrowType) {
+        const arrowCountSpan = document.querySelector(`.arrow-count[data-direction="${arrowType}"]`);
+        let count = parseInt(arrowCountSpan.textContent);
+        if (count > 0) {
+            cell.dataset.direction = arrowType;
+            const imgSrc = `../pixel_art_projet/32x32/${arrowType}-arrow.png`;
+            console.log(`Placing arrow image: ${imgSrc} at (${x}, ${y})`);
+            cell.innerHTML = `<img src="${imgSrc}" alt="${arrowType}" />`;
+            count--;
+            arrowCountSpan.textContent = count;
         }
     }
+    document.querySelectorAll('.cell').forEach(cell => cell.classList.remove('drag-over'));
+    document.querySelectorAll('.arrow').forEach(arrow => arrow.classList.remove('dragging'));
 }
 
-// Initialisation de la grille
-initGrid();
-
-// Position initiale du personnage
-let characterPosition = { x: 0, y: 0 };
-
-// Fonction pour mettre à jour la position du personnage
-function updateCharacterPosition() {
-    character.style.top = `${characterPosition.y * 32}px`;
-    character.style.left = `${characterPosition.x * 32}px`;
-}
-
-// Mise à jour initiale de la position
-updateCharacterPosition();
-
-// Gestion des entrées du clavier pour le mouvement
-document.addEventListener('keydown', (event) => {
-    let newX = characterPosition.x;
-    let newY = characterPosition.y;
-
-    switch(event.key) {
-        case 'ArrowUp':
-            newY--;
-            break;
-        case 'ArrowDown':
-            newY++;
-            break;
-        case 'ArrowLeft':
-            newX--;
-            break;
-        case 'ArrowRight':
-            newX++;
-            break;
+function removeArrow(x, y) {
+    if (gameStarted) return;
+    const cell = document.getElementById(`cell-${x}-${y}`);
+    if (cell.dataset.direction) {
+        const arrowType = cell.dataset.direction;
+        const arrowCountSpan = document.querySelector(`.arrow-count[data-direction="${arrowType}"]`);
+        let count = parseInt(arrowCountSpan.textContent);
+        count++;
+        arrowCountSpan.textContent = count;
+        cell.innerHTML = '';
+        delete cell.dataset.direction;
     }
+}
 
-    if (!collision(newX, newY)) {
-        characterPosition.x = newX;
-        characterPosition.y = newY;
-        updateCharacterPosition();
+
+// Play button functionality
+playBtn.addEventListener('click', () => {
+    if (!gameStarted) {
+        gameStarted = true;
+        playBtn.textContent = 'Stop';
+        moveInterval = setInterval(moveBoat, 1000);
+    } else {
+        stopGame();
+        resetBoat();
     }
 });
 
+// Stop game function
+function stopGame() {
+    clearInterval(moveInterval);
+    gameStarted = false;
+    playBtn.textContent = 'Play';
+    removeBoat(); // Remove the boat before resetting its position
+}
 
-
-
-
-// Fonction pour entrer en mode plein écran
+// Fullscreen functionality
 const fullscreenBtn = document.getElementById('fullscreenBtn');
-function enterFullscreen() {
-    if (!(document.fullscreenElement)) {
+fullscreenBtn.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
-        fullscreenBtn.style.backgroundImage = "url('exit.png')"
+        fullscreenBtn.style.backgroundImage = "url('exit.png')";
+    } else {
+        document.exitFullscreen();
+        fullscreenBtn.style.backgroundImage = "url('fullscreen.png')";
     }
-}
-// Ajouter un écouteur d'événement au bouton
-if (document.getElementById('fullscreenBtn').addEventListener('click', enterFullscreen)){
-document.getElementById('fullscreenBtn').addEventListener('click', enterFullscreen);}
+});
 
-// Fonction pour sortir du mode plein écran
-function exFullscreen() {
-    if (document.fullscreenElement) {
-        document.exitFullscreen()
-        fullscreenBtn.style.backgroundImage = "url('fullscreen.png')"
-    }
-}
-// Ajouter un écouteur d'événement au bouton
-if (document.getElementById('fullscreenBtn').addEventListener('click', exFullscreen)){
-document.getElementById('fullscreenBtn').addEventListener('click', exFullscreen);}
+placeBoat();

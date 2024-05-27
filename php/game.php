@@ -17,7 +17,7 @@
             <img id="center-image2" class="center-image" src="../img/campagne.png" alt="Center Image 2">
         </div>
         <div id="description-container" class="description-container">
-            <img id="description-image1" class="description-image" src="../img/Votre texte de paragraphe.png" alt="Description Image 1">
+            <img id="description-image1" class="description-image" src="../img/144579-OTMY9E-805.jpg" alt="Description Image 1">
             <div id="description-text1" class="description-text">
                 <h2>Community Mode</h2>
                 <p>The purpose of this mode is to play or level created by playing them in the level editor</p>
@@ -88,7 +88,7 @@
             margin: 0;
             background: url(../img/mapuii.webp) center/cover no-repeat;
         }
-
+      
         .container {
             text-align: center;
             justify-content: center;
