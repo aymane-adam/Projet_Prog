@@ -19,6 +19,10 @@ for (let y = 0; y < gridSize; y++) {
         grid.appendChild(cell);
     }
 }
+for (let y = 0; y < gridSize; y++) {
+
+}
+
 
 // Place obstacles (rocks)
 const rocks = [
@@ -43,12 +47,21 @@ function removeBoat() {
 
 // Move boat
 function moveBoat() {
+    var sheet = document.styleSheets[0];
     let nextPosition = { ...boatPosition };
     switch (boatDirection) {
-        case 'up': nextPosition.y--; break;
-        case 'down': nextPosition.y++; break;
-        case 'left': nextPosition.x--; break;
-        case 'right': nextPosition.x++; break;
+        case 'up': nextPosition.y--;
+            sheet.insertRule('.boat { background:url(../pixel_art_projet/32x32/ship-up.png) center/cover; }', sheet.cssRules.length);
+            break;
+        case 'down': nextPosition.y++; 
+            sheet.insertRule('.boat { background:url(../pixel_art_projet/32x32/ship-down.png) center/cover; }', sheet.cssRules.length);
+            break; 
+        case 'left': nextPosition.x--; 
+            sheet.insertRule('.boat { background:url(../pixel_art_projet/32x32/ship-left.png) center/cover; }', sheet.cssRules.length);
+            break;
+        case 'right': nextPosition.x++; 
+            sheet.insertRule('.boat { background:url(../pixel_art_projet/32x32/ship-right.png) center/cover; }', sheet.cssRules.length);
+            break;
     }
 
     // Check for collisions or boundary
@@ -110,7 +123,7 @@ function placeArrow(event, x, y) {
         removeArrow(x, y);
     }
     const arrowType = event.dataTransfer.getData('text/plain');
-    if (arrowType) {
+    if (arrowType ) {
         const arrowCountSpan = document.querySelector(`.arrow-count[data-direction="${arrowType}"]`);
         let count = parseInt(arrowCountSpan.textContent);
         if (count > 0) {
@@ -121,6 +134,7 @@ function placeArrow(event, x, y) {
             count--;
             arrowCountSpan.textContent = count;
         }
+
     }
     document.querySelectorAll('.cell').forEach(cell => cell.classList.remove('drag-over'));
     document.querySelectorAll('.arrow').forEach(arrow => arrow.classList.remove('dragging'));
@@ -146,7 +160,7 @@ playBtn.addEventListener('click', () => {
     if (!gameStarted) {
         gameStarted = true;
         playBtn.textContent = 'Stop';
-        moveInterval = setInterval(moveBoat, 1000);
+        moveInterval = setInterval(moveBoat, 100);
     } else {
         stopGame();
         resetBoat();
