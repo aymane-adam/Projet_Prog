@@ -32,14 +32,32 @@ header {
 }
 
 .container {
-    position: relative;
-    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.image-container {
+    position: relative;
+}
+
 .regle {
     display: block;
     max-width: 100%;
     height: auto;
 }
+
+.pero {
+    width: 40%;
+}
+
+.new-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: 20px; /* Adjust margin as needed */
+}
+
 .texte {
     position: absolute;
     top: 50%;
