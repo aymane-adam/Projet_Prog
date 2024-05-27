@@ -27,15 +27,15 @@
     </header>
     <main>
         <div class="obstacle">
-            <img src="../pixel_art_projet/32x32/ship.png" alt="Le bateau">
+            <img src="../pixel_art_projet/32x32/ship-down.png" alt="Le bateau">
             <p>Le bateau : C'est lui que tu diriges à l'aide des tridents, sa direction initiale est le nord.</p>
         </div>
         
         <div class="obstacle">
-            <img src="../pixel_art_projet/32x32/nord.png"" alt="Les tridents">
-            <img src="../pixel_art_projet/32x32/est.png"" alt="Les tridents">
-            <img src="../pixel_art_projet/32x32/sud.png"" alt="Les tridents">
-            <img src="../pixel_art_projet/32x32/ouest.png"" alt="Les tridents">
+            <img src="../pixel_art_projet/32x32/up-arrow.png"" alt="Les tridents">
+            <img src="../pixel_art_projet/32x32/right-arrow.png"" alt="Les tridents">
+            <img src="../pixel_art_projet/32x32/down-arrow.png"" alt="Les tridents">
+            <img src="../pixel_art_projet/32x32/left-arrow.png"" alt="Les tridents">
             <p>Les tridents : ce sont des "flèches de directions", tu en as à chaque début de niveau dans ton inventaire, ce dernier se situe à gauche de l'écran, tu dois les placer avant de lever l'ancre du bateau.</p>
         </div>
         <div class="obstacle">
