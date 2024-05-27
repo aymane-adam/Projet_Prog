@@ -91,6 +91,10 @@ body {
 .rock {
     background-color: gray;
 }
+.ocean{
+    background: url(../pixel_art_projet/32x32/ocean.png) center/cover;
+    z-index:-10;
+}
 
 .boat {
     background: url(../pixel_art_projet/32x32/ship-right.png) center/cover;

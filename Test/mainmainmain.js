@@ -24,15 +24,46 @@ for (let y = 0; y < gridSize; y++) {
 }
 
 
-// Place obstacles (rocks)
-const rocks = [
-    { x: 4, y: 4 },
-    { x: 5, y: 5 },
-    { x: 3, y: 5 }
+// Function to place obstacles based on a 2D array
+function placeObstacles(obstacleGrid) {
+    for (let y = 0; y < obstacleGrid.length; y++) {
+        for (let x = 0; x < obstacleGrid[y].length; x++) {
+            
+            switch (obstacleGrid[y][x]) {
+                case 0: document.getElementById(`cell-${x}-${y}`).classList.add('ocean');
+                case 1: document.getElementById(`cell-${x}-${y}`).classList.add('rock');
+                case 2: document.getElementById(`cell-${x}-${y}`).classList.add('caca');
+                case 3: document.getElementById(`cell-${x}-${y}`).classList.add('caca');
+                case 4: document.getElementById(`cell-${x}-${y}`).classList.add('caca');
+                case 5: document.getElementById(`cell-${x}-${y}`).classList.add('caca');
+                case 6: document.getElementById(`cell-${x}-${y}`).classList.add('caca');
+            }
+        }
+    }
+}
+
+// Example obstacle grid (16x16)
+const obstacleGrid = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ];
-rocks.forEach(rock => {
-    document.getElementById(`cell-${rock.x}-${rock.y}`).classList.add('rock');
-});
+
+// Place the obstacles using the grid
+placeObstacles(obstacleGrid);
 
 // Place boat
 function placeBoat() {
