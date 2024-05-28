@@ -6,21 +6,24 @@ body, html {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background: url(../img/bg.jpg) center/cover;
     font-family: Arial, sans-serif;
 }
 .back-arrow {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 2em;
     text-decoration: none;
-    color: #007bff;
     cursor: pointer;
     user-select: none;
 }
-.back-arrow:hover {
-    color: #0056b3;
+.back-arrow img {
+    width: 20%; 
+    height: auto;
+    transition: transform 0.3s;
+}
+.back-arrow:hover img {
+    transform: scale(1.1);
 }
 .container {
     display: flex;
