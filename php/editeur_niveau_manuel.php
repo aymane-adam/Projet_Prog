@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -16,8 +17,6 @@
     <form method="post">
         <label for="nom">Nom du niveau :</label>
         <input type="text" id="nom" name="nom">
-        <label for="crea">Nom  :</label>
-        <input type="text" id="crea" name="crea">
         <input type="hidden" id="matrix" name="matrix" value="">
         <input type="submit" name="button2" id="finish-button" class="button" value="Terminer"/>
     </form>
@@ -36,7 +35,7 @@
             $nom = $_POST["nom"];
             $nom_niveau = $nom;
             $matrix = $_POST['matrix'];
-            $createur = $_POST['crea'];
+            $createur = $_SESSION["pseudo"];
             $sql1 = $conn->prepare("INSERT INTO niveaux (nom_niveau, contenu, createur) VALUES (:nom_niveau, :contenu, :createur)");
             $sql1->execute(
                 array(
@@ -91,7 +90,7 @@
             let boatPosition = null;
             let isDirectionPlaced = false;
             const directionImages = ["image8", "image9", "image10", "image11"];
-            let isChestPlaced = false; // Variable to track if Chest5 is placed
+            let isChestPlaced = false;
             let gridMatrix = [];
 
             const gridSize = <?php echo $tailleGrille; ?>;
