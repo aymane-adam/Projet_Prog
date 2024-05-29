@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Grille PHP</title>
     <link rel="stylesheet" href="../css/editeur.css">
-   
 </head>
 <body>
     <div class="container">
@@ -14,7 +13,6 @@
                 <label for="taille">Taille :</label>
                 <input type="number" id="taille" name="taille" min="4" max="16" value="<?php echo isset($_POST['taille']) ? $_POST['taille'] : 5; ?>">
                 <input type="submit" name="button1" class="button" value="Créer la grille" />
-                <!-- Champ caché pour stocker la matrice -->
             </form>
 
             <form method="post">
@@ -85,10 +83,10 @@
             <img src="../pixel_art_projet/32x32/rock.png" draggable="true" id="image5" alt="Rock" data-value="5">
             <img src="../pixel_art_projet/32x32/rock1.png" draggable="true" id="image6" alt="Rock1" data-value="6">
             <img src="../pixel_art_projet/32x32/vague.png" draggable="true" id="image7" alt="Vague" data-value="7">
-            <img src="../pixel_art_projet/32x32/nord.png" draggable="true" id="image9" alt="Nord" data-value="8">
-            <img src="../pixel_art_projet/32x32/sud.png" draggable="true" id="image8" alt="Sud" data-value="9">
-            <img src="../pixel_art_projet/32x32/ouest.png" draggable="true" id="image10" alt="Ouest" data-value="10">
-            <img src="../pixel_art_projet/32x32/est.png" draggable="true" id="image11" alt="Est" data-value="11">
+            <img src="../pixel_art_projet/32x32/arrow_n.png" draggable="true" id="image9" alt="Nord" data-value="8">
+            <img src="../pixel_art_projet/32x32/arrow_s.png" draggable="true" id="image8" alt="Sud" data-value="9">
+            <img src="../pixel_art_projet/32x32/arrow_w.png" draggable="true" id="image10" alt="Ouest" data-value="10">
+            <img src="../pixel_art_projet/32x32/arrow_e.png" draggable="true" id="image11" alt="Est" data-value="11">
         </div>
         <!-- Section de corbeille -->
         <div class="trash-container">
@@ -163,8 +161,9 @@
                     }
 
                     const draggableElement = document.getElementById(imageId).cloneNode(true);
+                    draggableElement.setAttribute("data-grid-id", `grid-${x}-${y}-${Date.now()}`); // Ajoute un ID unique
                     draggableElement.addEventListener("dragstart", function(event) {
-                        event.dataTransfer.setData("text/plain", event.target.id);
+                        event.dataTransfer.setData("text/plain", draggableElement.getAttribute("data-grid-id"));
                     });
                     event.target.innerHTML = ''; // Clear any existing content
                     event.target.appendChild(draggableElement);
@@ -191,9 +190,10 @@
 
             trashContainer.addEventListener("drop", function(event) {
                 event.preventDefault();
-                const imageId = event.dataTransfer.getData("text/plain");
-                const draggableElement = document.getElementById(imageId);
-                if (draggableElement.parentElement.classList.contains("drop-box")) {
+                const gridId = event.dataTransfer.getData("text/plain");
+                const draggableElement = document.querySelector(`[data-grid-id="${gridId}"]`);
+
+                if (draggableElement && draggableElement.parentElement.classList.contains("drop-box")) {
                     const box = draggableElement.parentElement;
                     const x = parseInt(box.getAttribute("data-x"));
                     const y = parseInt(box.getAttribute("data-y"));
@@ -202,6 +202,7 @@
                     gridMatrix[x][y] = 0;  // STOCKAGE DE LA MATRICE
                     updateMatrixDisplay();
 
+                    const imageId = draggableElement.id;
                     if (imageId === "image1") {
                         isBoatPlaced = false;
                         boatPosition = null;
@@ -243,6 +244,7 @@
 
             updateMatrixDisplay(); // Initial display
         });
+
         document.addEventListener("DOMContentLoaded", function() {
             const finishButton = document.getElementById("finish-button");
             finishButton.addEventListener("click", function() {
