@@ -5,83 +5,99 @@
     <meta charset="UTF-8">
     <title>Grille PHP</title>
     <link rel="stylesheet" href="../css/editeur.css">
+   
 </head>
 <body>
-    <form method="post" action="#">
-        <label for="taille">Taille :</label>
-        <input type="number" id="taille" name="taille" min="4" max="16" value="<?php echo isset($_POST['taille']) ? $_POST['taille'] : 5; ?>">
-        <input type="submit" name="button1" class="button" value="Créer la grille" />
-        <!-- Champ caché pour stocker la matrice -->
-    </form>
+    <div class="container">
+        <div class="form-container">
+            <form method="post" action="#">
+                <label for="taille">Taille :</label>
+                <input type="number" id="taille" name="taille" min="4" max="16" value="<?php echo isset($_POST['taille']) ? $_POST['taille'] : 5; ?>">
+                <input type="submit" name="button1" class="button" value="Créer la grille" />
+                <!-- Champ caché pour stocker la matrice -->
+            </form>
 
-    <form method="post">
-        <label for="nom">Nom du niveau :</label>
-        <input type="text" id="nom" name="nom">
-        <input type="hidden" id="matrix" name="matrix" value="">
-        <input type="submit" name="button2" id="finish-button" class="button" value="Terminer"/>
-    </form>
+            <form method="post">
+                <label for="nom">Nom du niveau :</label>
+                <input type="text" id="nom" name="nom">
+                <input type="hidden" id="matrix" name="matrix" value="">
+                <input type="submit" name="button2" id="finish-button" class="button" value="Terminer"/>
+            </form>
+        </div>
 
-    <?php
-    $tailleGrille = 0;
-    if (array_key_exists('button1', $_POST)) {
-        $tailleGrille = intval($_POST['taille']);
-    }
-    if (array_key_exists('button2', $_POST)){
-        if(isset($_POST["nom"]) && empty($_POST["nom"])){
-            echo "Veuillez mettre un nom pour le niveau";
+        <?php
+        $tailleGrille = 0;
+        if (array_key_exists('button1', $_POST)) {
+            $tailleGrille = intval($_POST['taille']);
         }
-        else{
-            require("bdd.php");
-            $nom = $_POST["nom"];
-            $nom_niveau = $nom;
-            $matrix = $_POST['matrix'];
-            $createur = $_SESSION["pseudo"];
-            $sql1 = $conn->prepare("INSERT INTO niveaux (nom_niveau, contenu, createur) VALUES (:nom_niveau, :contenu, :createur)");
-            $sql1->execute(
-                array(
-                    ':nom_niveau' => $nom_niveau,
-                    ':contenu' => $matrix,
-                    ':createur' => $createur,
-                ));
-        }
-    }
-    function Grille($lignes, $colonnes) {
-        echo "<table>";
-        for ($i = 0; $i < $lignes; $i++) {
-            echo "<tr>";
-            for ($j = 0; $j < $colonnes; $j++) {
-                echo '<td><div class="drop-box" data-x="'.$i.'" data-y="'.$j.'" style="height: 100%; width: 100%;"></div></td>';
+        if (array_key_exists('button2', $_POST)){
+            if(isset($_POST["nom"]) && empty($_POST["nom"])){
+                echo "Veuillez mettre un nom pour le niveau";
             }
-            echo "</tr>";
+            else{
+                require("bdd.php");
+                $nom = $_POST["nom"];
+                $nom_niveau = $nom;
+                $matrix = $_POST['matrix'];
+                $createur = $_SESSION["pseudo"];
+                $sql1 = $conn->prepare("INSERT INTO niveaux (nom_niveau, contenu, createur) VALUES (:nom_niveau, :contenu, :createur)");
+                $sql1->execute(
+                    array(
+                        ':nom_niveau' => $nom_niveau,
+                        ':contenu' => $matrix,
+                        ':createur' => $createur,
+                    ));
+            }
         }
-        echo "</table>";
-    }
+        function Grille($lignes, $colonnes) {
+            echo "<table>";
+            for ($i = 0; $i < $lignes; $i++) {
+                echo "<tr>";
+                for ($j = 0; $j < $colonnes; $j++) {
+                    echo '<td><div class="drop-box" data-x="'.$i.'" data-y="'.$j.'" style="height: 100%; width: 100%;"></div></td>';
+                }
+                echo "</tr>";
+            }
+            echo "</table>";
+        }
 
-    Grille($tailleGrille, $tailleGrille);
-    ?>
+        Grille($tailleGrille, $tailleGrille);
+        ?>
 
-    <div class="image-container">
-        <img src="../pixel_art_projet/32x32/bateau.png" draggable="true" id="image1" alt="Boat" data-value="1">
-        <img src="../pixel_art_projet/32x32/chest5.png" draggable="true" id="image12" alt="tresor" data-value="12">
-        <img src="../pixel_art_projet/32x32/guardianclose.png" draggable="true" id="image2" alt="Guardian" data-value="2">
-        <img src="../pixel_art_projet/32x32/krabby.png" draggable="true" id="image3" alt="Krabby" data-value="3">
-        <img src="../pixel_art_projet/32x32/pieuvre.png" draggable="true" id="image4" alt="Krakken" data-value="4">
-        <img src="../pixel_art_projet/32x32/rock.png" draggable="true" id="image5" alt="Rock" data-value="5">
-        <img src="../pixel_art_projet/32x32/rock1.png" draggable="true" id="image6" alt="Rock1" data-value="6">
-        <img src="../pixel_art_projet/32x32/vague.png" draggable="true" id="image7" alt="Vague" data-value="7">
-        <img src="../pixel_art_projet/32x32/nord.png" draggable="true" id="image9" alt="Nord" data-value="8">
-        <img src="../pixel_art_projet/32x32/sud.png" draggable="true" id="image8" alt="Sud" data-value="9">
-        <img src="../pixel_art_projet/32x32/ouest.png" draggable="true" id="image10" alt="Ouest" data-value="10">
-        <img src="../pixel_art_projet/32x32/est.png" draggable="true" id="image11" alt="Est" data-value="11">
+        <div id="matrix-display"></div> 
+    </div>
+   
+    <div>
+        <img src="../img/top-coffre.png"  class="bottomt">
+    </div>
+    <div class="gogogo">
+    <div>
+        <img src="../img/bottom-coffre.png"  class="bottomc">
+    </div>
+    <div class="inventory-container">
+        <div class="inventory-title">inventory</div>
+        <div class="image-container">
+            <img src="../pixel_art_projet/32x32/bateau.png" draggable="true" id="image1" alt="Boat" data-value="1">
+            <img src="../pixel_art_projet/32x32/chest5.png" draggable="true" id="image12" alt="tresor" data-value="12">
+            <img src="../pixel_art_projet/32x32/guardianclose.png" draggable="true" id="image2" alt="Guardian" data-value="2">
+            <img src="../pixel_art_projet/32x32/krabby.png" draggable="true" id="image3" alt="Krabby" data-value="3">
+            <img src="../pixel_art_projet/32x32/pieuvre.png" draggable="true" id="image4" alt="Krakken" data-value="4">
+            <img src="../pixel_art_projet/32x32/rock.png" draggable="true" id="image5" alt="Rock" data-value="5">
+            <img src="../pixel_art_projet/32x32/rock1.png" draggable="true" id="image6" alt="Rock1" data-value="6">
+            <img src="../pixel_art_projet/32x32/vague.png" draggable="true" id="image7" alt="Vague" data-value="7">
+            <img src="../pixel_art_projet/32x32/nord.png" draggable="true" id="image9" alt="Nord" data-value="8">
+            <img src="../pixel_art_projet/32x32/sud.png" draggable="true" id="image8" alt="Sud" data-value="9">
+            <img src="../pixel_art_projet/32x32/ouest.png" draggable="true" id="image10" alt="Ouest" data-value="10">
+            <img src="../pixel_art_projet/32x32/est.png" draggable="true" id="image11" alt="Est" data-value="11">
+        </div>
+        <!-- Section de corbeille -->
+        <div class="trash-container">
+            <img src="../pixel_art_projet/32x32/trash.png">
+        </div>
     </div>
 
-    <!-- Section de corbeille -->
-    <div class="trash-container" style="margin-top: 20px; border: 2px solid red; width: 32px; height: 32px; text-align: center;">
-        <img src="../pixel_art_projet/32x32/trash.png">
     </div>
-
-    <!-- Affichage de la matrice -->
-    <div id="matrix-display" style="margin-top: 20px;"></div> 
+    
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -115,8 +131,7 @@
                     event.preventDefault();
                     const imageId = event.dataTransfer.getData("text/plain");
                     const value = parseInt(document.getElementById(imageId).getAttribute("data-value"));
-                    const x = parseInt(box
-                    .getAttribute("data-x"));
+                    const x = parseInt(box.getAttribute("data-x"));
                     const y = parseInt(box.getAttribute("data-y"));
 
                     if (imageId === "image1" && isBoatPlaced) {
