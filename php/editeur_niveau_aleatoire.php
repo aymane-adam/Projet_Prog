@@ -1,36 +1,31 @@
 <?php
-// Exécuter le programme C et capturer sa sortie
-$jsonMatrix = shell_exec('../C/coopteam/x64/Debug/coopteam.exe');
+// Définir le chemin de l'exécutable compilé
+$executablePath = '../C/coopteam/x64/Debug/coopteam.exe';
 
-// Vérifier si la sortie est vide
-if ($jsonMatrix === null || $jsonMatrix === '') {
-    echo "<h1>Le programme n'a pas généré de sortie.</h1>";
-    exit;
-}
+// Exécuter l'exécutable et capturer la sortie JSON
+$jsonMatrix = shell_exec($executablePath);
 
-// Convertir le JSON en un tableau PHP
-$matrixArray = json_decode($jsonMatrix, true);
+// Vérifier si la sortie JSON est valide
+if ($jsonMatrix === null) {
+    echo "Erreur lors de l'exécution du programme C.";
+} else {
+    // Convertir la sortie JSON en tableau PHP
+    $matrix = json_decode($jsonMatrix, true);
 
-// Vérifier si la conversion JSON a réussi
-if ($matrixArray === null) {
-    echo "<h1>Erreur : La conversion JSON a échoué.</h1>";
-    echo "<pre>$jsonMatrix</pre>"; // Afficher la sortie brute pour le débogage
-    exit;
-}
-
-// Afficher le JSON sur la page web
-echo "<h1>Matrice générée :</h1>";
-echo "<pre>$jsonMatrix</pre>";
-
-// Afficher la matrice sous forme de tableau HTML
-echo "<h1>Matrice sous forme de tableau HTML :</h1>";
-echo "<table border='1'>";
-foreach ($matrixArray as $row) {
-    echo "<tr>";
-    foreach ($row as $cell) {
-        echo "<td>$cell</td>";
+    // Vérifier si la conversion JSON est valide
+    if ($matrix === null) {
+        echo "Erreur de conversion JSON.";
+    } else {
+        // Afficher la matrice
+        echo "<h1>Matrice générée :</h1>";
+        echo "<pre>";
+        foreach ($matrix['matrix'] as $row) {
+            foreach ($row as $value) {
+                echo str_pad($value, 4, ' ', STR_PAD_LEFT);
+            }
+            echo "\n";
+        }
+        echo "</pre>";
     }
-    echo "</tr>";
 }
-echo "</table>";
 ?>

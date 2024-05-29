@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#include "cJSON.h"
 
 // Fonction pour vérifier si deux positions sont adjacentes
 int sontAdjacents(int row1, int col1, int row2, int col2) {
@@ -35,7 +34,10 @@ void placerAdjacents(int** matrix, int size, int row1, int col1, int valeurs[], 
 int main() {
     int size;
     printf("Choisissez la taille de la grille (entre 5 et 16) : ");
-    scanf("%d", &size);
+    if (scanf_s("%d", &size) != 1) {
+        printf("Erreur de lecture de la taille.\n");
+        return 1;
+    }
 
     if (size < 5 || size > 16) {
         printf("Taille invalide.\n");
@@ -44,8 +46,21 @@ int main() {
 
     // Allocation dynamique de la matrice
     int** matrix = (int**)malloc(size * sizeof(int*));
+    if (matrix == NULL) {
+        printf("Erreur d'allocation mémoire.\n");
+        return 1;
+    }
+
     for (int i = 0; i < size; i++) {
         matrix[i] = (int*)malloc(size * sizeof(int));
+        if (matrix[i] == NULL) {
+            printf("Erreur d'allocation mémoire.\n");
+            for (int j = 0; j < i; j++) {
+                free(matrix[j]);
+            }
+            free(matrix);
+            return 1;
+        }
     }
 
     // Initialiser la matrice avec des zéros
@@ -95,23 +110,20 @@ int main() {
         }
     }
 
-    // Convertir la matrice en JSON
-    cJSON* jsonMatrix = cJSON_CreateArray();
+    // Affichage de la matrice
+    printf("Matrice generee :\n");
     for (int i = 0; i < size; i++) {
-        cJSON* row = cJSON_CreateIntArray(matrix[i], size);
-        cJSON_AddItemToArray(jsonMatrix, row);
+        for (int j = 0; j < size; j++) {
+            printf("%4d ", matrix[i][j]);
+        }
+        printf("\n");
     }
-
-    char* jsonString = cJSON_Print(jsonMatrix);
-    printf("%s\n", jsonString);
 
     // Libérer la mémoire allouée
     for (int i = 0; i < size; i++) {
         free(matrix[i]);
     }
     free(matrix);
-    cJSON_Delete(jsonMatrix);
-    free(jsonString);
 
     return 0;
 }
