@@ -17,12 +17,12 @@
             <img id="center-image2" class="center-image" src="../img/campagne.png" alt="Center Image 2">
         </div>
         <div id="description-container" class="description-container">
-            <img id="description-image1" class="description-image" src="../img/144579-OTMY9E-805.jpg" alt="Description Image 1">
+            <img id="description-image1" class="description-image" src="../img/communitymode.png" alt="Community">
             <div id="description-text1" class="description-text">
                 <h2>Community Mode</h2>
                 <p>The purpose of this mode is to play or level created by playing them in the level editor</p>
             </div>
-            <img id="description-image2" class="description-image" src="../img/Votre texte de paragraphe (1).png" alt="Description Image 2" style="display: none;">
+            <img id="description-image2" class="description-image" src="../img/campaign.png" alt="campaign" style="display: none;">
             <div id="description-text2" class="description-text" style="display: none;">
                 <h2>Campaign Mode</h2>
                 <p>The goal of the campaign is to do the levels made by the game masters to learn how to play and use the objects</p>
