@@ -7,16 +7,14 @@
     <title>Compaign Mode</title>
 </head>
 <body>
-<h1>Compaign Mode</h1>
+<img src="../img/campaign.png" alt="Campaign" class="logo">
 <a href="game.php" class="back-arrow"><img src="../img/bouton_retour.png" alt="Back"></a>
     <div class="container">
         <div class="arrow" id="left-arrow">&#9664;</div>
         <div class="level-buttons" id="level-buttons">
-            <button>Level 1</button>
-            <button>Level 2</button>
-            <button>Level 3</button>
-            <button>Level 4</button>
-        </div>
+   
+</div>
+
         <div class="arrow" id="right-arrow">&#9654;</div>
     </div>
 
@@ -43,15 +41,16 @@
             });
 
             function updateLevels() {
-                const levels = [];
-                for (let i = 1; i <= 4; i++) {
-                    const levelNumber = (currentLevelSet - 1) * 4 + i;
-                    levels.push(`<button>Level ${levelNumber}</button>`);
-                }
-                levelButtons.innerHTML = levels.join('');
-                leftArrow.classList.toggle('disabled', currentLevelSet === 1);
-                rightArrow.classList.toggle('disabled', currentLevelSet === 2);
-            }
+    const levels = [];
+    for (let i = 1; i <= 4; i++) {
+        const levelNumber = (currentLevelSet - 1) * 4 + i;
+        levels.push(`<a href='page_for_level_${levelNumber}.html' class='level-link'><img src='../img/level${levelNumber}.png' alt='Level ${levelNumber}' /></a>`);
+    }
+    levelButtons.innerHTML = levels.join('');
+    leftArrow.classList.toggle('disabled', currentLevelSet === 1);
+    rightArrow.classList.toggle('disabled', currentLevelSet === 2);
+}
+
 
             updateLevels(); 
         });
