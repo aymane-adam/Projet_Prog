@@ -36,7 +36,6 @@
             <img id="play-button" src="../img/PLAYY.png" alt="Play" class="clickable-image">
         </div>
     </div>
-
     <script>
         let rotation = 0;
         let modeToggle = true;
