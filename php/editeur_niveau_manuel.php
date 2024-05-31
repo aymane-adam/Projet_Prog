@@ -88,12 +88,13 @@
         <div id="matrix-display"></div> 
     </div>
    
-    <div>
-        <img src="../img/top-coffre.png" class="bottomt">
-    </div>
+   
     <div class="gogogo">
         <div>
             <img src="../img/bottom-coffre.png" class="bottomc">
+        </div>
+        <div>
+            <img src="../img/top-coffre.png" class="bottomt">
         </div>
         <div class="inventory-container">
             <div class="inventory-title">inventory</div>
