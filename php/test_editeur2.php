@@ -2,24 +2,26 @@
 <html>
 <head>
     <title>Génération de matrice</title>
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/test_editeur2.css">
 </head>
 <body>
     <form method="post" action="">
         <label for="size">Choisissez la taille de la grille (entre 5 et 16) :</label>
         <input type="number" id="size" name="size" min="5" max="16" required>
-        <button type="submit">Générer</button>
+        <button type="submit" name="button1">Générer</button>
     </form>
+    <?php
+    if (array_key_exists('button1', $_POST)) {
+            $tailleGrille = intval($_POST['taille']);
+            echo'
+            <form method="post" id="level-form">
+                <label for="nom">Nom du niveau :</label>
+                <input type="text" id="nom" name="nom">
+                <button type="submit">Sauvegarder</button>
+            </form>'
+    }
+    ?>
+
     <?php 
     // Initialisation de la variable $size
     $size = isset($_POST["size"]) ? $_POST["size"] : null;
@@ -113,7 +115,6 @@
             }
         }
     }
-
 ?>
 </body>
 </html>
