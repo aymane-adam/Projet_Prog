@@ -15,24 +15,6 @@
                 <input type="submit" name="button1" class="button" value="Créer la grille" />
             </form>
 
-            <form method="post" id="level-form">
-                <label for="nom">Nom du niveau :</label>
-                <input type="text" id="nom" name="nom">
-                <input type="hidden" id="matrix" name="matrix" value="">
-                
-                <label for="arrow-n">Flèches Nord :</label>
-                <input type="number" id="arrow-n" name="arrow_n" min="0" value="<?php echo isset($_POST['arrow_n']) ? $_POST['arrow_n'] : 0; ?>">
-
-                <label for="arrow-s">Flèches Sud :</label>
-                <input type="number" id="arrow-s" name="arrow_s" min="0" value="<?php echo isset($_POST['arrow_s']) ? $_POST['arrow_s'] : 0; ?>">
-
-                <label for="arrow-w">Flèches Ouest :</label>
-                <input type="number" id="arrow-w" name="arrow_w" min="0" value="<?php echo isset($_POST['arrow_w']) ? $_POST['arrow_w'] : 0; ?>">
-
-                <label for="arrow-e">Flèches Est :</label>
-                <input type="number" id="arrow-e" name="arrow_e" min="0" value="<?php echo isset($_POST['arrow_e']) ? $_POST['arrow_e'] : 0; ?>">
-                <input type="submit" name="button2" id="finish-button" class="button" value="Terminer"/>
-            </form>
         </div>
 
         <?php
@@ -41,14 +23,27 @@
 
         if (array_key_exists('button1', $_POST)) {
             $tailleGrille = intval($_POST['taille']);
-        }
+            echo '
+            <form method="post" id="level-form">
+                <label for="nom">Nom du niveau :</label>
+                <input type="text" id="nom" name="nom">
+                <label for="crea">Créateur :</label>
+                <input type="text" id="crea" name="crea">
+                <input type="hidden" id="matrix" name="matrix" value="">
+                
+                <label for="arrow-n">Flèches Nord :</label>
+                <input type="number" id="arrow-n" name="arrow_n" min="0" value="' . (isset($_POST['arrow_n']) ? $_POST['arrow_n'] : 0) . '">
 
-        if (array_key_exists('button3', $_POST)) {
-            $arrowN = intval($_POST['arrow_n']);
-            $arrowS = intval($_POST['arrow_s']);
-            $arrowW = intval($_POST['arrow_w']);
-            $arrowE = intval($_POST['arrow_e']);
-            echo "Flèches Nord: $arrowN, Sud: $arrowS, Ouest: $arrowW, Est: $arrowE";
+                <label for="arrow-s">Flèches Sud :</label>
+                <input type="number" id="arrow-s" name="arrow_s" min="0" value="' . (isset($_POST['arrow_s']) ? $_POST['arrow_s'] : 0) . '">
+
+                <label for="arrow-w">Flèches Ouest :</label>
+                <input type="number" id="arrow-w" name="arrow_w" min="0" value="' . (isset($_POST['arrow_w']) ? $_POST['arrow_w'] : 0) . '">
+
+                <label for="arrow-e">Flèches Est :</label>
+                <input type="number" id="arrow-e" name="arrow_e" min="0" value="' . (isset($_POST['arrow_e']) ? $_POST['arrow_e'] : 0) . '">
+                <input type="submit" name="button2" id="finish-button" class="button" value="Terminer"/>
+            </form>';
         }
 
         if (array_key_exists('button2', $_POST)){
@@ -56,14 +51,20 @@
                 echo "Veuillez mettre un nom pour le niveau";
             } else {
                 require("bdd.php");
-                $nom = $_POST["nom"];
-                $nom_niveau = $nom;
+                $nom_niveau = $_POST["nom"];
                 $matrix = $_POST['matrix'];
-                $createur = $_SESSION["pseudo"];
+                $contenu = [
+                    "fleche_n" => $_POST['arrow_n'],
+                    "fleche_s" => $_POST['arrow_s'],
+                    "fleche_o" => $_POST['arrow_w'],
+                    "fleche_e" => $_POST['arrow_e'],
+                    "matrix" => $_POST['matrix'],
+                ];
+                $createur = $_POST['crea'];
                 $sql1 = $conn->prepare("INSERT INTO niveaux (nom_niveau, contenu, createur) VALUES (:nom_niveau, :contenu, :createur)");
                 $sql1->execute(array(
                     ':nom_niveau' => $nom_niveau,
-                    ':contenu' => $matrix,
+                    ':contenu' => json_encode($contenu),
                     ':createur' => $createur,
                 ));
                 $submissionSuccess = true;
