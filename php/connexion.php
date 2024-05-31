@@ -50,7 +50,7 @@
 
     <form method="post">
         <label>Pseudo:</label>
-        <input type="Pseudo" name="try_pseudo" />
+        <input type="text" name="try_pseudo" />
         <br>
         <br>
         <label>Mot de passe:</label>

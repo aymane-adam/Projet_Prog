@@ -1,31 +1,24 @@
 <?php
-// Définir le chemin de l'exécutable compilé
-$executablePath = '../C/coopteam/x64/Debug/coopteam.exe';
 
-// Exécuter l'exécutable et capturer la sortie JSON
-$jsonMatrix = shell_exec($executablePath);
+// Chemin vers l'exécutable du programme C
+$executablePath = "/chemin/vers/votre/programme_c_executable";
 
-// Vérifier si la sortie JSON est valide
-if ($jsonMatrix === null) {
-    echo "Erreur lors de l'exécution du programme C.";
-} else {
-    // Convertir la sortie JSON en tableau PHP
-    $matrix = json_decode($jsonMatrix, true);
+// Commande pour exécuter le programme C avec une taille de grille aléatoire
+$command = $executablePath;
 
-    // Vérifier si la conversion JSON est valide
-    if ($matrix === null) {
-        echo "Erreur de conversion JSON.";
-    } else {
-        // Afficher la matrice
-        echo "<h1>Matrice générée :</h1>";
-        echo "<pre>";
-        foreach ($matrix['matrix'] as $row) {
-            foreach ($row as $value) {
-                echo str_pad($value, 4, ' ', STR_PAD_LEFT);
-            }
-            echo "\n";
-        }
-        echo "</pre>";
+// Exécution du programme C
+exec($command, $output, $return_var);
+
+// Vérification du statut de sortie
+if ($return_var === 0) {
+    // Affichage de la sortie du programme C
+    foreach ($output as $line) {
+        echo $line . "<br>";
     }
+} 
+else {
+    // Affichage de la sortie d'erreur
+    echo "Erreur lors de l'exécution du programme C : <br>";
+    print_r($output);
 }
 ?>

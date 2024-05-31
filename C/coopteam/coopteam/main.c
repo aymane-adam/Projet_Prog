@@ -59,7 +59,7 @@ int main() {
                 free(matrix[j]);
             }
             free(matrix);
-            return 1;
+            return 0;
         }
     }
 
