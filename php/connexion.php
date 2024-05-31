@@ -19,42 +19,42 @@
        
 <body>
    
-    <?php
-    require("bdd.php");
+<?php
+	try{
+		require("bdd.php");               
+		if(!empty($_POST['try_pseudo']) AND !empty($_POST['try_mdp'])){
+            $pseudo = $_POST['try_pseudo'];
+            $mdp = sha1($_POST['try_mdp']);
 
-        if(isset($_POST["try_Pseudo"])){
-            $try_Mdp=$_POST["try_Mdp"];
-            $try_Pseudo=$_POST["try_Pseudo"];
-            if(validedonee($try_Pseudo)!=false){
-                $sql1 = $conn->prepare("SELECT * FROM comptes WHERE pseudo=:pseudo");
-                $sql1->execute(array(':pseudo' => $try_Pseudo));
-                $compte = $sql1->fetchAll(PDO::FETCH_ASSOC);
-                if(password_verify($try_Mdp,$compte[0]['mdp'])==true){
-                    $_SESSION["pseudo"]=$compte[0]['pseudo'];
-                    $_SESSION["mail"]=$compte[0]['mail'];
-                    $_SESSION["mdp"]=$compte[0]['mdp'];
-                    $_SESSION["id_compte"]=intval($compte[0]['id_compte']);
-                    $_SESSION["auth"]=true;
-                    header("Location: "."../index.php");
-                    die();
-                }
-                else{
-                    echo("Mot de passe incorrecte");
-                }
-            }  
-            else{
-                echo("Veuillez saisir une adresse mail");
+			$recup = $conn->prepare("SELECT pseudo,mdp FROM comptes WHERE pseudo = :pseudo AND mdp = :mdp");
+			$recup->execute(
+                array(
+                ':pseudo' => $pseudo,
+                ':mdp' => $mdp,
+            ));
+			if($recup->rowCount()>0){
+                $_SESSION['pseudo'] = $pseudo;
+                $_SESSION['mdp'] = $mdp;
+                $_SESSION['compte'] = 1;
+			header("Location:index.php");
             }
-        }        
-    ?>
+            else{
+                echo "Email ou mot de passe incorect";
+            }
+		}
+	}                 
+	catch(Exception $e){
+		die("Erreur : " . $e->getMessage());
+	}
+?>
 
     <form method="post">
         <label>Pseudo:</label>
-        <input type="Pseudo" name="try_Pseudo" />
+        <input type="Pseudo" name="try_pseudo" />
         <br>
         <br>
         <label>Mot de passe:</label>
-        <input type="password" name="try_Mdp" />
+        <input type="password" name="try_mdp" />
         <br>
         <br>
         <input type="submit" value="Se connecter"/>

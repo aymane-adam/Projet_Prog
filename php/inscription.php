@@ -22,17 +22,19 @@
             if($_POST['mdp'] == $_POST['Cmdp']){
                 $pseudo = $_POST['pseudo'];
                 $mail = $_POST['mail'];
-                $mdp = $_POST['mdp'];
+                $mdp = sha1($_POST['mdp']);
+                $progression = 0;
                 if(validedonee($pseudo)!=false && validedonee($mail)!=false && validedonee($mdp)!=false){
                     if(mailDejaPris($mail,$conn) == false){
-                        $sql1 = $conn->prepare("INSERT INTO comptes(pseudo,mail,mdp)
-                        VALUES (:pseudo,:mail,:mdp)"); // On prépare la requête SQL
+                        $sql1 = $conn->prepare("INSERT INTO comptes(pseudo,mail,mdp,progression)
+                        VALUES (:pseudo,:mail,:mdp,:progression)"); // On prépare la requête SQL
         
                         $sql1->execute(
                             array(
                             ':pseudo' => $pseudo,
                             ':mail' => $mail,
-                            ':mdp' => password_hash($mdp, PASSWORD_DEFAULT),
+                            ':mdp' => $mdp,
+                            ':progression' => $progression,
                         ));
                         header("Location: "."connexion.php");
                     }
