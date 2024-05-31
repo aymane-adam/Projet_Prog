@@ -1,4 +1,4 @@
-body, html {
+body {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -32,30 +32,36 @@ body, html {
     width: 100%;
     max-width: 800px;
 }
-.level-buttons, .arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .level-buttons {
     width: 70%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
-.level-buttons button {
-    padding: 20px;
-    font-size: 1.5em;
-    border: none;
-    background-color: #007bff;
+
+.level-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.level-link img {
+    width: 100px; /* ou la taille souhaitée */
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.level-link span {
     color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 1.2em;
+    padding-top: 10px;
 }
-.level-buttons button:hover {
-    background-color: #0056b3;
+
+.level-link:hover img {
+    transform: scale(1.1);
 }
+
 .arrow {
     width: 15%;
     font-size: 2em;

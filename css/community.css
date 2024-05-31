@@ -1,55 +1,41 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: yellow;
+body {
     font-family: Arial, sans-serif;
+    padding: 20px;
+    background: url(../img/commu_bg.webp);
 }
+
 .back-arrow {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 2em;
     text-decoration: none;
-    color: #007bff;
     cursor: pointer;
     user-select: none;
 }
-.back-arrow:hover {
-    color: #0056b3;
+.back-arrow img {
+    width: 20%; 
+    height: auto;
+    transition: transform 0.3s;
 }
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
+.back-arrow:hover img {
+    transform: scale(1.1);
 }
-.title {
-    font-size: 2em;
+
+.search-container, .sort-container {
     margin-bottom: 20px;
-    color: #333;
 }
-.level-buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+
+table {
     width: 100%;
+    border-collapse: collapse;
 }
-.level-buttons button {
-    padding: 20px;
-    font-size: 1.5em;
-    border: none;
-    background-color: #28a745;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
 }
-.level-buttons button:hover {
-    background-color: #218838;
+
+th {
+    background-color: #f2f2f2;
 }
