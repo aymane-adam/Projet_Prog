@@ -1,6 +1,6 @@
 body {
-    display: flex;
-    flex-direction: row;
+     display: flex;
+    flex-direction: row; 
     font-family: Arial, sans-serif;
 }
 .container {
@@ -36,18 +36,20 @@ img {
 .inventory-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 30%;
+    align-items: center; 
+     /* height:30%; */
     padding: 20px;
     background-color: #FFFACD; 
-    width: 12%;
-    background-repeat: no-repeat;
+    /* width: 12%; */
+    /* background-repeat: no-repeat; */
     
-    padding-top: 5%; 
+    /* padding-top: 5%; 
     margin-right: 2%;
     padding-bottom: 5%; 
-    margin-top: 5%;
+    margin-top: 5%; */
     position: relative;
+    margin-bottom: 30%;
+  
 }
 .inventory-title {
     font-size: 24px;
@@ -78,9 +80,9 @@ img {
 
 .bottomc{
     position: absolute;
-    bottom: 2%;
-    right: 0;
-    width: 20%;
+    bottom: 1%;
+    right: -15%;
+    width: 130%;
     height: 17%;
     z-index: 4;
 }
@@ -91,4 +93,19 @@ img {
     }
 
 }
+.gogogo{
+    position: relative;
+    height: 60%;
+    width: 20%;
+    right: 8%;
+    bottom: 0%;
+    margin-top: 10%;
+}
     
+.bottomt{
+    width: 120%;
+    height: 17%;
+    z-index: 4;
+    right: -10%;
+    position: absolute;
+}
