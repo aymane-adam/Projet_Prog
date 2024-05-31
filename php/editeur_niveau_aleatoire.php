@@ -1,7 +1,7 @@
 <?php
 
 // Chemin vers l'exécutable du programme C
-$executablePath = "/chemin/vers/votre/programme_c_executable";
+$executablePath = "../C/coopteam/x64/Debug/coopteam.exe";
 
 // Commande pour exécuter le programme C avec une taille de grille aléatoire
 $command = $executablePath;
