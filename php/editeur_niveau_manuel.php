@@ -72,11 +72,13 @@
                 "matrix" => $_POST['matrix'],
             ];
             $createur = $_POST['crea'];
-            $sql1 = $conn->prepare("INSERT INTO niveaux (nom_niveau, contenu, createur) VALUES (:nom_niveau, :contenu, :createur)");
+            $type_niveau = 2;
+            $sql1 = $conn->prepare("INSERT INTO niveaux (nom_niveau, contenu, createur, type_niveau) VALUES (:nom_niveau, :contenu, :createur, :type_niveau)");
             $sql1->execute(array(
                 ':nom_niveau' => $nom_niveau,
                 ':contenu' => json_encode($contenu),
                 ':createur' => $createur,
+                ':type_niveau' => $type_niveau,
             ));
             $submissionSuccess = true;
         }
