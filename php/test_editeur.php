@@ -35,7 +35,8 @@
                     <label for="arrow-s">Flèches Nord :</label>
                     <input type="number" id="arrow-n" name="arrow_n" min="0" value="' . (isset($_POST['arrow_s']) ? $_POST['arrow_s'] : 0) . '" class="input-field">
                     <img src="../pixel_art_projet/32x32/arrow_n.png" alt="Flèches Nord" class="image-label">
-
+                </div>
+                <div class="input-group">
                     <label for="arrow-s">Flèches Sud :</label>
                     <input type="number" id="arrow-s" name="arrow_s" min="0" value="' . (isset($_POST['arrow_s']) ? $_POST['arrow_s'] : 0) . '" class="input-field">
                     <img src="../pixel_art_projet/32x32/arrow_s.png" alt="Flèches Sud" class="image-label">
@@ -45,7 +46,8 @@
                     <label for="arrow-w">Flèches Ouest :</label>
                     <input type="number" id="arrow-w" name="arrow_w" min="0" value="' . (isset($_POST['arrow_w']) ? $_POST['arrow_w'] : 0) . '" class="input-field">
                     <img src="../pixel_art_projet/32x32/arrow_w.png" alt="Flèches Ouest" class="image-label">
-
+                </div>
+                <div class="input-group">
                     <label for="arrow-e">Flèches Est :</label>
                     <input type="number" id="arrow-e" name="arrow_e" min="0" value="' . (isset($_POST['arrow_e']) ? $_POST['arrow_e'] : 0) . '" class="input-field">
                     <img src="../pixel_art_projet/32x32/arrow_e.png" alt="Flèches Est" class="image-label">
