@@ -7,9 +7,6 @@
 </head>
 <body>
 <a href="game.php" class="back-arrow"><img src="../img/bouton_retour.png" alt="Back"></a>
-    <!-- <img src=../img/communitymode.png class="logo" alt="community"> -->
-    <br><br><br>
-    <h1>Community levels</h1>
     <div class="search-container">
         <input type="text" id="searchBox" placeholder="Chercher par ID...">
         <button onclick="searchLevel()">Chercher</button>
@@ -18,7 +15,7 @@
         <button onclick="sortLevels('date')">Plus récent</button>
         <button onclick="sortLevels('difficulty')">Difficulté</button>
     </div>
-    <table id="levelsTable">
+    <!-- <table id="levelsTable">
         <thead>
             <tr>
                 <th>Nom du Niveau</th>
@@ -29,9 +26,31 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Les données seront injectées ici via JavaScript -->
         </tbody>
-    </table>
+    </table> -->
+    <?php
+        require("bdd.php");
+        $sql1 = $conn->prepare("SELECT nom_niveau, createur, type_niveau, id_niveau FROM niveaux");
+        $sql1->execute();
+        $resultat = $sql1->fetchAll(PDO::FETCH_ASSOC);
+
+        echo "<table>
+                <tr>
+                    <th>Nom du Niveau</th>
+                    <th>Pseudo</th>
+                    <th>difficulté</th>
+                    <th>id</th>
+                </tr>";
+        foreach($resultat as $val){
+            echo "<tr>
+                    <td>".$val['nom_niveau']."</td>
+                    <td>".$val['createur']."</td>
+                    <td>".$val['type_niveau']."</td>
+                    <td>".$val['id_niveau']."</td>
+                </tr>";
+        }
+
+    ?>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
     fetchLevels();
