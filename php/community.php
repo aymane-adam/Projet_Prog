@@ -38,7 +38,7 @@
                 <tr>
                     <th>Nom du Niveau</th>
                     <th>Pseudo</th>
-                    <th>difficulté</th>
+                    <th>Type de niveau</th>
                     <th>id</th>
                 </tr>";
         foreach($resultat as $val){
