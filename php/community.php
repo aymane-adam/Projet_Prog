@@ -7,7 +7,9 @@
 </head>
 <body>
 <a href="game.php" class="back-arrow"><img src="../img/bouton_retour.png" alt="Back"></a>
-    <img src=../img/communitymode.png alt="community">
+    <!-- <img src=../img/communitymode.png class="logo" alt="community"> -->
+    <br><br><br>
+    <h1>Community levels</h1>
     <div class="search-container">
         <input type="text" id="searchBox" placeholder="Chercher par ID...">
         <button onclick="searchLevel()">Chercher</button>
