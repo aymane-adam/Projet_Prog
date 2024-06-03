@@ -119,6 +119,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
+            opacity: 0;
         }
 
         #center-image2 {

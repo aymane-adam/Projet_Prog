@@ -18,7 +18,7 @@
                 <label for="nom">Nom du niveau :</label>
                 <input type="text" id="nom" name="nom">
                 <button type="submit">Sauvegarder</button>
-            </form>'
+            </form>';
     }
     ?>
 
