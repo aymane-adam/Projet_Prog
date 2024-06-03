@@ -20,7 +20,7 @@
             <tr>
                 <th>Nom du Niveau</th>
                 <th>Pseudo du Créateur</th>
-                <th>Difficulté</th>
+                <th>Type de niveau</th>
                 <th>Nombre d'Étoiles</th>
                 <th>ID</th>
             </tr>
@@ -44,9 +44,14 @@
         foreach($resultat as $val){
             echo "<tr>
                     <td>".$val['nom_niveau']."</td>
-                    <td>".$val['createur']."</td>
-                    <td>".$val['type_niveau']."</td>
-                    <td>".$val['id_niveau']."</td>
+                    <td>".$val['createur']."</td>";
+                    if($val['type_niveau'] == 2){
+                        echo "<td>Créer par un utilisateur</td>";
+                    }
+                    if($val['type_niveau'] == 3){
+                        echo "<td>Créer aléatoirement</td>";
+                    }
+                    echo "<td>".$val['id_niveau']."</td>
                 </tr>";
         }
 
