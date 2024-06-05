@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,7 +9,15 @@
 </head>
 <body>
     <header>
-        <img src="../img/logolost islland-Photoroom.png" alt="Logo" class="logo">
+        <?php 
+    include('nav.php' )
+    
+    ?>
+      
+    </header>
+    <div class="azerty">  
+        
+    <img src="../img/logolost islland-Photoroom.png" alt="Logo" class="logo">
         
         <div class="container">
     <div class="image-container">
@@ -30,8 +39,9 @@
     <img src="../sprites/hd/chest.png" alt="coffre"> -->
         <br>
         <img src="../img/wiki_pancarte.png" alt="Wiki" class="wiki-image">
-    </header>
+
     <main>
+
         <div class="obstacle">
             <img src="../pixel_art_projet/gif/ship.gif" alt="Le bateau">
             <p>Le bateau : C'est lui que tu diriges à l'aide des tridents, sa direction initiale varie selon 
@@ -78,5 +88,9 @@
             <p>Rocher : si tu passes dessus t'exploses en gros.</p>
         </div>
     </main>
+ </div>
+   
 </body>
 </html>
+
+

@@ -184,3 +184,6 @@ header {
   animation: slideUp 0.8s ease-in-out forwards;
   display: none;
 }
+.nav-veil img{
+    z-index: 7;
+}

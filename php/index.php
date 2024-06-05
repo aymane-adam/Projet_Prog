@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/global.css">
-    <title class="titre">Lost Island</title>
+    <title class="titre">Sea of CIR</title>
 </head>
 <body>
 <?php 
