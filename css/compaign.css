@@ -9,18 +9,23 @@ body {
     background: url(../img/bg.jpg) center/cover;
     font-family: Arial, sans-serif;
 }
-.back-arrow {
+
+.back{
     position: absolute;
     top: 20px;
     left: 20px;
     text-decoration: none;
-    cursor: pointer;
-    user-select: none;
+    user-select: none;    
+}
+
+.back-arrow {
+    display: contents;
 }
 .back-arrow img {
     width: 20%; 
     height: auto;
     transition: transform 0.3s;
+    cursor: pointer;
 }
 .back-arrow:hover img {
     transform: scale(1.1);
