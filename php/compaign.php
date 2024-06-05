@@ -26,6 +26,7 @@
         const levelButtons = document.getElementById('level-buttons');
 
         let currentLevelSet = 1;
+        const totalLevelSets = 2; // Update this value to reflect the total number of level sets (24 levels, 12 per page)
 
         leftArrow.addEventListener('click', () => {
             if (currentLevelSet > 1) {
@@ -35,7 +36,7 @@
         });
 
         rightArrow.addEventListener('click', () => {
-            if (currentLevelSet < 2) { 
+            if (currentLevelSet < totalLevelSets) { 
                 currentLevelSet++;
                 updateLevels();
             }
@@ -43,13 +44,13 @@
 
         function updateLevels() {
             const levels = [];
-            for (let i = 1; i <= 4; i++) {
-                const levelNumber = (currentLevelSet - 1) * 4 + i;
-                levels.push(`<a href='page_for_level_${levelNumber}.html' class='level-link'><img src='../img/level${levelNumber}.png' alt='Level ${levelNumber}' /></a>`);
+            for (let i = 1; i <= 9; i++) {
+                const levelNumber = (currentLevelSet - 1) * 9 + i;
+                levels.push(`<a href='level.php' class='level-link'><img src='../img/level${levelNumber}.png' alt='Level ${levelNumber}' /></a>`);
             }
             levelButtons.innerHTML = levels.join('');
             leftArrow.classList.toggle('disabled', currentLevelSet === 1);
-            rightArrow.classList.toggle('disabled', currentLevelSet === 2);
+            rightArrow.classList.toggle('disabled', currentLevelSet === totalLevelSets);
         }
 
         updateLevels(); 
