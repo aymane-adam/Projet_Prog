@@ -137,19 +137,24 @@
 <body>
 <header>
   <nav id="nav">
-        <!-- <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul> -->
+        
     </nav>
   <div class="nav-veil show" >
     <img src="../img/neil-nav.png" alt="Image 1">
     <div class="button-container">
-      <button onclick="location.href='../php/index.php'">home</button>
-      <button onclick="location.href='../php/creation.php'">editeur</button>
-      <button onclick="location.href='../php/regles.php'">regle</button>
-      <button onclick="location.href='../php/inscription.php'">inscription</button>
+    
+      <button class="qsdf" onclick="location.href='../php/index.php'"><span class="transition"></span>
+  <span class="gradient"></span>
+  <span class="label">Home</span></button>
+      <button class="qsdf" onclick="location.href='../php/creation.php'"><span class="transition"></span>
+  <span class="gradient"></span>
+  <span class="label">Editor</span></button>
+      <button class="qsdf" onclick="location.href='../php/regles.php'"><span class="transition"></span>
+  <span class="gradient"></span>
+  <span class="label">Wiki</span></button>
+      <button class="qsdf" onclick="location.href='../php/inscription.php'"><span class="transition"></span>
+  <span class="gradient"></span>
+  <span class="label">Sign up</span></button>
     </div>
   </div>
   <div class="nav-veil2 hide" onclick="toggleImages()">
