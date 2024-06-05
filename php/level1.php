@@ -90,8 +90,30 @@
             $fleche_o = json_decode($data['fleche_o'], true);
             $fleche_e = json_decode($data['fleche_e'], true);
         }  
-        // Initialisation de la direction du bateau
-        $directBoat = "est"; 
+        
+        // Parcourir la matrice pour vérifier la présence des chiffres 8, 9, 10, 11
+        foreach ($matrice as $i => $row) {
+            foreach ($row as $j => $value) {
+                switch ($value) {
+                    case 8:
+                        $directBoat = "nord";
+                        $matrice[$i][$j] = 0;
+                        break;
+                    case 9:
+                        $directBoat = "sud";
+                        $matrice[$i][$j] = 0;
+                        break;
+                    case 10:
+                        $directBoat = "ouest";
+                        $matrice[$i][$j] = 0;
+                        break;
+                    case 11:
+                        $directBoat = "est";
+                        $matrice[$i][$j] = 0;
+                        break;
+                }
+            }
+        }
 
         function afficherGrille($matrice, $images) {
             echo "<table id='grid'>";
