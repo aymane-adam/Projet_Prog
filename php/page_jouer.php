@@ -78,30 +78,32 @@
             [7, 3, 0, 6, 12]
         ];
 
+        // Initialisation de la direction du bateau
+        $directBoat = "est"; // Vous pouvez changer la direction initiale ici
+
         // Parcourir la matrice pour vérifier la présence des chiffres 8, 9, 10, 11
-    foreach ($matrice as $i => $row) {
-        foreach ($row as $j => $value) {
-            switch ($value) {
-                case 8:
-                    $directBoat = "nord";
-                    $matrice[$i][$j] = 0;
-                    break;
-                case 9:
-                    $directBoat = "sud";
-                    $matrice[$i][$j] = 0;
-                    break;
-                case 10:
-                    $directBoat = "ouest";
-                    $matrice[$i][$j] = 0;
-                    break;
-                case 11:
-                    $directBoat = "est";
-                    $matrice[$i][$j] = 0;
-                    break;
+        foreach ($matrice as $i => $row) {
+            foreach ($row as $j => $value) {
+                switch ($value) {
+                    case 8:
+                        $directBoat = "nord";
+                        $matrice[$i][$j] = 0;
+                        break;
+                    case 9:
+                        $directBoat = "sud";
+                        $matrice[$i][$j] = 0;
+                        break;
+                    case 10:
+                        $directBoat = "ouest";
+                        $matrice[$i][$j] = 0;
+                        break;
+                    case 11:
+                        $directBoat = "est";
+                        $matrice[$i][$j] = 0;
+                        break;
+                }
             }
         }
-    }
-
 
         function afficherGrille($matrice, $images) {
             echo "<table id='grid'>";
@@ -358,8 +360,7 @@
             }
 
             document.getElementById('commencer').addEventListener('click', function() {
-                directBoat = "est"; // Initialiser direction à "est" pour démarrer
-                interval = setInterval(moveBoat, 1000);
+                interval = setInterval(moveBoat, 1000); // Utiliser directBoat initialisé dans PHP
             });
 
             document.getElementById('retry').addEventListener('click', function() {
@@ -369,7 +370,6 @@
     </script>
 </body>
 </html>
-
 
 
 

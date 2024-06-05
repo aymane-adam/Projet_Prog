@@ -91,6 +91,9 @@
             $fleche_e = json_decode($data['fleche_e'], true);
         }  
         
+        // Initialiser la direction du bateau par défaut
+        $directBoat = "est"; 
+
         // Parcourir la matrice pour vérifier la présence des chiffres 8, 9, 10, 11
         foreach ($matrice as $i => $row) {
             foreach ($row as $j => $value) {
@@ -374,8 +377,7 @@
             }
 
             document.getElementById('commencer').addEventListener('click', function() {
-                directBoat = "est"; // Initialiser direction à "est" pour démarrer
-                interval = setInterval(moveBoat, 1000);
+                interval = setInterval(moveBoat, 1000); // Utiliser directBoat initialisé dans PHP
             });
 
             document.getElementById('retry').addEventListener('click', function() {
