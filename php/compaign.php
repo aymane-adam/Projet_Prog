@@ -44,7 +44,7 @@
     const levels = [];
     for (let i = 1; i <= 4; i++) {
         const levelNumber = (currentLevelSet - 1) * 4 + i;
-        levels.push(`<a href='page_for_level_${levelNumber}.html' class='level-link'><img src='../img/level${levelNumber}.png' alt='Level ${levelNumber}' /></a>`);
+        levels.push(`<a href='level${levelNumber}.html' class='level-link'><img src='../img/level${levelNumber}.png' alt='Level ${levelNumber}' /></a>`);
     }
     levelButtons.innerHTML = levels.join('');
     leftArrow.classList.toggle('disabled', currentLevelSet === 1);

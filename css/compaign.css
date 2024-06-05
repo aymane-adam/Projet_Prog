@@ -8,7 +8,17 @@ body {
     height: 100vh;
     background: url(../img/bg.jpg) center/cover;
     font-family: Arial, sans-serif;
+    position: relative; /* Ajouté pour permettre le positionnement absolu de .logo */
 }
+
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px; /* Ajustez la taille selon vos besoins */
+    height: auto;
+}
+
 .back-arrow {
     position: absolute;
     top: 20px;
@@ -17,26 +27,32 @@ body {
     cursor: pointer;
     user-select: none;
 }
+
 .back-arrow img {
     width: 20%; 
     height: auto;
     transition: transform 0.3s;
 }
+
 .back-arrow:hover img {
     transform: scale(1.1);
 }
+
 .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Modifié pour centrer le conteneur */
     width: 100%;
     max-width: 800px;
+    padding: 0 20px; /* Ajouté pour un peu de marge autour du conteneur */
 }
+
 .level-buttons {
     width: 70%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    justify-content: center; /* Ajouté pour centrer les boutons de niveau */
 }
 
 .level-link {
@@ -68,6 +84,7 @@ body {
     cursor: pointer;
     user-select: none;
 }
+
 .arrow.disabled {
     opacity: 0.5;
     cursor: default;
