@@ -15,19 +15,7 @@
         <button onclick="sortLevels('date')">Plus récent</button>
         <button onclick="sortLevels('difficulty')">Difficulté</button>
     </div>
-    <!-- <table id="levelsTable">
-        <thead>
-            <tr>
-                <th>Nom du Niveau</th>
-                <th>Pseudo du Créateur</th>
-                <th>Type de niveau</th>
-                <th>Nombre d'Étoiles</th>
-                <th>ID</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table> -->
+
     <?php
         require("bdd.php");
         $sql1 = $conn->prepare("SELECT nom_niveau, createur, type_niveau, id_niveau FROM niveaux");
@@ -39,7 +27,8 @@
                     <th>Nom du Niveau</th>
                     <th>Pseudo</th>
                     <th>Type de niveau</th>
-                    <th>id</th>
+                    <th>ID</th>
+                    <th>Sélectionner</th>
                 </tr>";
         foreach($resultat as $val){
             echo "<tr>
@@ -52,33 +41,34 @@
                         echo "<td>Créer aléatoirement</td>";
                     }
                     echo "<td>".$val['id_niveau']."</td>
+                          <td><a href='level.php?id=".$val['id_niveau']."'>Sélectionner</a></td>
                 </tr>";
         }
 
+        echo "</table>";
     ?>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-    fetchLevels();
+            fetchLevels();
 
-    // Simuler une fonction de recherche par ID
-    window.searchLevel = function() {
-        const id = document.getElementById('searchBox').value;
-        fetchLevels(id);
-    }
+            // Simuler une fonction de recherche par ID
+            window.searchLevel = function() {
+                const id = document.getElementById('searchBox').value;
+                fetchLevels(id);
+            }
 
-    // Simuler une fonction de tri
-    window.sortLevels = function(method) {
-        fetchLevels(null, method);
-    }
-});
+            // Simuler une fonction de tri
+            window.sortLevels = function(method) {
+                fetchLevels(null, method);
+            }
+        });
 
-function fetchLevels(searchId = null, sortMethod = null) {
-    // Ici vous intégreriez l'appel AJAX/Fetch à votre API backend
-    console.log("Recherche ID:", searchId, "Méthode de tri:", sortMethod);
-    // Mettez à jour le DOM en fonction des données récupérées
-}
-
-
+        function fetchLevels(searchId = null, sortMethod = null) {
+            // Ici vous intégreriez l'appel AJAX/Fetch à votre API backend
+            console.log("Recherche ID:", searchId, "Méthode de tri:", sortMethod);
+            // Mettez à jour le DOM en fonction des données récupérées
+        }
     </script>
 
 </body>
