@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 22, 2024 at 08:26 AM
+-- Generation Time: Jun 05, 2024 at 07:49 AM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -40,10 +40,7 @@ CREATE TABLE `comptes` (
 --
 
 INSERT INTO `comptes` (`id_compte`, `pseudo`, `mail`, `mdp`, `progression`) VALUES
-(1, 'Firsal', '', '', 0),
-(2, '1', '2@gmail.com', '$2y$10$wwERyTAX7fTmSBomhY8qCed00QmIckFTjUghTeHnWTuWppy482YJ.', 0),
-(3, '1', '3@gmail.com', '$2y$10$6XWxTP3irDGyOjXda.8W2ep.WQ0yCmsarvqL30lcXr9ka497CCaLq', 0),
-(4, '2', '4@gmail.com', '$2y$10$mubYYIg/KXle6SM049nn4OYAq4OkMhA1d5Xd9Tbw6jRbjZE3q.8BC', 0);
+(7, 'haricotcoquin', 'flavien@lepd.frein', '2621a8ffabcf6369a97e9b692b1a9ec00be798f5', 0);
 
 -- --------------------------------------------------------
 
@@ -55,8 +52,18 @@ CREATE TABLE `niveaux` (
   `id_niveau` int(11) NOT NULL,
   `nom_niveau` varchar(64) NOT NULL,
   `contenu` json NOT NULL,
-  `createur` varchar(64) NOT NULL
+  `createur` varchar(64) NOT NULL,
+  `type_niveau` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `niveaux`
+--
+
+INSERT INTO `niveaux` (`id_niveau`, `nom_niveau`, `contenu`, `createur`, `type_niveau`) VALUES
+(4, 'test', '{\"matrix\": \"[[12,0,0,0,2],[3,0,0,0,0],[0,0,3,0,0],[0,0,8,0,0],[0,0,1,0,0]]\", \"fleche_e\": \"2\", \"fleche_n\": \"2\", \"fleche_o\": \"2\", \"fleche_s\": \"2\"}', 'haricotcoquin', 3),
+(5, 'test', '{\"matrix\": \"[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]\", \"fleche_e\": \"0\", \"fleche_n\": \"0\", \"fleche_o\": \"0\", \"fleche_s\": \"0\"}', 'test2', 2),
+(6, 'test pour calliste', '{\"matrix\": \"[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]\", \"fleche_e\": \"0\", \"fleche_n\": \"0\", \"fleche_o\": \"0\", \"fleche_s\": \"0\"}', 'admin de la bdd', 2);
 
 -- --------------------------------------------------------
 
@@ -102,13 +109,13 @@ ALTER TABLE `score`
 -- AUTO_INCREMENT for table `comptes`
 --
 ALTER TABLE `comptes`
-  MODIFY `id_compte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_compte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `niveaux`
 --
 ALTER TABLE `niveaux`
-  MODIFY `id_niveau` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_niveau` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
