@@ -53,6 +53,7 @@
 </head>
 <body>
     <?php
+        session_start();
         // Définition des images
         $images = [
             1 => "bateau.png",
@@ -70,7 +71,6 @@
         ];
 
         require("bdd.php");
-
         $sql1 = $conn->prepare("SELECT contenu FROM niveaux WHERE nom_niveau = 'level1'");
         $sql1->execute();
         $resultat = $sql1->fetchAll(PDO::FETCH_ASSOC);

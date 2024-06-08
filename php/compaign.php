@@ -52,7 +52,6 @@
             leftArrow.classList.toggle('disabled', currentLevelSet === 1);
             rightArrow.classList.toggle('disabled', currentLevelSet === totalLevelSets);
         }
-
         updateLevels(); 
     });
 </script>
