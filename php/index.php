@@ -10,7 +10,7 @@
 <?php 
 include('nav.php')
 ?>
-    <img src="../img/logolost islland-Photoroom.png" class="azerty">
+    <img src="../img/seaofcir.png" class="azerty">
     <a href="game.php"  class="container"> 
         <img class="image" src="../img/pirate-pppppppppp.png" alt="Image" style="width:30%">
     </a>

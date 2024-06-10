@@ -6,7 +6,7 @@ html,body{
 }
 .azerty{
     position: relative;
-    height: 230px;
+    height: 330px;
     width: 470px;
     left: 31%;
     top:10%;
@@ -40,14 +40,14 @@ h2 {
     transition: transform 0.3s ease; /* Ajoute une transition douce lorsqu'on survole l'image */
     display: block;
     
-    margin-top: 5%;
+    margin-top: 12%;
     cursor: pointer; /* Change le curseur au survol pour indiquer que l'image est cliquable */
 }
 
 .container {
     width: 13%;
     overflow: hidden; 
-    top:50%;
+    top:65%;
     left:43%;
     position: absolute;
     margin: auto;
