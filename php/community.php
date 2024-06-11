@@ -6,25 +6,26 @@
     <link rel="stylesheet" href="../css/community.css">
 </head>
 <body>
+<img src="../img/communitymode.png" alt="Community" class="logo">
 <a href="game.php" class="back-arrow"><img src="../img/bouton_retour.png" alt="Back"></a>
 <div class="search-container">
-    <input type="text" id="searchBox" placeholder="Chercher par ID...">
-    <button onclick="searchLevel()">Chercher</button>
+    <input type="text" id="searchBox" placeholder="Search by ID...">
+    <button onclick="searchLevel()">Search</button>
 </div>
 <div class="sort-container">
-    <button onclick="sortLevels('date')">Plus récent</button>
-    <button onclick="sortLevels('difficulty')">Difficulté</button>
+    <button onclick="sortLevels('date')">More recent</button>
+    <button onclick="sortLevels('difficulty')">Difficulty</button>
 </div>
 
 <div id="levels-table">
     <?php
         require("bdd.php");
 
-        // Get parameters for filtering and sorting
+        
         $idFilter = isset($_GET['id']) ? intval($_GET['id']) : null;
         $sortMethod = isset($_GET['sort']) ? $_GET['sort'] : null;
 
-        // Build the query based on the parameters
+      
         $query = "SELECT nom_niveau, createur, type_niveau, id_niveau FROM niveaux";
         if ($idFilter !== null) {
             $query .= " WHERE id_niveau = :id";
@@ -47,11 +48,11 @@
 
         echo "<table>
                 <tr>
-                    <th>Nom du Niveau</th>
-                    <th>Pseudo</th>
-                    <th>Type de niveau</th>
+                    <th>Name of level</th>
+                    <th>Nickname</th>
+                    <th>Type of level</th>
                     <th>ID</th>
-                    <th>Sélectionner</th>
+                    <th>Select</th>
                 </tr>";
         foreach($resultat as $val){
             if($val['type_niveau']!= 1){
@@ -59,13 +60,13 @@
                     <td>".$val['nom_niveau']."</td>
                     <td>".$val['createur']."</td>";
                     if($val['type_niveau'] == 2){
-                        echo "<td>Créer par un utilisateur</td>";
+                        echo "<td>Created by a user</td>";
                     }
                     if($val['type_niveau'] == 3){
-                        echo "<td>Créer aléatoirement</td>";
+                        echo "<td>Created randomly</td>";
                     }
                     echo "<td>".$val['id_niveau']."</td>
-                          <td><a href='level.php?id=".$val['id_niveau']."'>Sélectionner</a></td>
+                        <td><a href='level.php?id=".$val['id_niveau']."'>Play</a></td>
                 </tr>";
         }
     }

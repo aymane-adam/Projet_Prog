@@ -37,7 +37,7 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 100px; /* Ajustez la taille selon vos besoins */
+    width: 100px; 
     height: auto;
 }
 
@@ -46,7 +46,7 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1000px; /* Adjusted to ensure enough space for 3 columns */
+    max-width: 1000px; 
 }
 
 .level-buttons {
