@@ -42,7 +42,7 @@
 			header("Location:index.php");
             }
             else{
-                echo "Email ou mot de passe incorect";
+                echo '<script>alert("Email ou mot de passe incorrect");</script>';
             }
 		}
 	}                 

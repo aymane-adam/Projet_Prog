@@ -6,25 +6,25 @@ body {
 }
 
 .input-group {
-   text-align: center;
-   margin-bottom: 3%; /* Ajout d'une marge en bas pour séparer les groupes */
-}
-
-.input-buttom{
-   text-align: center;
-   margin-bottom: 3%;
-}
-
-.input-group img,
-.image-label {
-   vertical-align: middle;
-   margin-bottom: 0px;
-}
-
-.input-group input {
-   width: 9%; /* Définir une largeur plus petite */
-}
-
+    text-align: center;
+    margin-bottom: 3%; /* Ajout d'une marge en bas pour séparer les groupes */
+ }
+ 
+ .input-buttom{
+    text-align: center;
+    margin-bottom: 3%;
+ }
+ 
+ .input-group img,
+ .image-label {
+    vertical-align: middle;
+    margin-bottom: 0px;
+ }
+ 
+ .input-group input {
+    width: 6%; /* Définir une largeur plus petite */
+ }
+ 
 .container {
    display: flex;
    flex-direction: column;
