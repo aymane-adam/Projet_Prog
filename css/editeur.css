@@ -2,29 +2,29 @@ body {
     display: flex;
    flex-direction: row; 
    font-family: Arial, sans-serif;
-   /* background: url("../img/simplified_pirate_background.png") center/cover; */
+   background: url("../img/simplified_pirate_background.png") center/cover;
 }
 
 .input-group {
-    text-align: center;
-    margin-bottom: 3%; /* Ajout d'une marge en bas pour séparer les groupes */
- }
- 
- .input-buttom{
-    text-align: center;
-    margin-bottom: 3%;
- }
- 
- .input-group img,
- .image-label {
-    vertical-align: middle;
-    margin-bottom: 0px;
- }
- 
- .input-group input {
-    width: 6%; /* Définir une largeur plus petite */
- }
- 
+   text-align: center;
+   margin-bottom: 3%; /* Ajout d'une marge en bas pour séparer les groupes */
+}
+
+.input-buttom{
+   text-align: center;
+   margin-bottom: 3%;
+}
+
+.input-group img,
+.image-label {
+   vertical-align: middle;
+   margin-bottom: 0px;
+}
+
+.input-group input {
+   width: 9%; /* Définir une largeur plus petite */
+}
+
 .container {
    display: flex;
    flex-direction: column;
@@ -100,8 +100,8 @@ img {
 }
 #matrix-display {
    margin-top: 20px;
-   /* position: absolute; */
-   opacity: 1;
+   position: absolute;
+   opacity: 0;
 }
 
 .bottomc{
@@ -175,15 +175,16 @@ td {
 
 .gogogo {
    position: relative;
-   height: 60%;
-   width: 20%;
+   height: 40%;
+   width: 15%;
    right: 8%;
    bottom: 0%;
-   margin-top: 10%;
+   margin-top: 25%;
+  
 }
 
 .gogogo.lowered {
-   margin-top: 20%; /* Ajustement de la position lorsque la taille de la grille est entre 10 et 16 */
+   margin-top: 35%; /* Ajustement de la position lorsque la taille de la grille est entre 10 et 16 */
 }
 
 .bottomc {
