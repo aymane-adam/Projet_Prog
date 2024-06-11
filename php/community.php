@@ -31,9 +31,9 @@
         }
 
         if ($sortMethod === 'date') {
-            $query .= " ORDER BY date_creation DESC"; // Assurez-vous que la colonne date_creation existe
+            $query .= " ORDER BY date_creation DESC";
         } elseif ($sortMethod === 'difficulty') {
-            $query .= " ORDER BY difficulte ASC"; // Assurez-vous que la colonne difficulte existe
+            $query .= " ORDER BY difficulte ASC";
         }
 
         $stmt = $conn->prepare($query);
@@ -54,6 +54,7 @@
                     <th>Sélectionner</th>
                 </tr>";
         foreach($resultat as $val){
+            if($val['type_niveau']!= 1){
             echo "<tr>
                     <td>".$val['nom_niveau']."</td>
                     <td>".$val['createur']."</td>";
@@ -67,6 +68,7 @@
                           <td><a href='level.php?id=".$val['id_niveau']."'>Sélectionner</a></td>
                 </tr>";
         }
+    }
         echo "</table>";
     ?>
 </div>
