@@ -21,16 +21,16 @@
         
         <div class="container">
     <div class="image-container">
-        <img src="../img/reglement2.png" alt="Règle" class="regle">
+        <img src="../img/reglement.png" alt="Règle" class="regle">
         <div class="texte">
             Welcome sailor !<br>
-            Le but du jeu est d'atteindre en bateau le coffre.
-            Pour cela, avant de lever l'ancre dans chaque niveau, tu dois 
-            placer les tridents de direction sur la mer, lorsque tu auras finis 
-            tes placements, tu peux enfin lever l'ancre et le bateau avancera
-            et tournera dans le sens du trident sur lequel il passera.
-            Place le moins de trident possible et évite les différents mobs (voir wiki en base de la page)
-            (La direction initiale du bateau variera selon les niveaux, ça sera indiqué.)
+            The goal of the game is to reach the chest by boat.
+            For this, before raising the anchor in each level, you must 
+            place the tridents of direction on the sea, when you have finished 
+            your investments, you can finally anchor and the boat will advance
+            and turn in the direction of the trident on which it will pass.
+            Place as little trident as possible and avoid different mobs (see wiki at the base of the page)
+            (The initial direction of the boat will vary according to the levels, it will be indicated.)
         </div>
     </div>
     <img src="../img/pero.png" alt="Perroquet" class="pero">
@@ -44,48 +44,38 @@
 
         <div class="obstacle">
             <img src="../pixel_art_projet/gif/ship.gif" alt="Le bateau">
-            <p>Le bateau : C'est lui que tu diriges à l'aide des tridents, sa direction initiale varie selon 
-                les niveaux.
+            <p>The boat : you direct it using the tridents, its initial direction varies depending on the level.
             </p>
         </div>
         
         <div class="obstacle">
             <img src="../pixel_art_projet/gif/trident.gif" alt="Les tridents">
-            <p>Les tridents : ce sont des "flèches de directions", tu en as à chaque début de niveau dans ton inventaire, ce dernier se situe à gauche de l'écran, tu dois les placer avant de lever l'ancre du bateau.</p>
+            <p>The tridents :  They are "arrows of directions", you have them at the beginning of each level in your inventory, you must place them before lifting the anchor of the boat.</p>
         </div>
         <div class="obstacle">
             <img src="../pixel_art_projet/gif/krabby.gif" alt="Krabby">
-            <p>Krabby : c'est un crabe, on ne sait pas d'où cette espèce vient, la légende raconte qu'il vient en réalité d'un autre univers où il existe plein de différentes créatures comme lui avec différentes capacités. Si tu croises son chemin, il va réussir avec la capacité de ses crochets de couper un trident.</p>
+            <p>Krabby : it is a crab, we do not know where this species comes from, legend says that it actually comes from another universe where there are many different creatures like him with different abilities. If you cross his path, it’s over for you .</p>
         </div>
         <div class="obstacle">
             <img src="../pixel_art_projet/gif/pieuvre.gif" alt="Pieuvre crocheteuse">
-            <p>Pieuvre crocheteuse : Description de la pieuvre crocheteuse.</p>
-        </div>
-        <div class="obstacle">
-            <img src="../pixel_art_projet/32x32/la_main.png" alt="La main de l'eau">
-            <p>La main de l'eau : Caché dans un mer corrompue, elle t'attrapes et te
-               remontes dans une autre partie de la mer (apparition rare)
-            </p>
+            <p>Crocheting octopus : if you touch it it will sink you.</p>
         </div>
         <div class="obstacle">
             <img src="../pixel_art_projet/gif/guardian.gif" alt="Guardian">
-            <p>Guardian : 3 phases :<br>
-                -Oeil fermé : aucun effet <br>
-                -Oeil ouvert : (9-20cases) aucun effet <br>
-                -Oeuil laser : (1-8cases) détruit ton bateau si il te laser pendant 6 cases de déplacement 
+            <p>Guardian : it’s a monster from the water temples.<br>
             </p>
         </div>
         <div class="obstacle">
             <img src="../pixel_art_projet/gif/wave.gif" alt="Vague">
-            <p>Vague : Elle te propulse dans une autre case d'un rayon de 5 cases</p>
+            <p>Wave : She smashes the boat.</p>
         </div>
         <div class="obstacle">
             <img src="../pixel_art_projet/32x32/rock1.png" alt="Rocher">
-            <p>Rocher : si tu passes dessus t'exploses en gros.</p>
+            <p>Rock : it’s like the titanic and the iceburg.</p>
         </div>
         <div class="obstacle">
             <img src="../pixel_art_projet/32x32/rock.png" alt="Rocher1">
-            <p>Rocher : si tu passes dessus t'exploses en gros.</p>
+            <p>Rock : it’s like the titanic and the iceburg.</p>
         </div>
     </main>
  </div>
