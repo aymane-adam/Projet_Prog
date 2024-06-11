@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 05, 2024 at 07:49 AM
+-- Generation Time: Jun 11, 2024 at 08:05 AM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -40,7 +40,8 @@ CREATE TABLE `comptes` (
 --
 
 INSERT INTO `comptes` (`id_compte`, `pseudo`, `mail`, `mdp`, `progression`) VALUES
-(7, 'haricotcoquin', 'flavien@lepd.frein', '2621a8ffabcf6369a97e9b692b1a9ec00be798f5', 0);
+(7, 'haricotcoquin', 'flavien@lepd.frein', '2621a8ffabcf6369a97e9b692b1a9ec00be798f5', 0),
+(8, 'test', 'test@gmail.test', '9cf95dacd226dcf43da376cdb6cbba7035218921', 0);
 
 -- --------------------------------------------------------
 
@@ -61,9 +62,13 @@ CREATE TABLE `niveaux` (
 --
 
 INSERT INTO `niveaux` (`id_niveau`, `nom_niveau`, `contenu`, `createur`, `type_niveau`) VALUES
-(4, 'test', '{\"matrix\": \"[[12,0,0,0,2],[3,0,0,0,0],[0,0,3,0,0],[0,0,8,0,0],[0,0,1,0,0]]\", \"fleche_e\": \"2\", \"fleche_n\": \"2\", \"fleche_o\": \"2\", \"fleche_s\": \"2\"}', 'haricotcoquin', 3),
-(5, 'test', '{\"matrix\": \"[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]\", \"fleche_e\": \"0\", \"fleche_n\": \"0\", \"fleche_o\": \"0\", \"fleche_s\": \"0\"}', 'test2', 2),
-(6, 'test pour calliste', '{\"matrix\": \"[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]\", \"fleche_e\": \"0\", \"fleche_n\": \"0\", \"fleche_o\": \"0\", \"fleche_s\": \"0\"}', 'admin de la bdd', 2);
+(1, 'level1', '{\"matrix\": \"[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]\", \"fleche_e\": \"0\", \"fleche_n\": \"1\", \"fleche_o\": \"0\", \"fleche_s\": \"0\"}', 'admin', 1),
+(2, 'test2', '{\"matrix\": \"[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]\", \"fleche_e\": \"0\", \"fleche_n\": \"0\", \"fleche_o\": \"0\", \"fleche_s\": \"0\"}', 'aymane ', 2),
+(3, 'testbdd', '{\"matrix\": \"[[0,0,0,0,0],[0,0,3,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]\", \"fleche_e\": \"0\", \"fleche_n\": \"0\", \"fleche_o\": \"0\", \"fleche_s\": \"0\"}', '2', 2),
+(4, 'test 5', '{\"matrix\": \"[[1,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,12]]\", \"fleche_e\": \"0\", \"fleche_n\": \"0\", \"fleche_o\": \"0\", \"fleche_s\": \"0\"}', 'community', 2),
+(5, 'matteo trop nul a fifa', '{\"matrix\": \"[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]\", \"fleche_e\": \"2\", \"fleche_n\": \"2\", \"fleche_o\": \"4\", \"fleche_s\": \"1\"}', 'matheo', 2),
+(6, 'test', '{\"matrix\": \"[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]\", \"fleche_e\": \"0\", \"fleche_n\": \"0\", \"fleche_o\": \"0\", \"fleche_s\": \"0\"}', 'haricotcoquin', 2),
+(7, 'test', '{\"matrix\": \"[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]\", \"fleche_e\": \"0\", \"fleche_n\": \"0\", \"fleche_o\": \"0\", \"fleche_s\": \"0\"}', 'haricotcoquin', 2);
 
 -- --------------------------------------------------------
 
@@ -109,13 +114,13 @@ ALTER TABLE `score`
 -- AUTO_INCREMENT for table `comptes`
 --
 ALTER TABLE `comptes`
-  MODIFY `id_compte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_compte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `niveaux`
 --
 ALTER TABLE `niveaux`
-  MODIFY `id_niveau` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_niveau` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
