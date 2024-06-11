@@ -9,7 +9,7 @@
 <img src="../img/communitymode.png" alt="Community" class="logo">
 <a href="game.php" class="back-arrow"><img src="../img/bouton_retour.png" alt="Back"></a>
 <div class="search-container">
-    <input type="text" id="searchBox" placeholder="Search by ID or nickname...">
+    <input type="text" id="searchBox" placeholder="Search by ID...">
     <button onclick="searchLevel()">Search</button>
 </div>
 <div class="sort-container">

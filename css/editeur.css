@@ -1,210 +1,211 @@
 body {
-     display: flex;
-    flex-direction: row; 
-    font-family: Arial, sans-serif;
-    /* background: url("../img/simplified_pirate_background.png") center/cover; */
+    display: flex;
+   flex-direction: row; 
+   font-family: Arial, sans-serif;
+   background: url("../img/simplified_pirate_background.png") center/cover;
 }
 
 .input-group {
-    text-align: center;
-    margin-bottom: 3%; /* Ajout d'une marge en bas pour séparer les groupes */
- }
- 
- .input-buttom{
-    text-align: center;
-    margin-bottom: 3%;
- }
- 
- .input-group img,
- .image-label {
-    vertical-align: middle;
-    margin-bottom: 0px;
- }
- 
- .input-group input {
-    width: 6%; /* Définir une largeur plus petite */
- }
- 
+   text-align: center;
+   margin-bottom: 3%; /* Ajout d'une marge en bas pour séparer les groupes */
+}
+
+.input-buttom{
+   text-align: center;
+   margin-bottom: 3%;
+}
+
+.input-group img,
+.image-label {
+   vertical-align: middle;
+   margin-bottom: 0px;
+}
+
+.input-group input {
+   width: 9%; /* Définir une largeur plus petite */
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 2;
-  
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   flex-grow: 2;
+ 
 }
 .form-container {
-    margin-bottom: 4%;
+   margin-bottom: 4%;
 }
 table {
-    border-collapse: collapse;
-    width: auto;
-    margin-bottom: 10%;
+   border-collapse: collapse;
+   width: auto;
+   margin-bottom: 10%;
 }
 th, td {
-    border: 1px solid black;
-    width: 37px;
-    height: 37px;
-    text-align: center;
-   
-}
-th {
-    background-color: #f2f2f2;
-}
-td {
-    background-image: url('../pixel_art_projet/32x32/ocean.png');
-}
-img {
-    width: 32px;
-    height: 32px;
-}
-.inventory-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-     /* height:30%; */
-    padding: 20px;
-    background-color: #FFFACD; 
-    /* width: 12%; */
-    /* background-repeat: no-repeat; */
-    
-    /* padding-top: 5%; 
-    margin-right: 2%;
-    padding-bottom: 5%; 
-    margin-top: 5%; */
-    position: relative;
-    margin-bottom: 30%;
+   border: 1px solid black;
+   width: 37px;
+   height: 37px;
+   text-align: center;
   
 }
+th {
+   background-color: #f2f2f2;
+}
+td {
+   background-image: url('../pixel_art_projet/32x32/ocean.png');
+}
+img {
+   width: 32px;
+   height: 32px;
+}
+.inventory-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center; 
+    /* height:30%; */
+   padding: 20px;
+   background-color: #FFFACD; 
+   /* width: 12%; */
+   /* background-repeat: no-repeat; */
+   
+   /* padding-top: 5%; 
+   margin-right: 2%;
+   padding-bottom: 5%; 
+   margin-top: 5%; */
+   position: relative;
+   margin-bottom: 30%;
+ 
+}
 .inventory-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #FF4500; 
-    margin-bottom: 10px;
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive; 
+   font-size: 24px;
+   font-weight: bold;
+   color: #FF4500; 
+   margin-bottom: 10px;
+   font-family: 'Comic Sans MS', 'Comic Sans', cursive; 
 }
 .image-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 5px;
 }
 .image-container img {
-    margin: 5px;
-    border: solid 1px black;
+   margin: 5px;
+   border: solid 1px black;
 }
 .trash-container {
-    margin-top: 20px;
-    border: 2px solid red;
-    width: 32px;
-    height: 32px;
-    text-align: center;
+   margin-top: 20px;
+   border: 2px solid red;
+   width: 32px;
+   height: 32px;
+   text-align: center;
 }
 #matrix-display {
-    margin-top: 20px;
-    /* position: absolute; */
-    opacity: 1;
+   margin-top: 20px;
+   position: absolute;
+   opacity: 0;
 }
 
 .bottomc{
-    position: absolute;
-    bottom: 1%;
-    right: -15%;
-    width: 130%;
-    height: 17%;
-    z-index: 4;
+   position: absolute;
+   bottom: 1%;
+   right: -15%;
+   width: 130%;
+   height: 17%;
+   z-index: 4;
 }
 
 @media only screen and (min-width: 1380px){
-    .bottomc{
-        bottom: 2%;
-    }
+   .bottomc{
+       bottom: 2%;
+   }
 
 }
 .gogogo{
-    position: relative;
-    height: 60%;
-    width: 20%;
-    right: 8%;
-    bottom: 0%;
-    margin-top: 10%;
+   position: relative;
+   height: 60%;
+   width: 20%;
+   right: 8%;
+   bottom: 0%;
+   margin-top: 10%;
 }
-    
+   
 .bottomt{
-    width: 120%;
-    height: 17%;
-    z-index: 4;
-    right: -10%;
-    top: -10%;
-    position: absolute;
+   width: 120%;
+   height: 17%;
+   z-index: 4;
+   right: -10%;
+   top: -10%;
+   position: absolute;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 2;
-    padding: 20px; 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   flex-grow: 2;
+   padding: 20px; 
 }
 
 table {
-    border-collapse: collapse;
-   margin: 2px;
+   border-collapse: collapse;
+  margin: 2px;
 }
 
 
 th, td {
-    border: 1px solid black;
-    width: 37px;
-    height: 37px;
-    text-align: center;
+   border: 1px solid black;
+   width: 37px;
+   height: 37px;
+   text-align: center;
 }
 
 th {
-    background-color: #f2f2f2;
+   background-color: #f2f2f2;
 }
 
 td {
-    background-image: url('../pixel_art_projet/32x32/ocean.png');
+   background-image: url('../pixel_art_projet/32x32/ocean.png');
 }
 
 .grid-container {
-    border: 3px solid #000; 
-    
+   border: 3px solid #000; 
    
-    margin: 10%; 
+  
+   margin: 10%; 
 }
 
 .gogogo {
-    position: relative;
-    height: 60%;
-    width: 20%;
-    right: 8%;
-    bottom: 0%;
-    margin-top: 10%;
+   position: relative;
+   height: 40%;
+   width: 15%;
+   right: 8%;
+   bottom: 0%;
+   margin-top: 25%;
+  
 }
 
 .gogogo.lowered {
-    margin-top: 20%; /* Ajustement de la position lorsque la taille de la grille est entre 10 et 16 */
+   margin-top: 35%; /* Ajustement de la position lorsque la taille de la grille est entre 10 et 16 */
 }
 
 .bottomc {
-    position: absolute;
-    bottom: 1%;
-    right: -15%;
-    width: 130%;
-    height: 17%;
-    z-index: 4;
+   position: absolute;
+   bottom: 1%;
+   right: -15%;
+   width: 130%;
+   height: 17%;
+   z-index: 4;
 }
 
 @media only screen and (min-width: 1380px) {
-    .bottomc {
-        bottom: 2%;
-    }
+   .bottomc {
+       bottom: 2%;
+   }
 }
 
 .bottomt {
-    width: 120%;
-    height: 17%;
-    z-index: 4;
-    right: -10%;
-    position: absolute;
+   width: 120%;
+   height: 17%;
+   z-index: 4;
+   right: -10%;
+   position: absolute;
 }
