@@ -52,16 +52,16 @@
 ?>
 
     <form method="post">
-        <label>Pseudo:</label>
+        <label>Nickname:</label>
         <input type="text" name="try_pseudo" />
         <br>
         <br>
-        <label>Mot de passe:</label>
+        <label>Password:</label>
         <input type="password" name="try_mdp" />
         <br>
         <br>
-        <input type="submit" value="Se connecter"/>
-        <p><a href="inscription.php">S'inscrire</a></p>
+        <input type="submit" value="Sign up"/>
+        <p><a href="inscription.php">To register</a></p>
     </form>
 
 </div>
