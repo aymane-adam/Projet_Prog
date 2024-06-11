@@ -17,7 +17,7 @@
     </header>
     <div class="azerty">  
         
-    <img src="../img/logolost islland-Photoroom.png" alt="Logo" class="logo">
+    <img src="../img/seaofcir.png" alt="Logo" class="logo">
         
         <div class="container">
     <div class="image-container">
