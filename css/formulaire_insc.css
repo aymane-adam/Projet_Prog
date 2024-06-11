@@ -1,9 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #87CEFA, #FFFFFF); /* Dégradé du ciel à la mer */
+    /* background: linear-gradient(to bottom, #87CEFA, #FFFFFF); Dégradé du ciel à la mer */
+    background: url(../img/fond_inscription.webp);
     margin: 0;
-    padding: 0;
-   
+    padding: 0;   
     height: 100vh;
 }
 html,body{
@@ -16,8 +16,7 @@ form {
     border-radius: 10px; /* Coins arrondis */
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre subtile */
-    width: 300px;
-    margin: auto; /* Centrage horizontal */
+    width: 30%;
 }
 
 form label {

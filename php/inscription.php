@@ -61,27 +61,27 @@
     ?>
     
     <form method="post">
-        <label>Pseudo:</label>
+        <label>Nickname:</label>
         <input type="text" name="pseudo" require/>
         <br>
         <br>
-        <label>Mail:</label>
+        <label>E-mail:</label>
         <input type="email" name="mail" require/>
         <br>
         <br>
-        <label>Mot de passe:</label>
+        <label>Password:</label>
         <input type="password" name="mdp" require/>
         <br>
         <br>
-        <label>Confirmer mot de passe:</label>
+        <label>Confirm password:</label>
         <input type="password" name="Cmdp" require/>
         <br>
         <br>
-        <label>J'accepte les conditions générales </label>
+        <label>Accept the terms and conditions </label>
         <input type="checkbox" name="Condition" require/>
         <br>
         <br>
-        <input type="submit" value="S'insrire"/>
+        <input type="submit" value="To register"/>
     </form> 
 
   </div>

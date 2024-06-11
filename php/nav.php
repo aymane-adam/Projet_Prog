@@ -77,7 +77,7 @@
     padding: 0;
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    width: 10%;
   }
 
   #nav a {
