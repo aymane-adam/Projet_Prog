@@ -224,7 +224,7 @@ button {
   .transition {
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
     transition-duration: 500ms;
-    background-color: rgba(16, 185, 129, 0.6);
+    background-color: rgba(16, 134, 185, 0.6);
     border-radius: 9999px;
     width: 0;
     height: 0;
@@ -244,7 +244,7 @@ button {
   }
 
 .button-container{
-  height: 50%;
-  margin-top: -0.15em;
+  height: 55%;
+  margin-top: -0.1em;
 
 }
