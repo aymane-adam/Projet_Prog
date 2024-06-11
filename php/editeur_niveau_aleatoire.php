@@ -10,17 +10,7 @@
         <input type="number" id="size" name="size" min="4" max="16" required>
         <button type="submit" name="button1">Générer</button>
     </form>
-    <?php 
-    if (array_key_exists('button1', $_POST)) {
-            $tailleGrille = intval($_POST['taille']);
-            echo'
-            <form method="post" id="level-form">
-                <label for="nom">Nom du niveau :</label>
-                <input type="text" id="nom" name="nom">
-                <button type="submit">Sauvegarder</button>
-            </form>';
-    }
-    ?>
+
 
     <?php 
     // Initialisation de la variable $size
