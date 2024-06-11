@@ -39,8 +39,6 @@
             ));
 			if($recup->rowCount()>0){
                 $_SESSION['pseudo'] = $pseudo;
-                $_SESSION['mdp'] = $mdp;
-                $_SESSION['compte'] = 1;
 			header("Location:index.php");
             }
             else{

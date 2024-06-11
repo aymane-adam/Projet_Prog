@@ -26,8 +26,6 @@
         <form method="post" id="level-form">
             <label for="nom">Nom du niveau :</label>
             <input type="text" id="nom" name="nom">
-            <label for="crea">Créateur :</label>
-            <input type="text" id="crea" name="crea">
             <input type="hidden" id="matrix" name="matrix" value="">
             
             <div class="input-group">
@@ -71,7 +69,7 @@
                 "fleche_e" => $_POST['arrow_e'],
                 "matrix" => $_POST['matrix'],
             ];
-            $createur = $_POST['crea'];
+            $createur = $_SESSION['pseudo'];
             $type_niveau = 2;
             $sql1 = $conn->prepare("INSERT INTO niveaux (nom_niveau, contenu, createur, type_niveau) VALUES (:nom_niveau, :contenu, :createur, :type_niveau)");
             $sql1->execute(array(

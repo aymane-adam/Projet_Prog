@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!Doctype html>
 <html lang="fr">
 
@@ -40,7 +41,10 @@
                             ':mdp' => $mdp,
                             ':progression' => $progression,
                         ));
-                        header("Location: "."connexion.php");
+                        if($sql1->rowCount()>0){
+                            $_SESSION['pseudo'] = $pseudo;
+                        header("Location:index.php");
+                        }
                     }
                     else{
                         echo("Mail déjà utilisé");
