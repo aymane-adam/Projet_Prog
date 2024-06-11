@@ -7,7 +7,6 @@ $database = 'projet_2024_g12_lostisland';
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connexion réussie"; // Message pour indiquer que la connexion est réussie
 } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage(); // Affiche l'erreur de connexion
     die();
