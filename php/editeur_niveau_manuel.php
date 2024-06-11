@@ -120,8 +120,8 @@
                 <img src="../pixel_art_projet/32x32/rock.png" draggable="true" id="image5" alt="Rock" data-value="5">
                 <img src="../pixel_art_projet/32x32/rock1.png" draggable="true" id="image6" alt="Rock1" data-value="6">
                 <img src="../pixel_art_projet/32x32/vague.png" draggable="true" id="image7" alt="Vague" data-value="7">
-                <img src="../pixel_art_projet/32x32/arrow_n.png" draggable="true" id="image9" alt="Nord" data-value="8">
-                <img src="../pixel_art_projet/32x32/arrow_s.png" draggable="true" id="image8" alt="Sud" data-value="9">
+                <img src="../pixel_art_projet/32x32/arrow_n.png" draggable="true" id="image8" alt="Nord" data-value="8">
+                <img src="../pixel_art_projet/32x32/arrow_s.png" draggable="true" id="image9" alt="Sud" data-value="9">
                 <img src="../pixel_art_projet/32x32/arrow_w.png" draggable="true" id="image10" alt="Ouest" data-value="10">
                 <img src="../pixel_art_projet/32x32/arrow_e.png" draggable="true" id="image11" alt="Est" data-value="11">
             </div>
