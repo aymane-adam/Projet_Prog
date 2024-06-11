@@ -23,7 +23,7 @@
                 $pseudo = $_POST['pseudo'];
                 $mail = $_POST['mail'];
                 $mdp = sha1($_POST['mdp']);
-                $progression = 0;
+                $progression = 1;
                 if(validedonee($pseudo)!=false && validedonee($mail)!=false && validedonee($mdp)!=false){
                     if(mailDejaPris($mail,$conn) == false){
                         $sql1 = $conn->prepare("INSERT INTO comptes(pseudo,mail,mdp,progression)
