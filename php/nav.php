@@ -152,7 +152,7 @@
       <button class="qsdf" onclick="location.href='../php/regles.php'"><span class="transition"></span>
   <span class="gradient"></span>
   <span class="label">Wiki</span></button>
-      <button class="qsdf" onclick="location.href='../php/inscription.php'"><span class="transition"></span>
+      <button class="qsdf" onclick="location.href='../php/connexion.php'"><span class="transition"></span>
   <span class="gradient"></span>
   <span class="label">Sign up</span></button>
     </div>

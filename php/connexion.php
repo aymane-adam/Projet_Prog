@@ -18,7 +18,12 @@
 </head>
        
 <body>
-   
+
+<?php 
+   include('nav.php')
+   ?>
+
+<div id="azerty">
 <?php
 	try{
 		require("bdd.php");               
@@ -60,6 +65,9 @@
         <input type="submit" value="Se connecter"/>
         <p><a href="inscription.php">S'inscrire</a></p>
     </form>
+
+</div>
+
 </body>
 
 </html>

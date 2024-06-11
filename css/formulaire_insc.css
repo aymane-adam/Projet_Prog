@@ -3,10 +3,11 @@ body {
     background: linear-gradient(to bottom, #87CEFA, #FFFFFF); /* Dégradé du ciel à la mer */
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   
     height: 100vh;
+}
+html,body{
+    overflow: hidden;
 }
 
 form {
@@ -89,4 +90,11 @@ p a {
 
 p a:hover {
     text-decoration: underline;
+}
+#azerty{
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
 }
