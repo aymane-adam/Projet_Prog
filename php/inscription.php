@@ -47,15 +47,15 @@
                         }
                     }
                     else{
-                        echo("Mail déjà utilisé");
+                        echo '<script>alert("Email déjà utilisé");</script>';
                     }
                 }
                 else{
-                    echo("Champ incorrecte ou innexistant");
+                    echo '<script>alert("Champ incorrecte ou innexistant");</script>';
                 }
             }
             else{
-                echo("Validation de mot de passe incorrecte");
+                echo '<script>alert("Validation de mot de passe incorrecte");</script>';
             }
         }
     ?>

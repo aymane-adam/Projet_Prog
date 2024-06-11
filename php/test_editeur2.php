@@ -6,11 +6,11 @@
 </head>
 <body>
     <form method="post" action="">
-        <label for="size">Choisissez la taille de la grille (entre 5 et 16) :</label>
-        <input type="number" id="size" name="size" min="5" max="16" required>
+        <label for="size">Choisissez la taille de la grille (entre 4 et 16) :</label>
+        <input type="number" id="size" name="size" min="4" max="16" required>
         <button type="submit" name="button1">Générer</button>
     </form>
-    <?php
+    <?php 
     if (array_key_exists('button1', $_POST)) {
             $tailleGrille = intval($_POST['taille']);
             echo'
@@ -27,7 +27,7 @@
     $size = isset($_POST["size"]) ? $_POST["size"] : null;
 
     // Exécution du code de génération de matrice si la taille est valide
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && $size >= 5 && $size <= 16) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && $size >= 4 && $size <= 16) {
         // Initialisation de la graine pour la génération de nombres aléatoires
         srand(time());
 
