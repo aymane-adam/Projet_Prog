@@ -16,7 +16,11 @@
 </head>
        
 <body>
-    <?php
+   <?php 
+   include('nav.php')
+   ?>
+  <div id="azerty">
+  <?php
         require("bdd.php");
         if(isset($_POST["Condition"])){
             if($_POST['mdp'] == $_POST['Cmdp']){
@@ -75,5 +79,8 @@
         <br>
         <input type="submit" value="S'insrire"/>
     </form> 
+
+  </div>
+    
 </body>
 </html>
