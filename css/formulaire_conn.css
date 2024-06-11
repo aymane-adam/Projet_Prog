@@ -2,7 +2,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #87CEFA, #FFFFFF); /* Dégradé du ciel à la mer */
+    /* background: linear-gradient(to bottom, #87CEFA, #FFFFFF); Dégradé du ciel à la mer */
+    background: url(../img/fond_inscription.webp);
     margin: 0;
     padding: 0;
     
@@ -15,7 +16,7 @@ html,body{
 }
 
 form {
-    background-color: #F0FFFF; /* Couleur de fond bleu clair pour le formulaire */
+    background-color: #00f7ff; /* Couleur de fond bleu clair pour le formulaire */
     border: 2px solid #00BFFF; /* Bordure bleue */
     border-radius: 10px; /* Coins arrondis */
     padding: 20px;
