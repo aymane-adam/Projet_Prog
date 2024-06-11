@@ -17,13 +17,13 @@
                 <h1>Level Creator</h1>
             </div>
         </div>
-        <a href="../index.php" class="creationa">
+        <a href="editeur_niveau_aleatoire.php" class="creationa">
             <h2>Random Creation</h2>
             <img src="../img/sword.png" class="sword" alt="Image">
             <img src="../img/sword1.png" class="sword1" alt="Image">
             <img src="../img/imgalea.png" class="imgalea" alt="Image" style="width:30%">
         </a>    
-        <a href="../index.php" class="creationm">
+        <a href="editeur_niveau_manuel.php" class="creationm">
             <h2>Manual Creation</h2>
             <img src="../img/sword.png" class="sword" alt="Image">
             <img src="../img/sword1.png" class="sword1" alt="Image">
