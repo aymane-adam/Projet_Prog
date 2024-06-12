@@ -11,16 +11,23 @@
         <button type="submit" name="button1">Générer</button>
     </form>
 
+    <?php
+    // Démarrer la session
+    session_start();
 
-    <?php 
     // Initialisation de la variable $size
     $size = isset($_POST["size"]) ? $_POST["size"] : null;
 
     // Exécution du code de génération de matrice si la taille est valide
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && $size >= 4 && $size <= 16) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["button1"]) && $size >= 4 && $size <= 16) {
         // Initialisation de la graine pour la génération de nombres aléatoires
         srand(time());
-
+        echo '<form method="post" action="">
+        <label for="nom_niveau">Nom du niveau</label>
+        <input type="text" id="nom_niveau" name="nom_niveau" required>
+        <button type="submit" name="button2">Save</button>
+        </form>';
+        
         // Initialisation de la matrice
         $matrix = array_fill(0, $size, array_fill(0, $size, 0));
 
@@ -91,7 +98,11 @@
             echo "</table>";
         }
 
+        // Afficher la grille générée
         afficherGrille($matrix, $images);
+
+        // Stocker la matrice dans la session
+        $_SESSION['matrix'] = $matrix;
     }
 
     // Fonction pour vérifier si deux positions sont adjacentes
@@ -130,6 +141,37 @@
             }
         }
     }
-?>
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["button2"])) {
+        if (empty($_POST["nom_niveau"])) {
+            echo "Veuillez mettre un nom pour le niveau";
+        } else {
+            require("bdd.php");
+            $nom_niveau = $_POST["nom_niveau"];
+            $contenu = [
+                "fleche_n" => 0,
+                "fleche_s" => 0,
+                "fleche_o" => 0,
+                "fleche_e" => 0,
+                "matrix" => json_encode(isset($_SESSION["matrix"]) ? $_SESSION["matrix"] : null),
+            ];
+            if ($contenu) {
+                // Assurez-vous que la variable de session 'pseudo' est définie
+                $createur = isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : 'inconnu';
+                $type_niveau = 3;
+                $sql1 = $conn->prepare("INSERT INTO niveaux (nom_niveau, contenu, createur, type_niveau) VALUES (:nom_niveau, :contenu, :createur, :type_niveau)");
+                $sql1->execute(array(
+                    ':nom_niveau' => $nom_niveau,
+                    ':contenu' => json_encode($contenu),
+                    ':createur' => $createur,
+                    ':type_niveau' => $type_niveau,
+                ));
+                echo "Le niveau a été enregistré avec succès";
+            } else {
+                echo "Erreur : La matrice n'a pas été générée correctement.";
+            }
+        }
+    }
+    ?>
 </body>
 </html>

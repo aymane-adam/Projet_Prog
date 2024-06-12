@@ -62,7 +62,6 @@
         } else {
             require("bdd.php");
             $nom_niveau = $_POST["nom"];
-            $matrix = $_POST['matrix'];
             $contenu = [
                 "fleche_n" => $_POST['arrow_n'],
                 "fleche_s" => $_POST['arrow_s'],
