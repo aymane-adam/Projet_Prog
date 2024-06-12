@@ -20,40 +20,42 @@
     $tailleGrille = 0;
     $submissionSuccess = false;
 
-    if (array_key_exists('button1', $_POST)) {
-        $tailleGrille = intval($_POST['taille']);
-        echo '
-        <form method="post" id="level-form">
-            <label for="nom">Nom du niveau :</label>
-            <input type="text" id="nom" name="nom">
-            <input type="hidden" id="matrix" name="matrix" value="">
-            
-            <div class="input-group">
-                <label for="arrow-s">Flèches Nord :</label>
-                <input type="number" id="arrow-n" name="arrow_n" min="0" value="' . (isset($_POST['arrow_s']) ? $_POST['arrow_s'] : 0) . '" class="input-field">
-                <img src="../pixel_art_projet/32x32/arrow_n.png" alt="Flèches Nord" class="image-label">
-            </div>
-            <div class="input-group">
-                <label for="arrow-s">Flèches Sud :</label>
-                <input type="number" id="arrow-s" name="arrow_s" min="0" value="' . (isset($_POST['arrow_s']) ? $_POST['arrow_s'] : 0) . '" class="input-field">
-                <img src="../pixel_art_projet/32x32/arrow_s.png" alt="Flèches Sud" class="image-label">
-            </div>
+       
+        if (array_key_exists('button1', $_POST)) {
+            $tailleGrille = intval($_POST['taille']);
+            echo '
+            <form method="post" id="level-form">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom">
+                <input type="hidden" id="matrix" name="matrix" value="">
+                
+                <div class="input-group">
+                    <label for="arrow-s">Nord :</label>
+                    <input type="number" id="arrow-n" name="arrow_n" min="0" value="' . (isset($_POST['arrow_s']) ? $_POST['arrow_s'] : 0) . '" class="input-field">
+                    <img src="../pixel_art_projet/32x32/arrow_n.png" alt="Flèches Nord" class="image-label">
+                </div>
+                <div class="input-group">
+                    <label for="arrow-s">Sud :</label>
+                    <input type="number" id="arrow-s" name="arrow_s" min="0" value="' . (isset($_POST['arrow_s']) ? $_POST['arrow_s'] : 0) . '" class="input-field">
+                    <img src="../pixel_art_projet/32x32/arrow_s.png" alt="Flèches Sud" class="image-label">
+                </div>
 
-            <div class="input-group">
-                <label for="arrow-w">Flèches Ouest :</label>
-                <input type="number" id="arrow-w" name="arrow_w" min="0" value="' . (isset($_POST['arrow_w']) ? $_POST['arrow_w'] : 0) . '" class="input-field">
-                <img src="../pixel_art_projet/32x32/arrow_w.png" alt="Flèches Ouest" class="image-label">
-            </div>
-            <div class="input-group">
-                <label for="arrow-e">Flèches Est :</label>
-                <input type="number" id="arrow-e" name="arrow_e" min="0" value="' . (isset($_POST['arrow_e']) ? $_POST['arrow_e'] : 0) . '" class="input-field">
-                <img src="../pixel_art_projet/32x32/arrow_e.png" alt="Flèches Est" class="image-label">
-            </div>
-            <div class="input-buttom">
-                <input type="submit" name="button2" id="finish-button" class="button" value="Terminer"/>
-            </div>
-        </form>';
-    }
+                <div class="input-group">
+                    <label for="arrow-w">Ouest :</label>
+                    <input type="number" id="arrow-w" name="arrow_w" min="0" value="' . (isset($_POST['arrow_w']) ? $_POST['arrow_w'] : 0) . '" class="input-field">
+                    <img src="../pixel_art_projet/32x32/arrow_w.png" alt="Flèches Ouest" class="image-label">
+                </div>
+                <div class="input-group">
+                    <label for="arrow-e">Est :</label>
+                    <input type="number" id="arrow-e" name="arrow_e" min="0" value="' . (isset($_POST['arrow_e']) ? $_POST['arrow_e'] : 0) . '" class="input-field">
+                    <img src="../pixel_art_projet/32x32/arrow_e.png" alt="Flèches Est" class="image-label">
+                </div>
+                <div class="input-buttom">
+                    <input type="submit" name="button2" id="finish-button" class="button" value="Terminer"/>
+                </div>
+            </form>';
+        }
+      
 
     if (array_key_exists('button2', $_POST)){
         if(isset($_POST["nom"]) && empty($_POST["nom"])){
@@ -302,6 +304,16 @@ document.addEventListener("DOMContentLoaded", function() {
     <?php endif; ?>
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const gridSize = <?php echo $tailleGrille; ?>;
+    const levelContainer = document.querySelector('.level-container');
+
+    if (gridSize >= 10 && gridSize <= 16) {
+        levelContainer.classList.add('lowered');
+    } else {
+        levelContainer.classList.remove('lowered');
+    }
+});
     </script>
 </body>
 </html>
