@@ -28,7 +28,6 @@
                 <label for="nom">Nom :</label>
                 <input type="text" id="nom" name="nom">
                 <input type="hidden" id="matrix" name="matrix" value="">
-                
                 <div class="input-group">
                     <label for="arrow-s">Nord :</label>
                     <input type="number" id="arrow-n" name="arrow_n" min="0" value="' . (isset($_POST['arrow_s']) ? $_POST['arrow_s'] : 0) . '" class="input-field">
