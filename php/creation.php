@@ -17,7 +17,7 @@
                 <h1>Level Creator</h1>
             </div>
         </div>
-        <a href="test_editeur2.php" class="creationa">
+        <a href="editeur_niveau_aleatoire.php" class="creationa">
             <h2>Random Creation</h2>
             <img src="../img/sword.png" class="sword" alt="Image">
             <img src="../img/sword1.png" class="sword1" alt="Image">
