@@ -1,10 +1,13 @@
 const grid = document.getElementById('grid');
 const playBtn = document.getElementById('playBtn');
 const gridSize = 16;
+const audiob = new Audio('../audio/boomc.mp3');
+let audiop = false;
 let boatDirection = 'right';
 let boatPosition = { x: 0, y: 0 };
 let gameStarted = false;
 let moveInterval;
+
 
 // Function to place obstacles based on a 2D array
 function placeObstacles(obstacleGrid) {
@@ -27,6 +30,14 @@ function placeObstacles(obstacleGrid) {
                     cell.classList.add('rock');
                     cell.classList.add('pieuvre');
                     break;
+                case 3:
+                    cell.classList.add('rock');
+                    cell.classList.add('rock1');
+                    break;
+                case 4:
+                    cell.classList.add('rock');
+                    cell.classList.add('krabby');
+                    break;
                 // Add more cases if needed for different obstacles
             }
 
@@ -41,12 +52,23 @@ function placeObstacles(obstacleGrid) {
 
 // Example obstacle grid (16x16)
 const obstacleGrid = [
-    [0, 1, 0, 2, 0],
-    [2, 0, 1, 0, 1],
-    [1, 0, 2, 1, 0],
-    [0, 2, 0, 1, 2],
-    [1, 0, 2, 0, 1]
-];
+    [0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 3, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0],
+    [0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0],
+    [4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0]
+  ];
 
 // Place the obstacles using the grid
 placeObstacles(obstacleGrid);
@@ -55,6 +77,7 @@ placeObstacles(obstacleGrid);
 function placeBoat() {
     const boatCell = document.getElementById(`cell-${boatPosition.x}-${boatPosition.y}`);
     boatCell.classList.add('boat');
+    sheet.insertRule('.boat { background:url(../pixel_art_projet/32x32/ship-left.png) center/cover; }', sheet.cssRules.length);
 }
 
 function removeBoat() {
@@ -84,6 +107,11 @@ function moveBoat() {
     // Check for collisions or boundary
     if (nextPosition.x < 0 || nextPosition.x >= gridSize || nextPosition.y < 0 || nextPosition.y >= gridSize ||
         document.getElementById(`cell-${nextPosition.x}-${nextPosition.y}`).classList.contains('rock')) {
+        sheet.insertRule('.boat { background:url(../pixel_art_projet/32x32/boom.png) center/cover; }', sheet.cssRules.length);
+        if (audiop === false){
+            audiob.play();
+            audiop=true;
+        }
         return; // Prevent the boat from moving out of bounds or into a rock
     }
 
@@ -104,6 +132,7 @@ function resetBoat() {
     removeBoat(); // Ensure the boat is removed from the current position
     boatPosition = { x: 0, y: 0 };
     boatDirection = 'right';
+    audiop=false;
     placeBoat();
 }
 

@@ -262,9 +262,9 @@
     function checkValidPlacement(imageId, x, y, boatPosition) {
         switch (imageId) {
             case "image8":
-                return (x === boatPosition.x + 1 && y === boatPosition.y);
-            case "image9":
                 return (x === boatPosition.x - 1 && y === boatPosition.y);
+            case "image9":
+                return (x === boatPosition.x + 1 && y === boatPosition.y);
             case "image11":
                 return (x === boatPosition.x && y === boatPosition.y + 1);
             case "image10":
