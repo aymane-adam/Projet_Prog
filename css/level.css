@@ -2,20 +2,19 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    position: absolute; /* Nouveau */
-    right: 10px; /* Nouveau */
-    top: 10px; /* Nouveau */
+    position: absolute; 
+    right: 10px; 
+    top: 10px; 
 }
 
 .trash-container {
-    position: absolute; /* Nouveau */
-    right: 10px; /* Aligné avec l'inventaire */
-    top: 250px; /* Ajustez selon la hauteur totale de l'inventaire */
-    width: 60px;
-    height: 60px;
-    border: 2px solid red;
+    position: absolute; 
+    right: 10px; 
+    top: 250px; 
+    width: 32px;
+    height: 32px;
     text-align: center;
-    line-height: 60px; /* Ajusté pour centrer verticalement l'image */
+    line-height: 60px; 
 }
 
 body {
@@ -65,4 +64,9 @@ td {
 }
 .hidden {
     display: none;
+}
+
+#directionBoat {
+    font-weight: bold; 
+    text-transform: uppercase; 
 }

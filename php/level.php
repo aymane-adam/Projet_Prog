@@ -113,7 +113,7 @@
         <!-- <div>Matrice :</div> -->
          <?php //afficherMatrice($matrice);?> 
 
-        <button id="commencer">Launch</button>
+        <button id="launch">Launch</button>
         <button id="retry" class="hidden">Retry</button>
         <div id="message" class="hidden"></div>
 
