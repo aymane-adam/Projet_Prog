@@ -14,9 +14,9 @@
     </a>
 </div>
 <div class="container">
-    <div class="arrow" id="left-arrow">&#9664;</div>
+    <div class="arrow" id="left-arrow">&#10157;</div>
     <div class="level-buttons" id="level-buttons"></div>
-    <div class="arrow" id="right-arrow">&#9654;</div>
+    <div class="arrow" id="right-arrow">&#10157;</div>
 </div>
 
 <script>
