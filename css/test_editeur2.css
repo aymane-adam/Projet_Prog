@@ -1,22 +1,101 @@
+body {
+   font-family: Arial, sans-serif;
+   background: url("../img/simplified_pirate_background.png") center;
+}
+
+#jsp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nom{
+    margin-top: 1%;
+}
+
 table {
     border-collapse: collapse;
     width: auto;
-    margin-bottom: 10%;
+    margin-top: 1%;
 }
+
 th, td {
     border: 1px solid black;
     width: 37px;
     height: 37px;
     text-align: center;
-   
 }
+
 th {
     background-color: #f2f2f2;
 }
+
 td {
     background-image: url('../pixel_art_projet/32x32/ocean.png');
 }
+
 img {
     width: 32px;
     height: 32px;
 }
+
+
+.bouton3 {
+   
+   
+    gap: 10px;
+    padding: 0 10px;
+    color: white;
+    text-shadow: 2px 2px rgb(116, 116, 116);
+    text-transform: uppercase;
+    cursor: pointer;
+    border: solid 2px black;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 17px;
+    background-color: hsl(49deg 98% 60%);
+    border-radius: 50px;
+    position: absolute;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    
+  }
+  
+  .bouton3:active {
+    transform: scale(0.9);
+    transition: all 100ms ease;
+  }
+  
+  .bouton3 svg {
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  
+  .play {
+    transition: all 0.5s ease;
+    transition-delay: 300ms;
+  }
+  
+  .bouton3:hover svg {
+    transform: scale(3) translate(50%);
+  }
+  
+  .now {
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  
+  .bouton3:hover .now {
+    transform: translateX(10px);
+    transition-delay: 300ms;
+  }
+  
+  .bouton3:hover .play {
+    transform: translateX(200%);
+    transition-delay: 300ms;
+  }
+  
