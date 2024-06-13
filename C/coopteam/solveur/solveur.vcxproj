@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="getFromJson.c" />
-    <ClCompile Include="Solve.c" />
+    <ClCompile Include="main.c" />
     <ClCompile Include="cJSON.c" />
   </ItemGroup>
   <ItemGroup>
