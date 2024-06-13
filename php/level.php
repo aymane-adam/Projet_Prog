@@ -9,7 +9,6 @@
     <body>
         <?php
         session_start();
-
         // Définition des images
         $images = [
             1 => "bateau.png",
@@ -35,6 +34,10 @@
                 ':id_niveau' => $levelNumber,
             ));
             $resultat = $recup->fetchAll(PDO::FETCH_ASSOC);
+
+            if($levelNumber > 0 && $levelNumber < 19 && $_SESSION['progression'] < $levelNumber){
+                header("Location:compaign.php");
+            }
             if (!empty($recup)) {
                 // Matrice
                 $json_data = $resultat[0]['contenu'];
@@ -106,6 +109,26 @@
             echo "<h1>You are on level: " . $levelNumber . "</h1>";
         } else {
             echo "<h1>No level specified.</h1>";
+        }
+        function checkVictory($matrice) {
+            foreach ($matrice as $row) {
+                if (in_array(12, $row)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        // Vérifier si le bateau a atteint le coffre
+        if (checkVictory($matrice)) {
+            if($_SESSION['progression'] == $levelNumber){
+                $_SESSION['progression'] += 1;
+                $update = $conn->prepare("UPDATE `comptes` SET `progression` = :progression WHERE pseudo = :pseudo");
+                $update->execute(
+                    array(
+                    ':progression' => $_SESSION['progression'],
+                    ':pseudo' => $_SESSION['pseudo'],
+                ));
+            }
         }
         ?>
 
