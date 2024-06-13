@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/level.css">
-        <title>Level Page</title>
+        <title>Solve</title>
     </head>
 
     <?php
@@ -18,7 +18,7 @@
         $json = $resultat[0]["contenu"]; //on prend le premier niveau json dans la base
         var_dump($json);
 
-        $command = "main\solveur.exe";
+        $command = "solveur\solveur.exe";
         $escapedArgument = addcslashes($json, '"\\');
         $fullCommand = $command . '"' . $escapedArgument . '"';
         
