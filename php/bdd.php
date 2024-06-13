@@ -29,4 +29,11 @@ function mailDejaPris($mail, $conn) {
     $resultat = $sql1->fetchAll(PDO::FETCH_ASSOC); //récupération du résultat 
     return sizeof($resultat);
 }
+
+function pseudoDejaPris($pseudo, $conn) {
+    $sql = $conn->prepare("SELECT * FROM comptes WHERE Pseudo=:pseudo"); // On prépare la requête SQL
+    $sql->execute(array(':pseudo' => $pseudo));
+    $resultat = $sql->fetchAll(PDO::FETCH_ASSOC); // Récupération du résultat
+    return sizeof($resultat) > 0;
+}
 ?>
