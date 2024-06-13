@@ -18,8 +18,10 @@
 }
 
 body {
-    background: url(../img/bglevel.jpg) center/cover;
+    background: url(../img/bglevel2.png) center/cover;
     min-height: 100vh;
+    text-align: center;
+    align-items: center;
 }
 
 html, body {
