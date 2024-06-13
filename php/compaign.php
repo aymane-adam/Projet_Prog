@@ -45,9 +45,10 @@
 
         function updateLevels() {
             const levels = [];
+            const progress = <?php echo $_SESSION['progression'];?>;
             for (let i = 1; i <= 9; i++) {
                 const levelNumber = (currentLevelSet - 1) * 9 + i;
-                if(<?php echo $_SESSION['progression'];?> < levelNumber){
+                if(progress < levelNumber){
                     levels.push(`<a href='level.php?id=${levelNumber}' class='level-link'><img src='../img/cadenas.png' alt='Level ${levelNumber}' /></a>`);
                 }
                 else{
