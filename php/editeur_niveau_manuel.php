@@ -132,7 +132,7 @@
         </div>
     </div>
 
-    <button>
+    <button onclick="location.href='../php/creation.php'">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 36 36"
