@@ -12,7 +12,7 @@
         <form method="post" action="#" id="grid-form">
             <label for="taille">Taille :</label>
             <input type="number" id="taille" name="taille" min="4" max="16" value="<?php echo isset($_POST['taille']) ? $_POST['taille'] : 5; ?>">
-            <input type="submit" name="button1" class="button" value="Créer la grille" />
+            <input type="submit" name="button1" class="button2" value="Créer la grille" />
         </form>
     </div>
 
@@ -20,42 +20,42 @@
     $tailleGrille = 0;
     $submissionSuccess = false;
 
-       
-        if (array_key_exists('button1', $_POST)) {
-            $tailleGrille = intval($_POST['taille']);
-            echo '
-            <form method="post" id="level-form">
-                <label for="nom">Nom :</label>
+    if (array_key_exists('button1', $_POST)) {
+        $tailleGrille = intval($_POST['taille']);
+        echo '
+        <form method="post" id="level-form">
+            <div class="form-group">
+                <label for="nom">Nom du niveau :</label>
                 <input type="text" id="nom" name="nom">
                 <input type="hidden" id="matrix" name="matrix" value="">
-                
+            </div>
+            <div class="form-group">
                 <div class="input-group">
-                    <label for="arrow-s">Nord :</label>
+                    <label for="arrow-n">Flèches Nord :</label>
                     <input type="number" id="arrow-n" name="arrow_n" min="0" value="' . (isset($_POST['arrow_s']) ? $_POST['arrow_s'] : 0) . '" class="input-field">
                     <img src="../pixel_art_projet/32x32/arrow_n.png" alt="Flèches Nord" class="image-label">
                 </div>
                 <div class="input-group">
-                    <label for="arrow-s">Sud :</label>
+                    <label for="arrow-s">Flèches Sud :</label>
                     <input type="number" id="arrow-s" name="arrow_s" min="0" value="' . (isset($_POST['arrow_s']) ? $_POST['arrow_s'] : 0) . '" class="input-field">
                     <img src="../pixel_art_projet/32x32/arrow_s.png" alt="Flèches Sud" class="image-label">
                 </div>
-
                 <div class="input-group">
-                    <label for="arrow-w">Ouest :</label>
+                    <label for="arrow-w">Flèches Ouest :</label>
                     <input type="number" id="arrow-w" name="arrow_w" min="0" value="' . (isset($_POST['arrow_w']) ? $_POST['arrow_w'] : 0) . '" class="input-field">
                     <img src="../pixel_art_projet/32x32/arrow_w.png" alt="Flèches Ouest" class="image-label">
                 </div>
                 <div class="input-group">
-                    <label for="arrow-e">Est :</label>
+                    <label for="arrow-e">Flèches Est :</label>
                     <input type="number" id="arrow-e" name="arrow_e" min="0" value="' . (isset($_POST['arrow_e']) ? $_POST['arrow_e'] : 0) . '" class="input-field">
                     <img src="../pixel_art_projet/32x32/arrow_e.png" alt="Flèches Est" class="image-label">
                 </div>
-                <div class="input-buttom">
-                    <input type="submit" name="button2" id="finish-button" class="button" value="Terminer"/>
-                </div>
-            </form>';
-        }
-      
+            </div>
+            <div class="input-buttom">
+                <input type="submit" name="button2" id="finish-button" class="button" value="Terminer"/>
+            </div>
+        </form>';
+    }
 
     if (array_key_exists('button2', $_POST)){
         if(isset($_POST["nom"]) && empty($_POST["nom"])){
@@ -122,8 +122,8 @@
                 <img src="../pixel_art_projet/32x32/rock.png" draggable="true" id="image5" alt="Rock" data-value="5">
                 <img src="../pixel_art_projet/32x32/rock1.png" draggable="true" id="image6" alt="Rock1" data-value="6">
                 <img src="../pixel_art_projet/32x32/vague.png" draggable="true" id="image7" alt="Vague" data-value="7">
-                <img src="../pixel_art_projet/32x32/arrow_n.png" draggable="true" id="image8" alt="Nord" data-value="8">
-                <img src="../pixel_art_projet/32x32/arrow_s.png" draggable="true" id="image9" alt="Sud" data-value="9">
+                <img src="../pixel_art_projet/32x32/arrow_n.png" draggable="true" id="image9" alt="Nord" data-value="8">
+                <img src="../pixel_art_projet/32x32/arrow_s.png" draggable="true" id="image8" alt="Sud" data-value="9">
                 <img src="../pixel_art_projet/32x32/arrow_w.png" draggable="true" id="image10" alt="Ouest" data-value="10">
                 <img src="../pixel_art_projet/32x32/arrow_e.png" draggable="true" id="image11" alt="Est" data-value="11">
             </div>
@@ -262,9 +262,9 @@
     function checkValidPlacement(imageId, x, y, boatPosition) {
         switch (imageId) {
             case "image8":
-                return (x === boatPosition.x - 1 && y === boatPosition.y);
-            case "image9":
                 return (x === boatPosition.x + 1 && y === boatPosition.y);
+            case "image9":
+                return (x === boatPosition.x - 1 && y === boatPosition.y);
             case "image11":
                 return (x === boatPosition.x && y === boatPosition.y + 1);
             case "image10":
@@ -304,18 +304,6 @@ document.addEventListener("DOMContentLoaded", function() {
     <?php endif; ?>
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const gridSize = <?php echo $tailleGrille; ?>;
-    const levelContainer = document.querySelector('.level-container');
-
-    if (gridSize >= 10 && gridSize <= 16) {
-        levelContainer.classList.add('lowered');
-    } else {
-        levelContainer.classList.remove('lowered');
-    }
-});
     </script>
 </body>
 </html>
-
-

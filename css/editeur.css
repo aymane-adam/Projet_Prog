@@ -211,45 +211,108 @@ td {
 }
 
 #level-form{
+padding: 0.45em;
 background-color: #f2f2f2;
-padding: 0%;
+
 box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-border-radius: 10px;
-display: flex;
-   flex-direction: column;
-   align-items: center;
+
+   flex-grow: 2;
+  
+  
+
 }
 
 .form-container{
     background-color: #f2f2f2;
-    padding: 0.30em;
+    padding: 0.45em;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 border-radius: 10px;
 }
 
-.level-container {
+#level-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    left: 5%;
-    top: 10%;
+    margin: 0%;
+    width: 100%; /* Pour s'assurer qu'il prend toute la largeur disponible */
 }
 
-.level-container.lowered {
-    top: 20%;
+#level-form .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em; /* Ajustez selon les besoins pour l'espacement */
+    width: 100%;
+}
+
+#level-form .input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Ajustez selon les besoins pour l'espacement */
+    width: 100%;
+}
+
+#level-form .input-group label {
+    margin-right: 0.5em; /* Ajustez selon les besoins pour l'espacement */
+    text-align: right; /* Pour aligner le texte des labels à droite */
+    flex: 1; /* Pour que tous les labels prennent la même largeur */
+}
+
+#level-form .input-group input {
+    flex: 1; /* Pour que tous les inputs prennent la même largeur */
+}
+
+#level-form .input-group img {
+    margin-left: 0.5em; /* Ajustez selon les besoins pour l'espacement */
 }
 
 #level-form {
-    background-color: #f2f2f2;
-    padding: 1em;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 10; /* Assurez-vous que le formulaire est bien au-dessus des autres éléments */
+    position: relative; /* Position relative pour gérer le z-index */
 }
 
-.form-container {
-    background-color: #f2f2f2;
-    padding: 0.30em;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    border-radius: 10px;
+#level-form .form-group,
+#level-form .input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+}
+
+#level-form .form-group label,
+#level-form .input-group label {
+    margin-right: 0.5em;
+    text-align: right;
+    flex: 1;
+}
+
+#level-form .form-group input,
+#level-form .input-group input {
+    flex: 2;
+    max-width: 200px;
+}
+
+#level-form .input-group img {
+    margin-left: 0.5em;
+}
+
+.input-buttom {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    width: 100%;
+    z-index: 11; /* Assurez-vous que le bouton est bien au-dessus des autres éléments */
+    position: relative; /* Position relative pour gérer le z-index */
+}
+
+.button {
+    padding: 10px 20px;
+    cursor: pointer;
 }
