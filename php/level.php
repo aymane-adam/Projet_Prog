@@ -113,29 +113,6 @@
     } else {
         echo "<h1>No level specified.</h1>";
     }
-    function checkVictory($matrice) {
-        foreach ($matrice as $row) {
-            if (in_array(12, $row)) {
-                return true;
-            }
-        }
-        return false;
-    }
-    // Vérifier si le bateau a atteint le coffre
-    if (checkVictory($matrice) && !empty($_SESSION['pseudo'])) {
-        if($_SESSION['progression'] == $levelNumber){
-            $_SESSION['progression'] += 1;
-            $update = $conn->prepare("UPDATE `comptes` SET `progression` = :progression WHERE pseudo = :pseudo");
-            $update->execute(
-                array(
-                ':progression' => $_SESSION['progression'],
-                ':pseudo' => $_SESSION['pseudo'],
-            ));
-        }
-    }
-    if(checkVictory($matrice) && empty($_SESSION['pseudo'])){
-        $_SESSION['progression'] += 1;
-    }
     ?>
 
     <div class="left-container">
@@ -303,7 +280,7 @@
                         directBoat = "est";
                         matrice[nextRow][nextCol] = 1;
                     } else if (nextCell === 12) {
-                        clearInterval(interval);
+                        clearInterval(interval);                 
                         document.getElementById('message').textContent = "Partie gagnée!";
                         document.getElementById('message').classList.remove('hidden');
                         document.getElementById('recommencer').classList.remove('hidden');
@@ -388,5 +365,32 @@
             });
         });
     </script>
+    <?php     
+
+        function checkVictory($matrice){
+            foreach ($matrice as $row) {
+                if (in_array(12, $row)) {
+                        return true;
+                    }
+            }
+            return false;
+        }
+
+        // Vérifier si le bateau a atteint le coffre
+        if (checkVictory($matrice) && !empty($_SESSION['pseudo'])) {
+            if($_SESSION['progression'] == $levelNumber){
+                $_SESSION['progression'] += 1;
+                $update = $conn->prepare("UPDATE `comptes` SET `progression` = :progression WHERE pseudo = :pseudo");
+                $update->execute(
+                    array(
+                    ':progression' => $_SESSION['progression'],
+                    ':pseudo' => $_SESSION['pseudo'],
+                ));
+            }
+        }
+        if(checkVictory($matrice) && empty($_SESSION['pseudo'])){
+            $_SESSION['progression'] += 1;
+        }
+    ?>
 </body>
 </html>
