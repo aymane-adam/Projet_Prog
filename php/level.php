@@ -121,6 +121,7 @@
         }
         return false;
     }
+   
     // Vérifier si le bateau a atteint le coffre
     if (checkVictory($matrice) && !empty($_SESSION['pseudo'])) {
         if($_SESSION['progression'] == $levelNumber){
