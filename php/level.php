@@ -117,6 +117,8 @@
         <button id="retry" class="hidden">Retry</button>
         <div id="message" class="hidden"></div>
 
+        <button onclick= 'window.open("solveur.php", "_blank").focus();' style="background-color:black;color:white">Solution</button>
+
         <div class="image-container">
             <div style="position: relative; display: inline-block;">
                 <img src="../pixel_art_projet/32x32/nord.png" draggable="true" id="image8" alt="Nord" data-value="8">
