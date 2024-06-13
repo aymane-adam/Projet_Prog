@@ -119,7 +119,7 @@
             return false;
         }
         // Vérifier si le bateau a atteint le coffre
-        if (checkVictory($matrice)) {
+        if (checkVictory($matrice) && !empty($_SESSION['pseudo'])) {
             if($_SESSION['progression'] == $levelNumber){
                 $_SESSION['progression'] += 1;
                 $update = $conn->prepare("UPDATE `comptes` SET `progression` = :progression WHERE pseudo = :pseudo");
