@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background: url(../img/fond_inscription.webp) center;
+    min-height: 100vh;
+}
+
+
+.profile-container {
+    flex: 1;
+    padding: 20px;
+    margin: 60px auto;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-header h1 {
+    color: #333;
+    margin: 0;
+}
+
+.profile-section {
+    margin-bottom: 20px;
+}
+
+.profile-section h3 {
+    color: #555;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.profile-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-section li {
+    background-color: #fafafa;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+a[href="deconnexion.php"] {
+    display: block;
+    text-align: center;
+    margin: auto;
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    max-width: 200px;
+    transition: background-color 0.3s ease;
+}
+
+a[href="deconnexion.php"]:hover {
+    background-color: #c9302c;
+}
+
+footer {
+    height: 100px; 
+    background-color: #333;
+    color: white;
+    text-align: center;
+    line-height: 100px; 
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
