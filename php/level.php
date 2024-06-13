@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="back">
-        <a href="game.php" class="back-arrow">
+        <a href="compaign.php" class="back-arrow">
             <img src="../img/bouton_retour.png" alt="Back" class="link-image">
         </a>
     </div>
