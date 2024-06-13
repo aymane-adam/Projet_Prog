@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/compaign.css">
-    <title>Compaign Mode</title>
+    <title>Campaign Mode</title>
 </head>
 <body>
 <img src="../img/campaign.png" alt="Campaign" class="logo">
