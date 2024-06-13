@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +47,12 @@
             const levels = [];
             for (let i = 1; i <= 9; i++) {
                 const levelNumber = (currentLevelSet - 1) * 9 + i;
-                levels.push(`<a href='level.php?id=${levelNumber}' class='level-link'><img src='../img/level${levelNumber}.png' alt='Level ${levelNumber}' /></a>`);
+                if(<?php echo $_SESSION['progression'];?> < levelNumber){
+                    levels.push(`<a href='level.php?id=${levelNumber}' class='level-link'><img src='../img/cadenas.png' alt='Level ${levelNumber}' /></a>`);
+                }
+                else{
+                    levels.push(`<a href='level.php?id=${levelNumber}' class='level-link'><img src='../img/level${levelNumber}.png' alt='Level ${levelNumber}' /></a>`);
+                }
             }
             levelButtons.innerHTML = levels.join('');
             leftArrow.classList.toggle('disabled', currentLevelSet === 1);
