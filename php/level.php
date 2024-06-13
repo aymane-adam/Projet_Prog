@@ -133,7 +133,7 @@
         ?>
 
         <div>Direction du bateau : <span id="directionBoat"><?php echo $directBoat; ?></span></div>
-        <div>Matrice :</div>
+        <!-- <div>Matrice :</div> -->
         <?php afficherMatrice($matrice); ?>
 
         <button id="commencer">Commencer</button>
@@ -161,7 +161,7 @@
 
         <!-- Section de corbeille -->
         <div class="trash-container">
-            Corbeille
+            <img src=../pixel_art_projet/32x32/trash.png>
         </div>
 
         <script>

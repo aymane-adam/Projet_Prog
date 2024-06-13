@@ -72,3 +72,8 @@ td {
     font-weight: bold; 
     text-transform: uppercase; 
 }
+
+#matrice-display{
+    opacity: 0;
+    position: absolute;
+}
