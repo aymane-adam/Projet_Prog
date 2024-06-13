@@ -35,9 +35,6 @@
                 ':id_niveau' => $levelNumber,
             ));
             $resultat = $recup->fetchAll(PDO::FETCH_ASSOC);
-            if($_SESSION['progression'] < $levelNumber){
-                header("Location:compaign.php");
-            }
             if (!empty($recup)) {
                 // Matrice
                 $json_data = $resultat[0]['contenu'];
@@ -113,14 +110,12 @@
         ?>
 
         <div>Direction du bateau : <span id="directionBoat"><?php echo $directBoat; ?></span></div>
-        <!-- <div>Matrice :</div> -->
-         <?php //afficherMatrice($matrice);?> 
+        <div>Matrice :</div>
+        <?php afficherMatrice($matrice); ?>
 
-        <button id="launch">Launch</button>
+        <button id="commencer">Commencer</button>
         <button id="retry" class="hidden">Retry</button>
         <div id="message" class="hidden"></div>
-
-        <button onclick= 'window.open("solveur.php", "_blank").focus();' style="background-color:black;color:white">Solution</button>
 
         <div class="image-container">
             <div style="position: relative; display: inline-block;">
@@ -143,7 +138,7 @@
 
         <!-- Section de corbeille -->
         <div class="trash-container">
-            <img src="../pixel_art_projet/32x32/trash.png" alt="trash">
+            Corbeille
         </div>
 
         <script>
