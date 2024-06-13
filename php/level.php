@@ -138,7 +138,7 @@
 
         <!-- Section de corbeille -->
         <div class="trash-container">
-            Corbeille
+            <img src="../pixel_art_projet/32x32/trash.png" alt="trash">
         </div>
 
         <script>
