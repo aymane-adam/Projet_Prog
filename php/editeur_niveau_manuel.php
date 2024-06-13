@@ -173,8 +173,8 @@
       d="M15.078,19.043c1.957-0.326,5.122-0.529,4.435,1.304c-0.489,1.304-7.185,2.185-7.185,0.652 C12.328,19.467,15.078,19.043,15.078,19.043z"
     ></path>
   </svg>
-  <span class="now">now!</span>
-  <span class="play">play</span>
+  <span class="now">Back</span>
+  <span class="play">Back</span>
 </button>
 
 
