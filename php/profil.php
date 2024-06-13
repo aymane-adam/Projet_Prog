@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,6 +7,9 @@
     <title>Profil de Pirate</title>
 </head>
 <body>
+<?php 
+   include('nav.php')
+   ?>
 <div class="profile-container">
     <div class="profile-header">
         <?php echo "<h1>Captain " . $_SESSION['pseudo'] . "</h1>"; ?>
