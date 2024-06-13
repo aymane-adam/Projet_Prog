@@ -148,10 +148,16 @@
         } else {
             require("bdd.php");
             $nom_niveau = $_POST["nom_niveau"];
-            $contenu = isset($_SESSION['matrix']) ? $_SESSION['matrix'] : null;
+            $contenu = [
+                "fleche_n" => 0,
+                "fleche_s" => 0,
+                "fleche_o" => 0,
+                "fleche_e" => 0,
+                "matrix" => json_encode(isset($_SESSION["matrix"]) ? $_SESSION["matrix"] : null),
+            ];
             if ($contenu) {
                 // Assurez-vous que la variable de session 'pseudo' est définie
-                $createur = $_SESSION['pseudo'];
+                $createur = isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : 'inconnu';
                 $type_niveau = 3;
                 $sql1 = $conn->prepare("INSERT INTO niveaux (nom_niveau, contenu, createur, type_niveau) VALUES (:nom_niveau, :contenu, :createur, :type_niveau)");
                 $sql1->execute(array(

@@ -28,8 +28,7 @@
                 <label for="nom">Nom du niveau :</label>
                 <input type="text" id="nom" name="nom">
                 <input type="hidden" id="matrix" name="matrix" value="">
-            </div>
-            <div class="form-group">
+                
                 <div class="input-group">
                     <label for="arrow-n">Flèches Nord :</label>
                     <input type="number" id="arrow-n" name="arrow_n" min="0" value="' . (isset($_POST['arrow_s']) ? $_POST['arrow_s'] : 0) . '" class="input-field">
@@ -63,7 +62,6 @@
         } else {
             require("bdd.php");
             $nom_niveau = $_POST["nom"];
-            $matrix = $_POST['matrix'];
             $contenu = [
                 "fleche_n" => $_POST['arrow_n'],
                 "fleche_s" => $_POST['arrow_s'],
