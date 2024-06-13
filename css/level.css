@@ -1,3 +1,34 @@
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute; /* Nouveau */
+    right: 10px; /* Nouveau */
+    top: 10px; /* Nouveau */
+}
+
+.trash-container {
+    position: absolute; /* Nouveau */
+    right: 10px; /* Aligné avec l'inventaire */
+    top: 250px; /* Ajustez selon la hauteur totale de l'inventaire */
+    width: 60px;
+    height: 60px;
+    border: 2px solid red;
+    text-align: center;
+    line-height: 60px; /* Ajusté pour centrer verticalement l'image */
+}
+
+body {
+    background: url(../img/bglevel.jpg) center/cover;
+    min-height: 100vh;
+}
+
+html, body {
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+    height: 100%; 
+}
+
 table {
     border-collapse: collapse;
 }
@@ -31,14 +62,6 @@ td {
     text-align: center;
     line-height: 16px;
     font-size: 12px;
-}
-.trash-container {
-    margin-top: 20px;
-    border: 2px solid red;
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    line-height: 100px;
 }
 .hidden {
     display: none;
