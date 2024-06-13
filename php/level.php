@@ -133,6 +133,9 @@
             ));
         }
     }
+    if(checkVictory($matrice) && empty($_SESSION['pseudo'])){
+        $_SESSION['progression'] += 1;
+    }
     ?>
 
 <div class="left-container">
