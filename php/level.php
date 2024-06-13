@@ -34,7 +34,12 @@
                 array(
                 ':id_niveau' => $levelNumber,
             ));
-            $resultat = $recup->fetchAll(PDO::FETCH_ASSOC);
+            $resultat = $recup->fetchAll(PDO::FETCH_ASSOC); 
+            foreach($resultat as $val){         
+                if($_SESSION['progression'] < $levelNumber){
+                    header("Location:compaign.php");
+                }
+            }
             if (!empty($recup)) {
                 // Matrice
                 $json_data = $resultat[0]['contenu'];
