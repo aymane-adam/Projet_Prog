@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!Doctype html>
 <html lang="fr">
 
@@ -37,6 +35,14 @@
                 ':pseudo' => $pseudo,
                 ':mdp' => $mdp,
             ));
+            $recup2 = "SELECT progression, mail FROM comptes";
+            $stmt = $conn->prepare($recup2);
+            $stmt->execute();
+            $resultat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach($resultat as $val){
+                $_SESSION['progression'] = $val['progression'];
+                $_SESSION['mail'] = $val['mail'];
+            }
 			if($recup->rowCount()>0){
                 $_SESSION['pseudo'] = $pseudo;
 			header("Location:index.php");

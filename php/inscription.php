@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!Doctype html>
 <html lang="fr">
 
@@ -43,6 +42,8 @@
                         ));
                         if($sql1->rowCount()>0){
                             $_SESSION['pseudo'] = $pseudo;
+                            $_SESSION['progression'] = $progression;
+                            $_SESSION['mail'] = $mail;
                         header("Location:index.php");
                         }
                     }

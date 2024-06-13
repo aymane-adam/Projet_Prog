@@ -110,12 +110,14 @@
         ?>
 
         <div>Direction du bateau : <span id="directionBoat"><?php echo $directBoat; ?></span></div>
-        <div>Matrice :</div>
-        <?php afficherMatrice($matrice); ?>
+        <!-- <div>Matrice :</div> -->
+         <?php //afficherMatrice($matrice);?> 
 
-        <button id="commencer">Commencer</button>
+        <button id="commencer">Launch</button>
         <button id="retry" class="hidden">Retry</button>
         <div id="message" class="hidden"></div>
+
+        <button onclick= 'window.open("solveur.php", "_blank").focus();' style="background-color:black;color:white">Solution</button>
 
         <div class="image-container">
             <div style="position: relative; display: inline-block;">
