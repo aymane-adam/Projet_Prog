@@ -1,0 +1,7 @@
+﻿  getFromJson.c
+  Solve.c
+  cJSON.c
+  Génération de code en cours...
+C:\MAMP\htdocs\Année2\Projet_Prog\C\coopteam\solveur\getFromJson.h(12): warning C4715: 'getSize' : les chemins de contrôle ne retournent pas tous une valeur
+     Création de la bibliothèque C:\MAMP\htdocs\Année2\Projet_Prog\C\coopteam\x64\Debug\solveur.lib et de l'objet C:\MAMP\htdocs\Année2\Projet_Prog\C\coopteam\x64\Debug\solveur.exp
+  solveur.vcxproj -> C:\MAMP\htdocs\Année2\Projet_Prog\C\coopteam\x64\Debug\solveur.exe
