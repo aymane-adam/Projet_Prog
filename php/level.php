@@ -138,12 +138,14 @@
     }
     ?>
 
-<div class="left-container">
+    <div class="left-container">
         <h1>You are on level: <?php echo $levelNumber; ?></h1>
         <div>Direction du bateau : <span id="directionBoat"><?php echo $directBoat; ?></span></div>
         <?php afficherMatrice($matrice); ?>
         <button id="commencer">Commencer</button>
         <button id="retry" class="hidden">Retry</button>
+        <button id="recommencer" class="hidden">Recommencer le niveau</button>
+        <button id="suivant" class="hidden">Niveau suivant</button>
         <div id="message" class="hidden"></div>
     </div>
     <div class="table-container">
@@ -304,6 +306,8 @@
                         clearInterval(interval);
                         document.getElementById('message').textContent = "Partie gagnée!";
                         document.getElementById('message').classList.remove('hidden');
+                        document.getElementById('recommencer').classList.remove('hidden');
+                        document.getElementById('suivant').classList.remove('hidden');
                     } else {
                         matrice[nextRow][nextCol] = 13; // Code pour "boom"
                         clearInterval(interval);
@@ -373,6 +377,14 @@
 
             document.getElementById('retry').addEventListener('click', function() {
                 location.reload();
+            });
+
+            document.getElementById('recommencer').addEventListener('click', function() {
+                location.reload();
+            });
+
+            document.getElementById('suivant').addEventListener('click', function() {
+                window.location.href = "level.php?id=" + (<?php echo $levelNumber; ?> + 1);
             });
         });
     </script>
