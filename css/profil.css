@@ -4,8 +4,8 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    background: url(../img/fond_inscription.webp) center;
     min-height: 100vh;
-    background: url(../img/fond_inscription.webp) center/cover;
 }
 
 
