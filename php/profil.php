@@ -16,14 +16,14 @@
     </div>
     
     <div class="profile-section">
-        <h3>Statistiques</h3>
+        <h3>Statistics</h3>
         <ul>
         <?php echo "<li>Trésors trouvés : " . $_SESSION['progression'] . "</li>"; ?>
         </ul>
     </div>
     
     <div class="profile-section">
-        <h3>Création de maps :</h3>
+        <h3>Creation maps :</h3>
         <ul>
         <?php
             // Connexion à la base de données
