@@ -34,11 +34,9 @@
                 array(
                 ':id_niveau' => $levelNumber,
             ));
-            $resultat = $recup->fetchAll(PDO::FETCH_ASSOC); 
-            foreach($resultat as $val){         
-                if($_SESSION['progression'] < $levelNumber){
-                    header("Location:compaign.php");
-                }
+            $resultat = $recup->fetchAll(PDO::FETCH_ASSOC);
+            if($_SESSION['progression'] < $levelNumber){
+                header("Location:compaign.php");
             }
             if (!empty($recup)) {
                 // Matrice
