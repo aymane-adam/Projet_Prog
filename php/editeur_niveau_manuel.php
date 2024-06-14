@@ -69,7 +69,7 @@
                 "fleche_e" => $_POST['arrow_e'],
                 "matrix" => $_POST['matrix'],
             ];
-            $createur = $_SESSION['pseudo'];
+            $createur = isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : 'inconnu';
             $type_niveau = 2;
             $sql1 = $conn->prepare("INSERT INTO niveaux (nom_niveau, contenu, createur, type_niveau) VALUES (:nom_niveau, :contenu, :createur, :type_niveau)");
             $sql1->execute(array(
