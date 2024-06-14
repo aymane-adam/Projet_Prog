@@ -15,7 +15,7 @@ class Solver {
     private $cols;
     private $initialDirection;
     private $directions;
-    private $directionNames;
+    private $directionCounts;
 
     public function __construct($matrix, $initialDirection) {
         $this->matrix = $matrix;
@@ -30,7 +30,12 @@ class Solver {
             'ouest' => [0, -1]
         ];
 
-        $this->directionNames = array_keys($this->directions);
+        $this->directionCounts = [
+            'nord' => 0,
+            'sud' => 0,
+            'est' => 0,
+            'ouest' => 0
+        ];
     }
 
     private function isValid($x, $y) {
@@ -40,6 +45,9 @@ class Solver {
     private function changeDirection($currentDirection, $newX, $newY, $x, $y) {
         foreach ($this->directions as $direction => $coords) {
             if ($newX == $x + $coords[0] && $newY == $y + $coords[1]) {
+                if ($direction !== $currentDirection) {
+                    $this->directionCounts[$direction]++;
+                }
                 return $direction;
             }
         }
@@ -95,6 +103,10 @@ class Solver {
 
         return "No path found.";
     }
+
+    public function getDirectionCounts() {
+        return $this->directionCounts;
+    }
 }
 
 // Example usage:
@@ -113,6 +125,12 @@ if (is_array($path)) {
     echo "Path found:\n";
     foreach ($path as $step) {
         echo "(" . $step[0][0] . ", " . $step[0][1] . ") - Direction: " . $step[1] . "\n";
+    }
+
+    $directionCounts = $solver->getDirectionCounts();
+    echo "Direction changes:\n";
+    foreach ($directionCounts as $direction => $count) {
+        echo "$direction: $count times\n";
     }
 } else {
     echo $path;
