@@ -78,6 +78,7 @@
                 ':createur' => $createur,
                 ':type_niveau' => $type_niveau,
             ));
+            echo '<script>alert("Niveau sauvegardé");</script>';
             $submissionSuccess = true;
         }
     }
