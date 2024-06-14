@@ -9,6 +9,8 @@
 <body>
 <?php
 session_start();
+$_SESSION['solveur'] = 0;
+$_SESSION['good'] = true;
 class Solver {
     private $matrix;
     private $rows;
@@ -100,9 +102,8 @@ class Solver {
                 }
             }
         }
-        echo '<script>alert("Niveau impossible");</script>';
+        $_SESSION['solveur'] = 2;
         header("Location: editeur_niveau_aleatoire.php");
-        return "No path found.";
     }
 
     public function getDirectionCounts() {
@@ -145,7 +146,8 @@ if (is_array($path)) {
             ':createur' => $createur,
             ':type_niveau' => $type_niveau,
         ));
-    
+        $_SESSION['solveur'] = 1;
+        header("Location: editeur_niveau_aleatoire.php");
     } 
 
 

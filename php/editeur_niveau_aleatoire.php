@@ -59,7 +59,6 @@
         <?php
         // Démarrer la session
         session_start();
-
         // Initialisation de la variable $size
         $size = isset($_POST["size"]) ? $_POST["size"] : null;
 
@@ -196,7 +195,16 @@
                 header("Location: solveur.php");
             }
         }
-
+        if(!empty($_SESSION['good'])){
+            if($_SESSION['solveur'] == 1){
+                echo '<script>alert("Niveau sauvegardé");</script>';
+                unset($_SESSION['good']);
+            }
+            if($_SESSION['solveur'] == 2){
+                echo '<script>alert("Niveau impossible");</script>';
+                unset($_SESSION['good']);
+            }
+        }
         ?>
     </div>
 </body>
