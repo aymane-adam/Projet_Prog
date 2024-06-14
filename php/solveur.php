@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-
+session_start();
 class Solver {
     private $matrix;
     private $rows;
@@ -100,7 +100,8 @@ class Solver {
                 }
             }
         }
-
+        echo '<script>alert("Niveau impossible");</script>';
+        header("Location: editeur_niveau_aleatoire.php");
         return "No path found.";
     }
 
@@ -110,13 +111,7 @@ class Solver {
 }
 
 // Example usage:
-$matrix = [
-    [0, 0, 0, 0, 0],
-    [0, 1, 0, 2, 0],
-    [0, 2, 0, 2, 0],
-    [0, 0, 0, 2, 0],
-    [0, 2, 0, 0, 12]
-];
+$matrix = $_SESSION['matrix'];
 
 $solver = new Solver($matrix, 'est');
 $path = $solver->findPath();
@@ -126,6 +121,33 @@ if (is_array($path)) {
     foreach ($path as $step) {
         echo "(" . $step[0][0] . ", " . $step[0][1] . ") - Direction: " . $step[1] . "\n";
     }
+    require("bdd.php");
+    $nom_niveau = isset($_SESSION['nom_niv_alea']) ? $_SESSION['nom_niv_alea'] : null;
+
+    if ($nom_niveau != null) {
+        // Proceed with database insertion
+        $contenu = [
+            "fleche_n" => $step[0][1],
+            "fleche_s" => $step[0][1],
+            "fleche_o" => $step[0][1],
+            "fleche_e" => $step[0][1],
+            "matrix" => json_encode(isset($_SESSION["matrix"]) ? $_SESSION["matrix"] : null),
+        ];
+
+        // Assuming $conn is your PDO connection object
+        $createur = isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : 'inconnu';
+        $type_niveau = 3;
+        
+        $sql1 = $conn->prepare("INSERT INTO niveaux (nom_niveau, contenu, createur, type_niveau) VALUES (:nom_niveau, :contenu, :createur, :type_niveau)");
+        $sql1->execute(array(
+            ':nom_niveau' => $nom_niveau,
+            ':contenu' => json_encode($contenu),
+            ':createur' => $createur,
+            ':type_niveau' => $type_niveau,
+        ));
+    
+    } 
+
 
     $directionCounts = $solver->getDirectionCounts();
     echo "Direction changes:\n";

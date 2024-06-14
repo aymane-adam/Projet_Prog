@@ -190,33 +190,13 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["button2"])) {
             if (empty($_POST["nom_niveau"])) {
                 echo "Veuillez mettre un nom pour le niveau";
-            } else {
-                require("bdd.php");
-                $nom_niveau = $_POST["nom_niveau"];
-                $contenu = [
-                    "fleche_n" => 0,
-                    "fleche_s" => 0,
-                    "fleche_o" => 0,
-                    "fleche_e" => 0,
-                    "matrix" => json_encode(isset($_SESSION["matrix"]) ? $_SESSION["matrix"] : null),
-                ];
-                if ($contenu) {
-                    // Assurez-vous que la variable de session 'pseudo' est définie
-                    $createur = isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : 'inconnu';
-                    $type_niveau = 3;
-                    $sql1 = $conn->prepare("INSERT INTO niveaux (nom_niveau, contenu, createur, type_niveau) VALUES (:nom_niveau, :contenu, :createur, :type_niveau)");
-                    $sql1->execute(array(
-                        ':nom_niveau' => $nom_niveau,
-                        ':contenu' => json_encode($contenu),
-                        ':createur' => $createur,
-                        ':type_niveau' => $type_niveau,
-                    ));
-                    echo "Le niveau a été enregistré avec succès";
-                } else {
-                    echo "Erreur : La matrice n'a pas été générée correctement.";
-                }
+            } 
+            else {
+                $_SESSION['nom_niv_alea'] = $_POST['nom_niveau'];
+                header("Location: solveur.php");
             }
         }
+
         ?>
     </div>
 </body>
