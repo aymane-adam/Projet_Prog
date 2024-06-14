@@ -125,13 +125,13 @@
     ?>
 
     <div class="left-container">
-        <h1>You are on level: <?php echo $nom_niv; ?></h1>
+        <h1>You are on : "<?php echo $nom_niv; ?>"</h1>
         <div>Direction du bateau : <span id="directionBoat"><?php echo $directBoat; ?></span></div>
         <?php afficherMatrice($matrice); ?>
-        <button id="commencer">Commencer</button>
+        <button id="commencer">Weigh Anchor !</button>
         <button id="retry" class="hidden">Retry</button>
-        <button id="recommencer" class="hidden">Recommencer le niveau</button>
-        <button id="suivant" class="hidden">Niveau suivant</button>
+        <button id="recommencer" class="hidden">Restart the level</button>
+        <button id="suivant" class="hidden">Next level</button>
         <div id="message" class="hidden"></div>
     </div>
     <div class="table-container">
