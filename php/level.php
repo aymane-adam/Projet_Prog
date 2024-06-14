@@ -163,18 +163,21 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     const images = document.querySelectorAll(".image-container img");
-    const imageCount = {};
-    const maxImages = 2;
+    const imageCount = {
+        8: <?php echo $fleche_n; ?>,
+        9: <?php echo $fleche_s; ?>,
+        10: <?php echo $fleche_o; ?>,
+        11: <?php echo $fleche_e; ?>
+    };
+
     let matrice = <?php echo json_encode($matrice); ?>;
     let directBoat = "<?php echo $directBoat; ?>";
     let interval;
     let win = 0;
 
     images.forEach(image => {
-        const value = image.getAttribute("data-value");
-        imageCount[value] = maxImages;
         image.addEventListener("dragstart", function(event) {
             event.dataTransfer.setData("text/plain", event.target.id);
         });
@@ -247,6 +250,7 @@
             matriceDisplay.innerHTML += ligne.join(" ") + "\n";
         });
     }
+
 
     function moveBoat() {
         let boatPosition = findBoatPosition();
