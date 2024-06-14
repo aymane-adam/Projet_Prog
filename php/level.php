@@ -125,7 +125,7 @@
     ?>
 
     <div class="left-container">
-        <h1>You are on : "<?php echo $nom_niv; ?>"</h1>
+        <h1>You are on : <?php echo $nom_niv; ?></h1>
         <div>Direction du bateau : <span id="directionBoat"><?php echo $directBoat; ?></span></div>
         <?php afficherMatrice($matrice); ?>
         <button id="commencer">Weigh Anchor !</button>
