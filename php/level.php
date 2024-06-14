@@ -42,7 +42,7 @@
 
     require("bdd.php");
     if (isset($_GET['id'])) {
-        $recup = $conn->prepare("SELECT contenu FROM niveaux WHERE id_niveau = :id_niveau");
+        $recup = $conn->prepare("SELECT contenu, nom_niveau FROM niveaux WHERE id_niveau = :id_niveau");
         $recup->execute(
             array(
             ':id_niveau' => $levelNumber,
@@ -55,7 +55,7 @@
         if (!empty($recup)) {
             // Matrice
             $json_data = $resultat[0]['contenu'];
-
+            $nom_niv = $resultat[0]['nom_niveau'];
             // Décoder le JSON
             $data = json_decode($json_data, true);
 
@@ -125,7 +125,7 @@
     ?>
 
     <div class="left-container">
-        <h1>You are on level: <?php echo $levelNumber; ?></h1>
+        <h1>You are on level: <?php echo $nom_niv; ?></h1>
         <div>Direction du bateau : <span id="directionBoat"><?php echo $directBoat; ?></span></div>
         <?php afficherMatrice($matrice); ?>
         <button id="commencer">Commencer</button>
