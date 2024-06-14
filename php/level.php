@@ -163,6 +163,7 @@
     </div>
 
     <script>
+<<<<<<< HEAD
         document.addEventListener("DOMContentLoaded", function() {
     const images = document.querySelectorAll(".image-container img");
     const imageCount = {};
@@ -175,6 +176,21 @@
     images.forEach(image => {
         const value = image.getAttribute("data-value");
         imageCount[value] = maxImages;
+=======
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll(".image-container img");
+    let imageCount = {
+        8: parseInt(document.getElementById('counter8').textContent),
+        9: parseInt(document.getElementById('counter9').textContent),
+        10: parseInt(document.getElementById('counter10').textContent),
+        11: parseInt(document.getElementById('counter11').textContent)
+    };
+    let matrice = <?php echo json_encode($matrice); ?>;
+    let directBoat = "<?php echo $directBoat; ?>";
+    let interval;
+
+    images.forEach(image => {
+>>>>>>> bf3a631ea00c0da7b536a483dfb19d3e7443aed4
         image.addEventListener("dragstart", function(event) {
             event.dataTransfer.setData("text/plain", event.target.id);
         });
@@ -292,8 +308,11 @@
             } else if (nextCell === 12) {
                 clearInterval(interval);                 
                 document.getElementById('message').textContent = "Partie gagnée!";
+<<<<<<< HEAD
                 win = 1;
                 updateProgression(win, <?php echo $levelNumber; ?>);
+=======
+>>>>>>> bf3a631ea00c0da7b536a483dfb19d3e7443aed4
                 document.getElementById('message').classList.remove('hidden');
                 document.getElementById('recommencer').classList.remove('hidden');
                 document.getElementById('suivant').classList.remove('hidden');
@@ -360,6 +379,7 @@
         });
     }
 
+<<<<<<< HEAD
     function updateProgression(win, levelNumber) {
     fetch('update_progression.php', {
         method: 'POST',
@@ -377,6 +397,8 @@
     });
 }
 
+=======
+>>>>>>> bf3a631ea00c0da7b536a483dfb19d3e7443aed4
     document.getElementById('commencer').addEventListener('click', function() {
         interval = setInterval(moveBoat, 1000); // Utiliser directBoat initialisé dans PHP
     });

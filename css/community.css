@@ -32,8 +32,8 @@ body {
 }
 
 .search-container, .sort-container, table {
-    background-color: #eafd7df5; 
-    border: 4px solid #ffc800;
+    background-color: #dee4ebc7; 
+    border: 4px solid #000000;
     border-radius: 10px; 
     padding: 20px; 
     margin-top: 20px; 
@@ -62,7 +62,7 @@ table {
 }
 
 th, td {
-    border-bottom: 3px solid #ff5500; 
+    border-bottom: 3px solid #cfd7e0d6; 
     padding: 8px;
     text-align: left;
 }
@@ -72,25 +72,25 @@ table td a {
     padding: 8px 16px;
     text-decoration: none; /* Enlève le soulignement */
     color: white; /* Couleur du texte */
-    background-color: #007BFF; /* Couleur de fond du bouton */
+    background-color: #0396ff; /* Couleur de fond du bouton */
     border-radius: 5px; /* Coins arrondis */
-    transition: background-color 0.3s; /* Transition pour l'effet de survol */
+    transition: background-color 0.3s; 
 }
 
 table td a:hover {
-    background-color: #0056b3; /* Couleur de fond au survol */
+    background-color: #1ecbfa; 
 }
 
 th {
-    background-color: #ffcc00; 
+    background-color: #269de8; 
     color: white;
 }
 
 input[type="text"], button {
     padding: 10px;
-    border: 1px solid #ffc800;
+    border: 1px solid #f9f9f9;
     border-radius: 5px;
-    background-color: #eade09a5; 
+    background-color: #c9ebe8a5; 
 }
 
 button {
@@ -98,5 +98,5 @@ button {
 }
 
 button:hover {
-    background-color: #ffea02; 
+    background-color: #02ffea; 
 }
