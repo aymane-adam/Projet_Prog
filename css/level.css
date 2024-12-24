@@ -204,11 +204,3 @@ td {
     display: none;
 }
 
-#message {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #ffdddd;
-    border: 1px solid #ff6200;
-    border-radius: 5px;
-    color: #ff0000;
-}
